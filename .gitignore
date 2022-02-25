@@ -1,0 +1,12 @@
+*.mpf
+*.mti
+*.wlf
+*.svf
+*.mr
+*.syn
+*.pvl
+work/
+transcript
+.log
+*.vg
+*.txt
