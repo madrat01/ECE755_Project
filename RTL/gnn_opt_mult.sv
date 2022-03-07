@@ -1,4 +1,4 @@
-module gnn (
+module gnn_opt_mult (
     input logic                 clk,
     input logic signed [4:0]    x0_node0, x1_node0, x2_node0, x3_node0, 
     input logic signed [4:0]    x0_node1, x1_node1, x2_node1, x3_node1, 
@@ -32,14 +32,14 @@ logic signed [5:0]  x0_node1_aggr, x1_node1_aggr, x2_node1_aggr, x3_node1_aggr;
 logic signed [5:0]  x0_node2_aggr, x1_node2_aggr, x2_node2_aggr, x3_node2_aggr;
 logic signed [5:0]  x0_node3_aggr, x1_node3_aggr, x2_node3_aggr, x3_node3_aggr;
     
-logic signed [13:0]  y4_node0_aggr, y5_node0_aggr, y6_node0_aggr, y7_node0_aggr; 
-logic signed [12:0]  y4_node0, y5_node0, y6_node0, y7_node0;
-logic signed [13:0]  y4_node1_aggr, y5_node1_aggr, y6_node1_aggr, y7_node1_aggr; 
-logic signed [12:0]  y4_node1, y5_node1, y6_node1, y7_node1;
-logic signed [13:0]  y4_node2_aggr, y5_node2_aggr, y6_node2_aggr, y7_node2_aggr; 
-logic signed [12:0]  y4_node2, y5_node2, y6_node2, y7_node2;
-logic signed [13:0]  y4_node3_aggr, y5_node3_aggr, y6_node3_aggr, y7_node3_aggr; 
-logic signed [12:0]  y4_node3, y5_node3, y6_node3, y7_node3;
+logic signed [12:0]  y4_node0_aggr_p3, y5_node0_aggr_p3, y6_node0_aggr_p3, y7_node0_aggr_p3; 
+logic signed [12:0]  y4_node0_p3, y5_node0_p3, y6_node0_p3, y7_node0_p3;
+logic signed [12:0]  y4_node1_aggr_p3, y5_node1_aggr_p3, y6_node1_aggr_p3, y7_node1_aggr_p3; 
+logic signed [12:0]  y4_node1_p3, y5_node1_p3, y6_node1_p3, y7_node1_p3;
+logic signed [12:0]  y4_node2_aggr_p3, y5_node2_aggr_p3, y6_node2_aggr_p3, y7_node2_aggr_p3; 
+logic signed [12:0]  y4_node2_p3, y5_node2_p3, y6_node2_p3, y7_node2_p3;
+logic signed [12:0]  y4_node3_aggr_p3, y5_node3_aggr_p3, y6_node3_aggr_p3, y7_node3_aggr_p3; 
+logic signed [12:0]  y4_node3_p3, y5_node3_p3, y6_node3_p3, y7_node3_p3;
 
 // Aggregated i/p features
 // Aggregate x_inputs
@@ -65,27 +65,27 @@ assign  x2_node3_aggr = x2_node1 + x2_node2 + x2_node3;
 assign  x3_node3_aggr = x3_node1 + x3_node2 + x3_node3;
 
 // Aggregate layer-1 outputs
-assign  y4_node0_aggr = y4_node0 + y4_node1 + y4_node2;
-assign  y5_node0_aggr = y5_node0 + y5_node1 + y5_node2;
-assign  y6_node0_aggr = y6_node0 + y6_node1 + y6_node2;
-assign  y7_node0_aggr = y7_node0 + y7_node1 + y7_node2;
+assign  y4_node0_aggr_p3 = y4_node0_p3 + y4_node1_p3 + y4_node2_p3;
+assign  y5_node0_aggr_p3 = y5_node0_p3 + y5_node1_p3 + y5_node2_p3;
+assign  y6_node0_aggr_p3 = y6_node0_p3 + y6_node1_p3 + y6_node2_p3;
+assign  y7_node0_aggr_p3 = y7_node0_p3 + y7_node1_p3 + y7_node2_p3;
 
-assign  y4_node1_aggr = y4_node0 + y4_node1 + y4_node3;
-assign  y5_node1_aggr = y5_node0 + y5_node1 + y5_node3;
-assign  y6_node1_aggr = y6_node0 + y6_node1 + y6_node3;
-assign  y7_node1_aggr = y7_node0 + y7_node1 + y7_node3;
+assign  y4_node1_aggr_p3 = y4_node0_p3 + y4_node1_p3 + y4_node3_p3;
+assign  y5_node1_aggr_p3 = y5_node0_p3 + y5_node1_p3 + y5_node3_p3;
+assign  y6_node1_aggr_p3 = y6_node0_p3 + y6_node1_p3 + y6_node3_p3;
+assign  y7_node1_aggr_p3 = y7_node0_p3 + y7_node1_p3 + y7_node3_p3;
 
-assign  y4_node2_aggr = y4_node0 + y4_node2 + y4_node3;
-assign  y5_node2_aggr = y5_node0 + y5_node2 + y5_node3;
-assign  y6_node2_aggr = y6_node0 + y6_node2 + y6_node3;
-assign  y7_node2_aggr = y7_node0 + y7_node2 + y7_node3;
+assign  y4_node2_aggr_p3 = y4_node0_p3 + y4_node2_p3 + y4_node3_p3;
+assign  y5_node2_aggr_p3 = y5_node0_p3 + y5_node2_p3 + y5_node3_p3;
+assign  y6_node2_aggr_p3 = y6_node0_p3 + y6_node2_p3 + y6_node3_p3;
+assign  y7_node2_aggr_p3 = y7_node0_p3 + y7_node2_p3 + y7_node3_p3;
 
-assign  y4_node3_aggr = y4_node1 + y4_node2 + y4_node3;
-assign  y5_node3_aggr = y5_node1 + y5_node2 + y5_node3;
-assign  y6_node3_aggr = y6_node1 + y6_node2 + y6_node3;
-assign  y7_node3_aggr = y7_node1 + y7_node2 + y7_node3;
+assign  y4_node3_aggr_p3 = y4_node1_p3 + y4_node2_p3 + y4_node3_p3;
+assign  y5_node3_aggr_p3 = y5_node1_p3 + y5_node2_p3 + y5_node3_p3;
+assign  y6_node3_aggr_p3 = y6_node1_p3 + y6_node2_p3 + y6_node3_p3;
+assign  y7_node3_aggr_p3 = y7_node1_p3 + y7_node2_p3 + y7_node3_p3;
 
-dnn_gnn node0 (
+dnn_opt_mult_gnn node0 (
     .clk            (clk),
     .in_ready       (in_ready),
     .x0(x0_node0_aggr), .x1(x1_node0_aggr), .x2(x2_node0_aggr), .x3(x3_node0_aggr), 
@@ -95,13 +95,13 @@ dnn_gnn node0 (
     .w07(w07), .w17(w17), .w27(w27), .w37(w37),
     .w48(w48), .w58(w58), .w68(w68), .w78(w78),
     .w49(w49), .w59(w59), .w69(w69), .w79(w79),
-    .y4_aggr (y4_node0_aggr), .y5_aggr (y5_node0_aggr), .y6_aggr (y6_node0_aggr), .y7_aggr (y7_node0_aggr),
-    .y4_relu (y4_node0), .y5_relu (y5_node0), .y6_relu (y6_node0), .y7_relu (y7_node0),
+    .y4_aggr_p3 (y4_node0_aggr_p3), .y5_aggr_p3 (y5_node0_aggr_p3), .y6_aggr_p3 (y6_node0_aggr_p3), .y7_aggr_p3 (y7_node0_aggr_p3),
+    .y4_relu_p3 (y4_node0_p3), .y5_relu_p3 (y5_node0_p3), .y6_relu_p3 (y6_node0_p3), .y7_relu_p3 (y7_node0_p3),
     .out0(out0_node0), .out1(out1_node0),
     .out0_ready(out0_ready_node0), .out1_ready(out1_ready_node0)
 );
 
-dnn_gnn node1 (
+dnn_opt_mult_gnn node1 (
     .clk            (clk),
     .in_ready       (in_ready),
     .x0(x0_node1_aggr), .x1(x1_node1_aggr), .x2(x2_node1_aggr), .x3(x3_node1_aggr), 
@@ -111,13 +111,13 @@ dnn_gnn node1 (
     .w07(w07), .w17(w17), .w27(w27), .w37(w37),
     .w48(w48), .w58(w58), .w68(w68), .w78(w78),
     .w49(w49), .w59(w59), .w69(w69), .w79(w79),
-    .y4_aggr (y4_node1_aggr), .y5_aggr (y5_node1_aggr), .y6_aggr (y6_node1_aggr), .y7_aggr (y7_node1_aggr),
-    .y4_relu (y4_node1), .y5_relu (y5_node1), .y6_relu (y6_node1), .y7_relu (y7_node1),
+    .y4_aggr_p3 (y4_node1_aggr_p3), .y5_aggr_p3 (y5_node1_aggr_p3), .y6_aggr_p3 (y6_node1_aggr_p3), .y7_aggr_p3 (y7_node1_aggr_p3),
+    .y4_relu_p3 (y4_node1_p3), .y5_relu_p3 (y5_node1_p3), .y6_relu_p3 (y6_node1_p3), .y7_relu_p3 (y7_node1_p3),
     .out0(out0_node1), .out1(out1_node1),
     .out0_ready(out0_ready_node1), .out1_ready(out1_ready_node1)
 );
 
-dnn_gnn node2 (
+dnn_opt_mult_gnn node2 (
     .clk            (clk),
     .in_ready       (in_ready),
     .x0(x0_node2_aggr), .x1(x1_node2_aggr), .x2(x2_node2_aggr), .x3(x3_node2_aggr), 
@@ -127,13 +127,13 @@ dnn_gnn node2 (
     .w07(w07), .w17(w17), .w27(w27), .w37(w37),
     .w48(w48), .w58(w58), .w68(w68), .w78(w78),
     .w49(w49), .w59(w59), .w69(w69), .w79(w79),
-    .y4_aggr (y4_node2_aggr), .y5_aggr (y5_node2_aggr), .y6_aggr (y6_node2_aggr), .y7_aggr (y7_node2_aggr),
-    .y4_relu (y4_node2), .y5_relu (y5_node2), .y6_relu (y6_node2), .y7_relu (y7_node2),
+    .y4_aggr_p3 (y4_node2_aggr_p3), .y5_aggr_p3 (y5_node2_aggr_p3), .y6_aggr_p3 (y6_node2_aggr_p3), .y7_aggr_p3 (y7_node2_aggr_p3),
+    .y4_relu_p3 (y4_node2_p3), .y5_relu_p3 (y5_node2_p3), .y6_relu_p3 (y6_node2_p3), .y7_relu_p3 (y7_node2_p3),
     .out0(out0_node2), .out1(out1_node2),
     .out0_ready(out0_ready_node2), .out1_ready(out1_ready_node2)
 );
 
-dnn_gnn node3 (
+dnn_opt_mult_gnn node3 (
     .clk            (clk),
     .in_ready       (in_ready),
     .x0(x0_node3_aggr), .x1(x1_node3_aggr), .x2(x2_node3_aggr), .x3(x3_node3_aggr), 
@@ -143,8 +143,8 @@ dnn_gnn node3 (
     .w07(w07), .w17(w17), .w27(w27), .w37(w37),
     .w48(w48), .w58(w58), .w68(w68), .w78(w78),
     .w49(w49), .w59(w59), .w69(w69), .w79(w79),
-    .y4_aggr (y4_node3_aggr), .y5_aggr (y5_node3_aggr), .y6_aggr (y6_node3_aggr), .y7_aggr (y7_node3_aggr),
-    .y4_relu (y4_node3), .y5_relu (y5_node3), .y6_relu (y6_node3), .y7_relu (y7_node3),
+    .y4_aggr_p3 (y4_node3_aggr_p3), .y5_aggr_p3 (y5_node3_aggr_p3), .y6_aggr_p3 (y6_node3_aggr_p3), .y7_aggr_p3 (y7_node3_aggr_p3),
+    .y4_relu_p3 (y4_node3_p3), .y5_relu_p3 (y5_node3_p3), .y6_relu_p3 (y6_node3_p3), .y7_relu_p3 (y7_node3_p3),
     .out0(out0_node3), .out1(out1_node3),
     .out0_ready(out0_ready_node3), .out1_ready(out1_ready_node3)
 );

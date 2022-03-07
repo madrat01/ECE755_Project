@@ -1,4 +1,4 @@
-module dnn_tb();
+module dnn_opt_mult_tb();
 
 reg [4:0] x0, x1, x2, x3;
 reg [4:0] w04, w14, w24, w34;
