@@ -190,9 +190,16 @@ always_ff @ (posedge clk) begin
 end
 
 // Assign out and out_ready when output MAC is completed (cycle 5)
-assign out0 = {17{out_comp_ready_p5}} & mac1;
-assign out1 = {17{out_comp_ready_p5}} & mac2;
+//assign out0 = {17{out_comp_ready_p5}} & mac1;
+//assign out1 = {17{out_comp_ready_p5}} & mac2;
 assign out0_ready = out_comp_ready_p5;
-assign out1_ready = out_comp_ready_p5; 
+assign out1_ready = out_comp_ready_p5;
+
+always_latch begin
+    if (out_comp_ready_p5) begin
+        out0 <= mac1;
+        out1 <= mac2;
+    end
+end
 
 endmodule

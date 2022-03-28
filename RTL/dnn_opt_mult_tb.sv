@@ -10,7 +10,7 @@ reg [4:0] w49, w59, w69, w79;
 
 reg clk;
 
-wire [16:0] out0, out1;
+wire signed [16:0] out0, out1;
 wire out0_ready, out1_ready;
 
 reg in_ready;
@@ -69,7 +69,7 @@ initial begin
     @ (posedge clk);
     in_ready = 1'b0;
 
-    #4
+    repeat (20) @ (posedge clk);
     $display("-----------Test 1 - Few Negative-----------------");
     if (out0 == -17'd726)
         $display("-----------out0 is correct-----------------");
@@ -88,7 +88,7 @@ initial begin
 
     @ (posedge clk);
     in_ready = 1'b0;
-    repeat (5) @ (posedge clk);
+    repeat (20) @ (posedge clk);
 
     @ (posedge clk);
     in_ready = 1'b1;
@@ -126,7 +126,7 @@ initial begin
     @ (posedge clk);
     in_ready = 1'b0;
 
-    #4
+    repeat (20) @ (posedge clk);
     $display("-----------Test 2 - All Positive-----------------");
     if (out0 == 17'd1173)
         $display("-----------out0 is correct-----------------");
@@ -145,7 +145,7 @@ initial begin
 
     @ (posedge clk);
     in_ready = 1'b0;
-    repeat (5) @ (posedge clk);
+    repeat (20) @ (posedge clk);
 
     @ (posedge clk);
     in_ready = 1'b1;
@@ -183,7 +183,7 @@ initial begin
     @ (posedge clk);
     in_ready = 1'b0;
 
-    #4
+    repeat (20) @ (posedge clk);
     $display("-----------Test 3 - Minimum-----------------");
     if (out0 == -17'd65536)
         $display("-----------out0 is correct-----------------");
@@ -202,7 +202,7 @@ initial begin
 
     @ (posedge clk);
     in_ready = 1'b0;
-    repeat (5) @ (posedge clk);
+    repeat (20) @ (posedge clk);
 
     @ (posedge clk);
     in_ready = 1'b1;
@@ -240,7 +240,7 @@ initial begin
     @ (posedge clk);
     in_ready = 1'b0;
 
-    #4
+    repeat (20) @ (posedge clk);
     $display("-----------Test 4 - Maximum-----------------");
     if (out0 == 17'd54000)
         $display("-----------out0 is correct-----------------");
@@ -265,7 +265,7 @@ always
 
 
 initial
-    #70 $stop;
+    #400 $stop;
 
 
 endmodule

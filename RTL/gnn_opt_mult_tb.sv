@@ -13,10 +13,10 @@ reg [4:0] w49, w59, w69, w79;
 
 reg clk;
 
-wire [20:0] out0_node0, out1_node0;
-wire [20:0] out0_node1, out1_node1;
-wire [20:0] out0_node2, out1_node2;
-wire [20:0] out0_node3, out1_node3;
+wire signed [20:0] out0_node0, out1_node0;
+wire signed [20:0] out0_node1, out1_node1;
+wire signed [20:0] out0_node2, out1_node2;
+wire signed [20:0] out0_node3, out1_node3;
 
 wire out0_ready_node0, out1_ready_node0;
 wire out0_ready_node1, out1_ready_node1;
@@ -224,7 +224,6 @@ always
 
 
 initial
-    #130 $finish;
-
+    #200 $finish;
 
 endmodule
