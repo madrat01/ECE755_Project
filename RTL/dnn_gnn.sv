@@ -5,7 +5,7 @@ module dnn_gnn (
     input logic                 in_ready,
     input logic signed [16:0]   y4_aggr, y5_aggr, y6_aggr, y7_aggr, 
     output logic signed [14:0]  y4_relu, y5_relu, y6_relu, y7_relu, 
-    output logic signed [22:0]  out0, out1, 
+    output logic signed [20:0]  out0, out1, 
     output logic                out0_ready, out1_ready
 );
 
