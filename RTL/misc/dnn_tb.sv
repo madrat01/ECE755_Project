@@ -1,4 +1,5 @@
-module dnn_opt_mult_tb();
+// This module is for dnn not used in gnn
+module dnn_tb();
 
 reg [4:0] x0, x1, x2, x3;
 reg [4:0] w04, w14, w24, w34;
@@ -10,7 +11,7 @@ reg [4:0] w49, w59, w69, w79;
 
 reg clk;
 
-wire signed [16:0] out0, out1;
+wire [16:0] out0, out1;
 wire out0_ready, out1_ready;
 
 reg in_ready;
@@ -19,7 +20,8 @@ reg in_ready;
 // Please replace the instantiation with the top module of your gate level model
 // Look for 'test failed' in the message. If there is no such message then your output matches the golden outputs. 
 
-dnn_opt_mult dnn(.x0(x0), .x1(x1), .x2(x2), .x3(x3), 
+
+dnn dnn(.x0(x0), .x1(x1), .x2(x2), .x3(x3), 
         .w04(w04), .w14(w14), .w24(w24), .w34(w34), 
         .w05(w05), .w15(w15), .w25(w25), .w35(w35),
         .w06(w06), .w16(w16), .w26(w26), .w36(w36),
@@ -33,7 +35,6 @@ dnn_opt_mult dnn(.x0(x0), .x1(x1), .x2(x2), .x3(x3),
 initial begin
 
     clk = 0;
-    @ (posedge clk);
     in_ready = 1; 
     
     x0 = 5'b00100;
@@ -66,10 +67,7 @@ initial begin
     w69 = 5'b10001;
     w79 = 5'b00110;
 
-    @ (posedge clk);
-    in_ready = 1'b0;
-
-    repeat (20) @ (posedge clk);
+    #40
     $display("-----------Test 1 - Few Negative-----------------");
     if (out0 == -17'd726)
         $display("-----------out0 is correct-----------------");
@@ -88,7 +86,7 @@ initial begin
 
     @ (posedge clk);
     in_ready = 1'b0;
-    repeat (20) @ (posedge clk);
+    repeat (5) @ (posedge clk);
 
     @ (posedge clk);
     in_ready = 1'b1;
@@ -122,11 +120,8 @@ initial begin
     w59 = 5'b00000;
     w69 = 5'b00000;
     w79 = 5'b00110;
-    
-    @ (posedge clk);
-    in_ready = 1'b0;
 
-    repeat (20) @ (posedge clk);
+    #40
     $display("-----------Test 2 - All Positive-----------------");
     if (out0 == 17'd1173)
         $display("-----------out0 is correct-----------------");
@@ -145,7 +140,7 @@ initial begin
 
     @ (posedge clk);
     in_ready = 1'b0;
-    repeat (20) @ (posedge clk);
+    repeat (5) @ (posedge clk);
 
     @ (posedge clk);
     in_ready = 1'b1;
@@ -179,11 +174,8 @@ initial begin
     w59 = 5'b10000;
     w69 = 5'b10000;
     w79 = 5'b10000;
-    
-    @ (posedge clk);
-    in_ready = 1'b0;
 
-    repeat (20) @ (posedge clk);
+    #40
     $display("-----------Test 3 - Minimum-----------------");
     if (out0 == -17'd65536)
         $display("-----------out0 is correct-----------------");
@@ -202,7 +194,7 @@ initial begin
 
     @ (posedge clk);
     in_ready = 1'b0;
-    repeat (20) @ (posedge clk);
+    repeat (5) @ (posedge clk);
 
     @ (posedge clk);
     in_ready = 1'b1;
@@ -236,11 +228,8 @@ initial begin
     w59 = 5'b01111;
     w69 = 5'b01111;
     w79 = 5'b01111;
-    
-    @ (posedge clk);
-    in_ready = 1'b0;
 
-    repeat (20) @ (posedge clk);
+    #40
     $display("-----------Test 4 - Maximum-----------------");
     if (out0 == 17'd54000)
         $display("-----------out0 is correct-----------------");
@@ -265,7 +254,7 @@ always
 
 
 initial
-    #400 $stop;
+    #200 $finish;
 
 
 endmodule

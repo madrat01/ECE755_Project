@@ -1,15 +1,15 @@
-module gnn_opt_mult_tb();
+module tb_top();
 
-reg [4:0] x0_node0, x1_node0, x2_node0, x3_node0;
-reg [4:0] x0_node1, x1_node1, x2_node1, x3_node1;
-reg [4:0] x0_node2, x1_node2, x2_node2, x3_node2;
-reg [4:0] x0_node3, x1_node3, x2_node3, x3_node3;
-reg [4:0] w04, w14, w24, w34;
-reg [4:0] w05, w15, w25, w35;
-reg [4:0] w06, w16, w26, w36;
-reg [4:0] w07, w17, w27, w37;
-reg [4:0] w48, w58, w68, w78;
-reg [4:0] w49, w59, w69, w79;
+reg signed [4:0] x0_node0, x1_node0, x2_node0, x3_node0;
+reg signed [4:0] x0_node1, x1_node1, x2_node1, x3_node1;
+reg signed [4:0] x0_node2, x1_node2, x2_node2, x3_node2;
+reg signed [4:0] x0_node3, x1_node3, x2_node3, x3_node3;
+reg signed [4:0] w04, w14, w24, w34;
+reg signed [4:0] w05, w15, w25, w35;
+reg signed [4:0] w06, w16, w26, w36;
+reg signed [4:0] w07, w17, w27, w37;
+reg signed [4:0] w48, w58, w68, w78;
+reg signed [4:0] w49, w59, w69, w79;
 
 reg clk;
 
@@ -30,7 +30,7 @@ reg in_ready;
 // Look for 'test failed' in the message. If there is no such message then your output matches the golden outputs. 
 
 
-gnn_opt_mult gnn(.x0_node0(x0_node0), .x1_node0(x1_node0), .x2_node0(x2_node0), .x3_node0(x3_node0), 
+top gnn(.x0_node0(x0_node0), .x1_node0(x1_node0), .x2_node0(x2_node0), .x3_node0(x3_node0), 
         .x0_node1(x0_node1), .x1_node1(x1_node1), .x2_node1(x2_node1), .x3_node1(x3_node1), 
         .x0_node2(x0_node2), .x1_node2(x1_node2), .x2_node2(x2_node2), .x3_node2(x3_node2), 
         .x0_node3(x0_node3), .x1_node3(x1_node3), .x2_node3(x2_node3), .x3_node3(x3_node3), 
@@ -217,13 +217,16 @@ initial begin
     $display("out1_node0 %d out1_node1 %d out1_node2 %d out1_node3 %d\n", out1_node0, out1_node1, out1_node2, out1_node3);
     in_ready = 1'b0;
 
+
 end
+
 
 always
     #1 clk = !clk;
 
 
 initial
-    #200 $finish;
+    #500 $finish;
+
 
 endmodule

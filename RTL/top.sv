@@ -1,4 +1,4 @@
-module gnn (
+module top (
     input logic                 clk,
     input logic signed [4:0]    x0_node0, x1_node0, x2_node0, x3_node0, 
     input logic signed [4:0]    x0_node1, x1_node1, x2_node1, x3_node1, 
@@ -85,7 +85,7 @@ assign  y5_node3_aggr = y5_node1 + y5_node2 + y5_node3;
 assign  y6_node3_aggr = y6_node1 + y6_node2 + y6_node3;
 assign  y7_node3_aggr = y7_node1 + y7_node2 + y7_node3;
 
-dnn_gnn node0 (
+dnn node0 (
     .clk            (clk),
     .in_ready       (in_ready),
     .x0(x0_node0_aggr), .x1(x1_node0_aggr), .x2(x2_node0_aggr), .x3(x3_node0_aggr), 
@@ -101,7 +101,7 @@ dnn_gnn node0 (
     .out0_ready(out0_ready_node0), .out1_ready(out1_ready_node0)
 );
 
-dnn_gnn node1 (
+dnn node1 (
     .clk            (clk),
     .in_ready       (in_ready),
     .x0(x0_node1_aggr), .x1(x1_node1_aggr), .x2(x2_node1_aggr), .x3(x3_node1_aggr), 
@@ -117,7 +117,7 @@ dnn_gnn node1 (
     .out0_ready(out0_ready_node1), .out1_ready(out1_ready_node1)
 );
 
-dnn_gnn node2 (
+dnn node2 (
     .clk            (clk),
     .in_ready       (in_ready),
     .x0(x0_node2_aggr), .x1(x1_node2_aggr), .x2(x2_node2_aggr), .x3(x3_node2_aggr), 
@@ -133,7 +133,7 @@ dnn_gnn node2 (
     .out0_ready(out0_ready_node2), .out1_ready(out1_ready_node2)
 );
 
-dnn_gnn node3 (
+dnn node3 (
     .clk            (clk),
     .in_ready       (in_ready),
     .x0(x0_node3_aggr), .x1(x1_node3_aggr), .x2(x2_node3_aggr), .x3(x3_node3_aggr), 
