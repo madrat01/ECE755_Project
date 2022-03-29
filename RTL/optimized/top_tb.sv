@@ -1,4 +1,4 @@
-module tb_top_opt();
+module tb_top();
 
 reg [4:0] x0_node0, x1_node0, x2_node0, x3_node0;
 reg [4:0] x0_node1, x1_node1, x2_node1, x3_node1;
@@ -18,10 +18,10 @@ wire signed [20:0] out0_node1, out1_node1;
 wire signed [20:0] out0_node2, out1_node2;
 wire signed [20:0] out0_node3, out1_node3;
 
-wire out0_ready_node0, out1_ready_node0;
-wire out0_ready_node1, out1_ready_node1;
-wire out0_ready_node2, out1_ready_node2;
-wire out0_ready_node3, out1_ready_node3;
+wire out10_ready_node0, out11_ready_node0;
+wire out10_ready_node1, out11_ready_node1;
+wire out10_ready_node2, out11_ready_node2;
+wire out10_ready_node3, out11_ready_node3;
 
 reg in_ready;
 // Top module
@@ -30,7 +30,7 @@ reg in_ready;
 // Look for 'test failed' in the message. If there is no such message then your output matches the golden outputs. 
 
 
-top_opt gnn(.x0_node0(x0_node0), .x1_node0(x1_node0), .x2_node0(x2_node0), .x3_node0(x3_node0), 
+top gnn(.x0_node0(x0_node0), .x1_node0(x1_node0), .x2_node0(x2_node0), .x3_node0(x3_node0), 
         .x0_node1(x0_node1), .x1_node1(x1_node1), .x2_node1(x2_node1), .x3_node1(x3_node1), 
         .x0_node2(x0_node2), .x1_node2(x1_node2), .x2_node2(x2_node2), .x3_node2(x3_node2), 
         .x0_node3(x0_node3), .x1_node3(x1_node3), .x2_node3(x2_node3), .x3_node3(x3_node3), 
@@ -45,10 +45,10 @@ top_opt gnn(.x0_node0(x0_node0), .x1_node0(x1_node0), .x2_node0(x2_node0), .x3_n
         .out0_node2(out0_node2), .out1_node2(out1_node2),
         .out0_node3(out0_node3), .out1_node3(out1_node3),
         .in_ready(in_ready),
-        .out0_ready_node0(out0_ready_node0), .out1_ready_node0(out1_ready_node0),
-        .out0_ready_node1(out0_ready_node1), .out1_ready_node1(out1_ready_node1),
-        .out0_ready_node2(out0_ready_node2), .out1_ready_node2(out1_ready_node2),
-        .out0_ready_node3(out0_ready_node3), .out1_ready_node3(out1_ready_node3),
+        .out10_ready_node0(out10_ready_node0), .out11_ready_node0(out11_ready_node0),
+        .out10_ready_node1(out10_ready_node1), .out11_ready_node1(out11_ready_node1),
+        .out10_ready_node2(out10_ready_node2), .out11_ready_node2(out11_ready_node2),
+        .out10_ready_node3(out10_ready_node3), .out11_ready_node3(out11_ready_node3),
         .clk(clk));
 
 initial begin

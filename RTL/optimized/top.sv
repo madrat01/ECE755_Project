@@ -1,4 +1,4 @@
-module top_opt (
+module top (
     input logic                 clk,
     input logic signed [4:0]    x0_node0, x1_node0, x2_node0, x3_node0, 
     input logic signed [4:0]    x0_node1, x1_node1, x2_node1, x3_node1, 
@@ -15,10 +15,10 @@ module top_opt (
     output logic signed [20:0]  out0_node1, out1_node1,
     output logic signed [20:0]  out0_node2, out1_node2,
     output logic signed [20:0]  out0_node3, out1_node3,
-    output logic                out0_ready_node0, out1_ready_node0, 
-    output logic                out0_ready_node1, out1_ready_node1, 
-    output logic                out0_ready_node2, out1_ready_node2, 
-    output logic                out0_ready_node3, out1_ready_node3
+    output logic                out10_ready_node0, out11_ready_node0, 
+    output logic                out10_ready_node1, out11_ready_node1, 
+    output logic                out10_ready_node2, out11_ready_node2, 
+    output logic                out10_ready_node3, out11_ready_node3
 ); 
 
 //      Node 0
@@ -85,7 +85,7 @@ assign  y5_node3_aggr_p3 = y5_node1_p3 + y5_node2_p3 + y5_node3_p3;
 assign  y6_node3_aggr_p3 = y6_node1_p3 + y6_node2_p3 + y6_node3_p3;
 assign  y7_node3_aggr_p3 = y7_node1_p3 + y7_node2_p3 + y7_node3_p3;
 
-dnn_opt node0 (
+dnn node0 (
     .clk            (clk),
     .in_ready       (in_ready),
     .x0(x0_node0_aggr), .x1(x1_node0_aggr), .x2(x2_node0_aggr), .x3(x3_node0_aggr), 
@@ -98,10 +98,10 @@ dnn_opt node0 (
     .y4_aggr_p3 (y4_node0_aggr_p3), .y5_aggr_p3 (y5_node0_aggr_p3), .y6_aggr_p3 (y6_node0_aggr_p3), .y7_aggr_p3 (y7_node0_aggr_p3),
     .y4_relu_p3 (y4_node0_p3), .y5_relu_p3 (y5_node0_p3), .y6_relu_p3 (y6_node0_p3), .y7_relu_p3 (y7_node0_p3),
     .out0(out0_node0), .out1(out1_node0),
-    .out0_ready(out0_ready_node0), .out1_ready(out1_ready_node0)
+    .out0_ready(out10_ready_node0), .out1_ready(out11_ready_node0)
 );
 
-dnn_opt node1 (
+dnn node1 (
     .clk            (clk),
     .in_ready       (in_ready),
     .x0(x0_node1_aggr), .x1(x1_node1_aggr), .x2(x2_node1_aggr), .x3(x3_node1_aggr), 
@@ -114,10 +114,10 @@ dnn_opt node1 (
     .y4_aggr_p3 (y4_node1_aggr_p3), .y5_aggr_p3 (y5_node1_aggr_p3), .y6_aggr_p3 (y6_node1_aggr_p3), .y7_aggr_p3 (y7_node1_aggr_p3),
     .y4_relu_p3 (y4_node1_p3), .y5_relu_p3 (y5_node1_p3), .y6_relu_p3 (y6_node1_p3), .y7_relu_p3 (y7_node1_p3),
     .out0(out0_node1), .out1(out1_node1),
-    .out0_ready(out0_ready_node1), .out1_ready(out1_ready_node1)
+    .out0_ready(out10_ready_node1), .out1_ready(out11_ready_node1)
 );
 
-dnn_opt node2 (
+dnn node2 (
     .clk            (clk),
     .in_ready       (in_ready),
     .x0(x0_node2_aggr), .x1(x1_node2_aggr), .x2(x2_node2_aggr), .x3(x3_node2_aggr), 
@@ -130,10 +130,10 @@ dnn_opt node2 (
     .y4_aggr_p3 (y4_node2_aggr_p3), .y5_aggr_p3 (y5_node2_aggr_p3), .y6_aggr_p3 (y6_node2_aggr_p3), .y7_aggr_p3 (y7_node2_aggr_p3),
     .y4_relu_p3 (y4_node2_p3), .y5_relu_p3 (y5_node2_p3), .y6_relu_p3 (y6_node2_p3), .y7_relu_p3 (y7_node2_p3),
     .out0(out0_node2), .out1(out1_node2),
-    .out0_ready(out0_ready_node2), .out1_ready(out1_ready_node2)
+    .out0_ready(out10_ready_node2), .out1_ready(out11_ready_node2)
 );
 
-dnn_opt node3 (
+dnn node3 (
     .clk            (clk),
     .in_ready       (in_ready),
     .x0(x0_node3_aggr), .x1(x1_node3_aggr), .x2(x2_node3_aggr), .x3(x3_node3_aggr), 
@@ -146,7 +146,7 @@ dnn_opt node3 (
     .y4_aggr_p3 (y4_node3_aggr_p3), .y5_aggr_p3 (y5_node3_aggr_p3), .y6_aggr_p3 (y6_node3_aggr_p3), .y7_aggr_p3 (y7_node3_aggr_p3),
     .y4_relu_p3 (y4_node3_p3), .y5_relu_p3 (y5_node3_p3), .y6_relu_p3 (y6_node3_p3), .y7_relu_p3 (y7_node3_p3),
     .out0(out0_node3), .out1(out1_node3),
-    .out0_ready(out0_ready_node3), .out1_ready(out1_ready_node3)
+    .out0_ready(out10_ready_node3), .out1_ready(out11_ready_node3)
 );
 
 endmodule
