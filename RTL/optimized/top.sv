@@ -32,14 +32,14 @@ logic signed [6:0]  x0_node1_aggr, x1_node1_aggr, x2_node1_aggr, x3_node1_aggr;
 logic signed [6:0]  x0_node2_aggr, x1_node2_aggr, x2_node2_aggr, x3_node2_aggr;
 logic signed [6:0]  x0_node3_aggr, x1_node3_aggr, x2_node3_aggr, x3_node3_aggr;
     
-logic signed [16:0]  y4_node0_aggr_p3, y5_node0_aggr_p3, y6_node0_aggr_p3, y7_node0_aggr_p3; 
-logic signed [14:0]  y4_node0_p3, y5_node0_p3, y6_node0_p3, y7_node0_p3;
-logic signed [16:0]  y4_node1_aggr_p3, y5_node1_aggr_p3, y6_node1_aggr_p3, y7_node1_aggr_p3; 
-logic signed [14:0]  y4_node1_p3, y5_node1_p3, y6_node1_p3, y7_node1_p3;
-logic signed [16:0]  y4_node2_aggr_p3, y5_node2_aggr_p3, y6_node2_aggr_p3, y7_node2_aggr_p3; 
-logic signed [14:0]  y4_node2_p3, y5_node2_p3, y6_node2_p3, y7_node2_p3;
-logic signed [16:0]  y4_node3_aggr_p3, y5_node3_aggr_p3, y6_node3_aggr_p3, y7_node3_aggr_p3; 
-logic signed [14:0]  y4_node3_p3, y5_node3_p3, y6_node3_p3, y7_node3_p3;
+logic signed [15:0]  y4_node0_aggr_p3, y5_node0_aggr_p3, y6_node0_aggr_p3, y7_node0_aggr_p3; 
+logic signed [12:0]  y4_node0_p3, y5_node0_p3, y6_node0_p3, y7_node0_p3;
+logic signed [15:0]  y4_node1_aggr_p3, y5_node1_aggr_p3, y6_node1_aggr_p3, y7_node1_aggr_p3; 
+logic signed [12:0]  y4_node1_p3, y5_node1_p3, y6_node1_p3, y7_node1_p3;
+logic signed [15:0]  y4_node2_aggr_p3, y5_node2_aggr_p3, y6_node2_aggr_p3, y7_node2_aggr_p3; 
+logic signed [12:0]  y4_node2_p3, y5_node2_p3, y6_node2_p3, y7_node2_p3;
+logic signed [15:0]  y4_node3_aggr_p3, y5_node3_aggr_p3, y6_node3_aggr_p3, y7_node3_aggr_p3; 
+logic signed [12:0]  y4_node3_p3, y5_node3_p3, y6_node3_p3, y7_node3_p3;
 
 // Aggregated i/p features
 // Aggregate x_inputs
