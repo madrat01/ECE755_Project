@@ -3,8 +3,8 @@ module dnn (
     input logic signed [6:0]    x0, x1, x2, x3,
     input logic signed [4:0]    w04, w05, w06, w07, w14, w15, w16, w17, w24, w25, w26, w27, w34, w35, w36, w37, w48, w58, w49, w59, w68, w69, w78, w79,
     input logic                 in_ready,
-    input logic signed [15:0]   y4_aggr_p3, y5_aggr_p3, y6_aggr_p3, y7_aggr_p3,
-    output logic signed [12:0]  y4_relu_p3, y5_relu_p3, y6_relu_p3, y7_relu_p3,
+    input logic signed [15:0]   y4_aggr_p4, y5_aggr_p4, y6_aggr_p4, y7_aggr_p4,
+    output logic signed [12:0]  y4_relu_p4, y5_relu_p4, y6_relu_p4, y7_relu_p4,
     output logic signed [20:0]  out0, out1, 
     output logic                out0_ready, out1_ready
 );
@@ -13,7 +13,7 @@ typedef enum logic [1:0] {LAYER1_y4y5_MUL, LAYER1_y6y7_MUL, LAYER1_FINAL_ADD, OU
 
 logic signed [12:0] y4_p2, y5_p2;
 logic signed [12:0] y4_p3, y5_p3, y6_p3, y7_p3;
-logic signed [15:0] y4_aggr_p4, y5_aggr_p4, y6_aggr_p4, y7_aggr_p4;
+//logic signed [15:0] y4_aggr_p4, y5_aggr_p4, y6_aggr_p4, y7_aggr_p4;
 
 //logic signed [6:0]  x0_p2, x1_p2, x2_p2, x3_p2;
 //logic signed [4:0]  w06_p2, w07_p2, w16_p2, w17_p2, w26_p2, w27_p2, w36_p2, w37_p2, w48_p2, w58_p2, w49_p2, w59_p2, w68_p2, w69_p2, w78_p2, w79_p2;
@@ -145,10 +145,10 @@ end
 // ReLu(x) = max (0, x)
 // These flops were added
 always_ff @ (posedge clk) begin
-    y4_relu_p3 <= ~{13{y4_p3[12]}} & y4_p3;
-    y5_relu_p3 <= ~{13{y5_p3[12]}} & y5_p3;
-    y6_relu_p3 <= ~{13{y6_p3[12]}} & y6_p3;
-    y7_relu_p3 <= ~{13{y7_p3[12]}} & y7_p3;
+    y4_relu_p4 <= ~{13{y4_p3[12]}} & y4_p3;
+    y5_relu_p4 <= ~{13{y5_p3[12]}} & y5_p3;
+    y6_relu_p4 <= ~{13{y6_p3[12]}} & y6_p3;
+    y7_relu_p4 <= ~{13{y7_p3[12]}} & y7_p3;
 end
 // These assigns were removed
 //assign y4_relu_p3 = ~{13{y4_p3[12]}} & y4_p3;
@@ -164,10 +164,10 @@ end
 //    y7_aggr_p4 <= y7_aggr_p3;
 //end 
 // These assigs were added
-assign  y4_aggr_p4 = y4_aggr_p3;
-assign  y5_aggr_p4 = y5_aggr_p3;
-assign  y6_aggr_p4 = y6_aggr_p3;
-assign  y7_aggr_p4 = y7_aggr_p3;
+//assign  y4_aggr_p4 = y4_aggr_p3;
+//assign  y5_aggr_p4 = y5_aggr_p3;
+//assign  y6_aggr_p4 = y6_aggr_p3;
+//assign  y7_aggr_p4 = y7_aggr_p3;
 
 // Flop x inputs to calculate y6 and y7 in cycle 2
 //always_ff @ (posedge clk) begin
