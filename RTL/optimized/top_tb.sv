@@ -11,7 +11,7 @@ reg [4:0] w07, w17, w27, w37;
 reg [4:0] w48, w58, w68, w78;
 reg [4:0] w49, w59, w69, w79;
 
-reg clk;
+reg clk, rst_n;
 
 wire signed [20:0] out0_node0, out1_node0;
 wire signed [20:0] out0_node1, out1_node1;
@@ -30,6 +30,7 @@ reg in_ready;
 // Look for 'test failed' in the message. If there is no such message then your output matches the golden outputs. 
 
 
+//top_vg gnn(.x0_node0(x0_node0), .x1_node0(x1_node0), .x2_node0(x2_node0), .x3_node0(x3_node0), 
 top gnn(.x0_node0(x0_node0), .x1_node0(x1_node0), .x2_node0(x2_node0), .x3_node0(x3_node0), 
         .x0_node1(x0_node1), .x1_node1(x1_node1), .x2_node1(x2_node1), .x3_node1(x3_node1), 
         .x0_node2(x0_node2), .x1_node2(x1_node2), .x2_node2(x2_node2), .x3_node2(x3_node2), 
@@ -49,11 +50,17 @@ top gnn(.x0_node0(x0_node0), .x1_node0(x1_node0), .x2_node0(x2_node0), .x3_node0
         .out10_ready_node1(out10_ready_node1), .out11_ready_node1(out11_ready_node1),
         .out10_ready_node2(out10_ready_node2), .out11_ready_node2(out11_ready_node2),
         .out10_ready_node3(out10_ready_node3), .out11_ready_node3(out11_ready_node3),
-        .clk(clk));
+        .clk(clk),
+        .rst_n(rst_n));
 
 initial begin
 
     clk = 0;
+    rst_n = 0;
+    @ (posedge clk);
+    @ (negedge clk);
+    rst_n = 1;
+
     in_ready = 1; 
     
     x0_node0 = 5'b0100;

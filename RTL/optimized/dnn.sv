@@ -1,9 +1,10 @@
 module dnn (
-    input logic                 clk, 
+    input logic                 clk,
+    input logic                 rst_n, 
     input logic signed [6:0]    x0, x1, x2, x3,
     input logic signed [4:0]    w04, w05, w06, w07, w14, w15, w16, w17, w24, w25, w26, w27, w34, w35, w36, w37, w48, w58, w49, w59, w68, w69, w78, w79,
     input logic                 in_ready,
-    input logic signed [15:0]   y4_aggr_p4, y5_aggr_p4, y6_aggr_p4, y7_aggr_p4,
+    input logic signed [14:0]   y4_aggr_p4, y5_aggr_p4, y6_aggr_p4, y7_aggr_p4,
     output logic signed [12:0]  y4_relu_p4, y5_relu_p4, y6_relu_p4, y7_relu_p4,
     output logic signed [20:0]  out0, out1, 
     output logic                out0_ready, out1_ready
@@ -20,46 +21,50 @@ logic signed [12:0] y4_p3, y5_p3, y6_p3, y7_p3;
 //logic signed [4:0]  w48_p3, w58_p3, w49_p3, w59_p3, w68_p3, w69_p3, w78_p3, w79_p3;
 //logic signed [4:0]  w48_p4, w58_p4, w49_p4, w59_p4, w68_p4, w69_p4, w78_p4, w79_p4;
 
-logic signed [15:0] multiplicand1, multiplicand2, multiplicand3, multiplicand4;
+logic signed [14:0] multiplicand1, multiplicand2, multiplicand3, multiplicand4;
 logic signed [4:0]  multiplier1, multiplier2, multiplier3, multiplier4, multiplier5, multiplier6, multiplier7, multiplier8;
-logic signed [20:0] mul1_out, mul2_out, mul3_out, mul4_out, mul5_out, mul6_out, mul7_out, mul8_out;
+logic signed [18:0] mul1_out, mul2_out, mul3_out, mul4_out, mul5_out, mul6_out, mul7_out, mul8_out;
 
 logic signed [20:0] mac1, mac2;
 
 logic               out_comp_ready_p5;
 
-dnn_state_t         dnn_state;
-    
-logic signed [20:0]  out0_dly, out1_dly; 
-logic                out0_ready_dly, out1_ready_dly;
+dnn_state_t         dnn_state, next_dnn_state;
+
+always_ff @ (posedge clk, negedge rst_n)
+    if (~rst_n)
+        dnn_state <= LAYER1_y4y5_MUL;
+    else
+        dnn_state <= next_dnn_state;
 
 // FSM
-always_ff @ (posedge clk) begin
+always_comb begin
+    next_dnn_state = dnn_state;
     case (dnn_state)
-        LAYER1_y4y5_MUL     : dnn_state <= in_ready ? LAYER1_y6y7_MUL : dnn_state;
-        LAYER1_y6y7_MUL     : dnn_state <= LAYER1_FINAL_ADD;
-        LAYER1_FINAL_ADD    : dnn_state <= OUTPUT_MUL;
-        OUTPUT_MUL          : dnn_state <= LAYER1_y4y5_MUL;
-        default             : dnn_state <= LAYER1_y4y5_MUL;
+        LAYER1_y4y5_MUL     : next_dnn_state = in_ready ? LAYER1_y6y7_MUL : LAYER1_y4y5_MUL;
+        LAYER1_y6y7_MUL     : next_dnn_state = LAYER1_FINAL_ADD;
+        LAYER1_FINAL_ADD    : next_dnn_state = OUTPUT_MUL;
+        //OUTPUT_MUL          : dnn_state <= LAYER1_y4y5_MUL;
+        default             : next_dnn_state = LAYER1_y4y5_MUL;
     endcase
 end
 
 // Assign multiplicand and multiplier based on current state
 //assign multiplicand1 = dnn_state == LAYER1_y6y7_MUL ? {{10{x0_p2[6]}}, x0_p2} : // Layer-1 y6, y7
 assign multiplicand1 = dnn_state == OUTPUT_MUL      ? y4_aggr_p4             : // Output calc y
-                                                      {{10{x0[6]}}, x0};        // Layer-1 y4, y5
+                                                      {{8{x0[6]}}, x0};        // Layer-1 y4, y5
 
 //assign multiplicand2 = dnn_state == LAYER1_y6y7_MUL ? {{10{x1_p2[6]}}, x1_p2} :  // Layer-1 y6, y7
 assign multiplicand2 = dnn_state == OUTPUT_MUL      ? y5_aggr_p4             :  // Output y5
-                                                      {{10{x1[6]}}, x1};         // Layer-1 y4, y5
+                                                      {{8{x1[6]}}, x1};         // Layer-1 y4, y5
 
 //assign multiplicand3 = dnn_state == LAYER1_y6y7_MUL ? {{10{x2_p2[6]}}, x2_p2} :  // Layer-1 y6, y7
 assign multiplicand3 = dnn_state == OUTPUT_MUL      ? y6_aggr_p4             :  // Output y6
-                                                      {{10{x2[6]}}, x2};         // Layer-1 y4, y5
+                                                      {{8{x2[6]}}, x2};         // Layer-1 y4, y5
 
 //assign multiplicand4 = dnn_state == LAYER1_y6y7_MUL ? {{10{x3_p2[6]}}, x3_p2} :  // Layer-1 y6, y7
 assign multiplicand4 = dnn_state == OUTPUT_MUL      ? y7_aggr_p4             :  // Output y7
-                                                      {{10{x3[6]}}, x3};         // Layer-1 y4, y5
+                                                      {{8{x3[6]}}, x3};         // Layer-1 y4, y5
 
 //assign multiplier1   = dnn_state == LAYER1_y6y7_MUL ? w06_p2 :  // Layer-1 y6 x0*w06
 //                       dnn_state == OUTPUT_MUL      ? w48_p4 :  // Output out0 y4*w48
@@ -131,24 +136,29 @@ assign mac2 = mul5_out + mul6_out + mul7_out + mul8_out;
 // LAYER1_y6y7_MUL -> y4, y5 MAC has been done
 // LAYER1_FINAL_ADD -> y6, y7 MAC has been done
 // LAYER1_FINAL_ADD -> y6, y7 MAC has been done
-assign y4_p2 = dnn_state == LAYER1_y6y7_MUL ? mac1 : 13'b0;
-assign y5_p2 = dnn_state == LAYER1_y6y7_MUL ? mac2 : 13'b0;
-assign y6_p3 = dnn_state == LAYER1_FINAL_ADD ? mac1 : 13'b0;
-assign y7_p3 = dnn_state == LAYER1_FINAL_ADD ? mac2 : 13'b0;
+assign y4_p2 = dnn_state == LAYER1_y6y7_MUL ? mac1[12:0] : 13'b0;
+assign y5_p2 = dnn_state == LAYER1_y6y7_MUL ? mac2[12:0] : 13'b0;
+assign y6_p3 = dnn_state == LAYER1_FINAL_ADD ? mac1[12:0] : 13'b0;
+assign y7_p3 = dnn_state == LAYER1_FINAL_ADD ? mac2[12:0] : 13'b0;
 
 // y4 y5 outputs to p3 to ReLu
 always_ff @(posedge clk) begin
     y4_p3 <= y4_p2;
     y5_p3 <= y5_p2;
+    //$display("y6_p3 %b", y6_p3);
 end
 
 // ReLu(x) = max (0, x)
 // These flops were added
 always_ff @ (posedge clk) begin
-    y4_relu_p4 <= ~{13{y4_p3[12]}} & y4_p3;
-    y5_relu_p4 <= ~{13{y5_p3[12]}} & y5_p3;
-    y6_relu_p4 <= ~{13{y6_p3[12]}} & y6_p3;
-    y7_relu_p4 <= ~{13{y7_p3[12]}} & y7_p3;
+//    y4_relu_p4 <= ~{13{y4_p3[12]}} & y4_p3[12:0];
+//    y5_relu_p4 <= ~{13{y5_p3[12]}} & y5_p3[12:0];
+//    y6_relu_p4 <= ~{13{y6_p3[12]}} & y6_p3[12:0];
+//    y7_relu_p4 <= ~{13{y7_p3[12]}} & y7_p3[12:0];
+    y4_relu_p4 <= y4_p3[12] ? 12'h0 : {1'b0, y4_p3[11:0]};
+    y5_relu_p4 <= y5_p3[12] ? 12'h0 : {1'b0, y5_p3[11:0]};
+    y6_relu_p4 <= y6_p3[12] ? 12'h0 : {1'b0, y6_p3[11:0]};
+    y7_relu_p4 <= y7_p3[12] ? 12'h0 : {1'b0, y7_p3[11:0]};
 end
 // These assigns were removed
 //assign y4_relu_p3 = ~{13{y4_p3[12]}} & y4_p3;
