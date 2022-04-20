@@ -1,0 +1,22 @@
+#############################################
+# ECE755 Project Milestone #4 Optimizations #
+#############################################
+
+Building on the optimizations done for MS3, we added an additional state to the FSM called IDLE in dnn.sv, which limits the number of multiply-and-accumulate (mac1/2) operations to one for every rising transition of in_ready. This optimization resulted in:
+
+1. A decrease total power from 1.62mW to 1.38mW. The overall decrease in power amounts to 14.81%.
+	
+2. An increase in the number of nets and cells from 12.3K and 9.59K to 12.63K and 9.88K, respectively. The overall cell area increased by 4.82%.
+#############################################
+
+The driving factor behind this optimization was an error seen in the maximum trans/cap values in the route.qor.rpt file generated after APR. This error propagated to the post_route stage as well.
+
+In order to fix this issue, we added the following command in the Route stage of the apr_script.tcl file:
+
+focal_opt -drc_nets all
+
+Please refer the file 'Design_Closure_with_ICC.pdf' for additional details about this command.
+#############################################
+
+We also added the switch 'set_fix_hold [all_clocks]' prior to the steps related to placement optimization to avoid hold time and max trans/cap violations seen above.
+#############################################
