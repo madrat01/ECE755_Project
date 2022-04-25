@@ -41,19 +41,19 @@ assign multiplicand4 = dnn_state == OUTPUT_MUL      ? y7_aggr_p4             :  
 
 assign multiplier1   = dnn_state == LAYER1_y6y7_MUL ? w06 :  // Layer-1 y6 x0*w06
                        dnn_state == OUTPUT_MUL      ? w48 :  // Output out0 y4*w48
-                                                      w04;   // Layer-1 y4 x0*w04
+                                                      w04;      // Layer-1 y4 x0*w04
 
 assign multiplier2   = dnn_state == LAYER1_y6y7_MUL ? w16 :  // Layer-1 y6 x1*w16
                        dnn_state == OUTPUT_MUL      ? w58 :  // Output out0 y5*w58
-                                                      w14;   // Layer-1 y4 x1*w14
+                                                      w14;      // Layer-1 y4 x1*w14
 
 assign multiplier3   = dnn_state == LAYER1_y6y7_MUL ? w26 :  // Layer-1 y6 x2*w26
                        dnn_state == OUTPUT_MUL      ? w68 :  // Output out0 y6*w68
-                                                      w24;   // Layer-1 y4 x2*w24
+                                                      w24;      // Layer-1 y4 x2*w24
 
 assign multiplier4   = dnn_state == LAYER1_y6y7_MUL ? w36 :  // Layer-1 y6 x3*w36
                        dnn_state == OUTPUT_MUL      ? w78 :  // Output out0 y7*w78
-                                                      w34;   // Layer-1 y4 x3*w34
+                                                      w34;      // Layer-1 y4 x3*w34
 
 assign multiplier5   = dnn_state == LAYER1_y6y7_MUL ? w07 :  // Layer-1 y7 x0*w07
                        dnn_state == OUTPUT_MUL      ? w49 :  // Output out0 y4*w48
@@ -61,30 +61,29 @@ assign multiplier5   = dnn_state == LAYER1_y6y7_MUL ? w07 :  // Layer-1 y7 x0*w0
 
 assign multiplier6   = dnn_state == LAYER1_y6y7_MUL ? w17 :  // Layer-1 y7 x1*w17
                        dnn_state == OUTPUT_MUL      ? w59 :  // Output out0 y5*w58
-                                                      w15;   // Layer-1 y5 x1*w15
+                                                      w15;      // Layer-1 y5 x1*w15
 
 assign multiplier7   = dnn_state == LAYER1_y6y7_MUL ? w27 :  // Layer-1 y7 x2*w27
                        dnn_state == OUTPUT_MUL      ? w69 :  // Output out0 y6*w68
-                                                      w25;   // Layer-1 y5 x2*w25
+                                                      w25;      // Layer-1 y5 x2*w25
 
 assign multiplier8   = dnn_state == LAYER1_y6y7_MUL ? w37 :  // Layer-1 y7 x3*w37
                        dnn_state == OUTPUT_MUL      ? w79 :  // Output out0 y7*w78
-                                                      w35;   // Layer-1 y5 x3*w35
+                                                      w35;      // Layer-1 y5 x3*w35
 
 // Flop these multiplication outputs to be added in the next cycle
-always_ff @(posedge clk) 
-    if (dnn_state != IDLE) begin
-        // y4, y5, out0
-        mul1_out <= multiplicand1 * multiplier1;
-        mul2_out <= multiplicand2 * multiplier2;
-        mul3_out <= multiplicand3 * multiplier3;
-        mul4_out <= multiplicand4 * multiplier4;
-        // y6, y7, out1
-        mul5_out <= multiplicand1 * multiplier5;
-        mul6_out <= multiplicand2 * multiplier6;
-        mul7_out <= multiplicand3 * multiplier7;
-        mul8_out <= multiplicand4 * multiplier8;
-    end
+always_ff @(posedge clk) begin
+    // y4, y5, out0
+    mul1_out <= multiplicand1 * multiplier1;
+    mul2_out <= multiplicand2 * multiplier2;
+    mul3_out <= multiplicand3 * multiplier3;
+    mul4_out <= multiplicand4 * multiplier4;
+    // y6, y7, out1
+    mul5_out <= multiplicand1 * multiplier5;
+    mul6_out <= multiplicand2 * multiplier6;
+    mul7_out <= multiplicand3 * multiplier7;
+    mul8_out <= multiplicand4 * multiplier8;
+end
 
 // MAC for the 8 multiplications done, single node has 4 mults
 assign mac1 = mul1_out + mul2_out + mul3_out + mul4_out;

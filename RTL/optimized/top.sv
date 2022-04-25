@@ -1,4 +1,6 @@
-module top (
+module top 
+import defines_pkg::*;
+(
     input logic                 clk,
     input logic                 rst_n,
     input logic signed [4:0]    x0_node0, x1_node0, x2_node0, x3_node0, 
@@ -33,14 +35,18 @@ logic signed [6:0]  x0_node1_aggr, x1_node1_aggr, x2_node1_aggr, x3_node1_aggr;
 logic signed [6:0]  x0_node2_aggr, x1_node2_aggr, x2_node2_aggr, x3_node2_aggr;
 logic signed [6:0]  x0_node3_aggr, x1_node3_aggr, x2_node3_aggr, x3_node3_aggr;
     
-logic signed [14:0]  y4_node0_aggr_p4, y5_node0_aggr_p4, y6_node0_aggr_p4, y7_node0_aggr_p4; 
-logic signed [12:0]  y4_node0_p4, y5_node0_p4, y6_node0_p4, y7_node0_p4;
-logic signed [14:0]  y4_node1_aggr_p4, y5_node1_aggr_p4, y6_node1_aggr_p4, y7_node1_aggr_p4; 
-logic signed [12:0]  y4_node1_p4, y5_node1_p4, y6_node1_p4, y7_node1_p4;
-logic signed [14:0]  y4_node2_aggr_p4, y5_node2_aggr_p4, y6_node2_aggr_p4, y7_node2_aggr_p4; 
-logic signed [12:0]  y4_node2_p4, y5_node2_p4, y6_node2_p4, y7_node2_p4;
-logic signed [14:0]  y4_node3_aggr_p4, y5_node3_aggr_p4, y6_node3_aggr_p4, y7_node3_aggr_p4; 
-logic signed [12:0]  y4_node3_p4, y5_node3_p4, y6_node3_p4, y7_node3_p4;
+logic signed [14:0] y4_node0_aggr_p4, y5_node0_aggr_p4, y6_node0_aggr_p4, y7_node0_aggr_p4; 
+logic signed [12:0] y4_node0_p4, y5_node0_p4, y6_node0_p4, y7_node0_p4;
+logic signed [14:0] y4_node1_aggr_p4, y5_node1_aggr_p4, y6_node1_aggr_p4, y7_node1_aggr_p4; 
+logic signed [12:0] y4_node1_p4, y5_node1_p4, y6_node1_p4, y7_node1_p4;
+logic signed [14:0] y4_node2_aggr_p4, y5_node2_aggr_p4, y6_node2_aggr_p4, y7_node2_aggr_p4; 
+logic signed [12:0] y4_node2_p4, y5_node2_p4, y6_node2_p4, y7_node2_p4;
+logic signed [14:0] y4_node3_aggr_p4, y5_node3_aggr_p4, y6_node3_aggr_p4, y7_node3_aggr_p4; 
+logic signed [12:0] y4_node3_p4, y5_node3_p4, y6_node3_p4, y7_node3_p4;
+
+dnn_state_t         dnn_state, next_dnn_state;
+logic               in_ready_prev, in_ready_pulse;
+logic               out_comp_ready_p5, out_comp_ready_p5_nxt;
 
 // Aggregated i/p features
 // Aggregate x_inputs
@@ -86,7 +92,40 @@ assign  y5_node3_aggr_p4 = y5_node1_p4 + y5_node2_p4 + y5_node3_p4;
 assign  y6_node3_aggr_p4 = y6_node1_p4 + y6_node2_p4 + y6_node3_p4;
 assign  y7_node3_aggr_p4 = y7_node1_p4 + y7_node2_p4 + y7_node3_p4;
 
+always_ff @(posedge clk, negedge rst_n)
+    if (~rst_n)	
+	    in_ready_prev <= 0;
+    else 
+	    in_ready_prev <= in_ready;
+
+assign in_ready_pulse = (~in_ready_prev) & (in_ready);
+
+always_ff @ (posedge clk, negedge rst_n)
+    if (~rst_n)
+        dnn_state <= IDLE;
+    else
+        dnn_state <= next_dnn_state;
+
+// FSM
+always_comb begin
+    next_dnn_state = dnn_state; 
+    out_comp_ready_p5_nxt = 0;
+    case (dnn_state)
+        LAYER1_y4y5_MUL     : next_dnn_state = LAYER1_y6y7_MUL;
+        LAYER1_y6y7_MUL     : next_dnn_state = LAYER1_FINAL_ADD;
+        LAYER1_FINAL_ADD    : next_dnn_state = OUTPUT_MUL;
+        OUTPUT_MUL          : begin out_comp_ready_p5_nxt = 1; next_dnn_state = IDLE; end
+        default             : next_dnn_state = in_ready_pulse ? LAYER1_y4y5_MUL : IDLE;
+    endcase
+end
+
+// Output completes in the next cycle
+always_ff @ (posedge clk) begin
+    out_comp_ready_p5 <= out_comp_ready_p5_nxt;
+end
+
 dnn node0 (
+    //Inputs
     .clk            (clk),
     .rst_n          (rst_n),
     .in_ready       (in_ready),
@@ -98,12 +137,17 @@ dnn node0 (
     .w48(w48), .w58(w58), .w68(w68), .w78(w78),
     .w49(w49), .w59(w59), .w69(w69), .w79(w79),
     .y4_aggr_p4 (y4_node0_aggr_p4), .y5_aggr_p4 (y5_node0_aggr_p4), .y6_aggr_p4 (y6_node0_aggr_p4), .y7_aggr_p4 (y7_node0_aggr_p4),
+    .dnn_state (dnn_state),
+    .out_comp_ready_p5 (out_comp_ready_p5),
+
+    // Outputs
     .y4_relu_p4 (y4_node0_p4), .y5_relu_p4 (y5_node0_p4), .y6_relu_p4 (y6_node0_p4), .y7_relu_p4 (y7_node0_p4),
     .out0(out0_node0), .out1(out1_node0),
     .out0_ready(out10_ready_node0), .out1_ready(out11_ready_node0)
 );
 
 dnn node1 (
+    //Inputs
     .clk            (clk),
     .rst_n          (rst_n),
     .in_ready       (in_ready),
@@ -115,12 +159,17 @@ dnn node1 (
     .w48(w48), .w58(w58), .w68(w68), .w78(w78),
     .w49(w49), .w59(w59), .w69(w69), .w79(w79),
     .y4_aggr_p4 (y4_node1_aggr_p4), .y5_aggr_p4 (y5_node1_aggr_p4), .y6_aggr_p4 (y6_node1_aggr_p4), .y7_aggr_p4 (y7_node1_aggr_p4),
+    .dnn_state (dnn_state),
+    .out_comp_ready_p5 (out_comp_ready_p5),
+
+    // Outputs
     .y4_relu_p4 (y4_node1_p4), .y5_relu_p4 (y5_node1_p4), .y6_relu_p4 (y6_node1_p4), .y7_relu_p4 (y7_node1_p4),
     .out0(out0_node1), .out1(out1_node1),
     .out0_ready(out10_ready_node1), .out1_ready(out11_ready_node1)
 );
 
 dnn node2 (
+    //Inputs
     .clk            (clk),
     .rst_n          (rst_n),
     .in_ready       (in_ready),
@@ -132,12 +181,17 @@ dnn node2 (
     .w48(w48), .w58(w58), .w68(w68), .w78(w78),
     .w49(w49), .w59(w59), .w69(w69), .w79(w79),
     .y4_aggr_p4 (y4_node2_aggr_p4), .y5_aggr_p4 (y5_node2_aggr_p4), .y6_aggr_p4 (y6_node2_aggr_p4), .y7_aggr_p4 (y7_node2_aggr_p4),
+    .dnn_state (dnn_state),
+    .out_comp_ready_p5 (out_comp_ready_p5),
+
+    // Outputs
     .y4_relu_p4 (y4_node2_p4), .y5_relu_p4 (y5_node2_p4), .y6_relu_p4 (y6_node2_p4), .y7_relu_p4 (y7_node2_p4),
     .out0(out0_node2), .out1(out1_node2),
     .out0_ready(out10_ready_node2), .out1_ready(out11_ready_node2)
 );
 
 dnn node3 (
+    //Inputs
     .clk            (clk),
     .rst_n          (rst_n),
     .in_ready       (in_ready),
@@ -149,6 +203,10 @@ dnn node3 (
     .w48(w48), .w58(w58), .w68(w68), .w78(w78),
     .w49(w49), .w59(w59), .w69(w69), .w79(w79),
     .y4_aggr_p4 (y4_node3_aggr_p4), .y5_aggr_p4 (y5_node3_aggr_p4), .y6_aggr_p4 (y6_node3_aggr_p4), .y7_aggr_p4 (y7_node3_aggr_p4),
+    .dnn_state (dnn_state),
+    .out_comp_ready_p5 (out_comp_ready_p5),
+
+    // Outputs
     .y4_relu_p4 (y4_node3_p4), .y5_relu_p4 (y5_node3_p4), .y6_relu_p4 (y6_node3_p4), .y7_relu_p4 (y7_node3_p4),
     .out0(out0_node3), .out1(out1_node3),
     .out0_ready(out10_ready_node3), .out1_ready(out11_ready_node3)
