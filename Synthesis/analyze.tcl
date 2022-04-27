@@ -1,7 +1,7 @@
 lappend search_path "../RTL/five_stage"
 
 analyze -library work -format sverilog \
-{	../RTL/five_stage/defines_pkg.sv \	
+{	../RTL/five_stage/defines_pkg.sv \
 	../RTL/five_stage/top.sv \
 	../RTL/five_stage/dnn.sv
 }

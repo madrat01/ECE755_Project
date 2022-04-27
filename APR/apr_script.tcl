@@ -219,3 +219,5 @@ verify_zrt_route > ./reports/post_route.drc.rpt
 write_verilog ./outputs/${module}.post_route.vg
 write_sdc     ./outputs/${module}.post_route.sdc
 write_parasitics -output ./outputs/${module}.post_route.spef -compress
+
+exit

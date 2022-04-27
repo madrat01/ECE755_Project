@@ -92,4 +92,4 @@ echo "\[ INFO\] Dumping outputs"
 write -format verilog -output ./outputs/${top}.vg
 write_sdc ./outputs/${top}.sdc
 
-# exit
+exit

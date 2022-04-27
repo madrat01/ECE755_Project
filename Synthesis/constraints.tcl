@@ -10,7 +10,7 @@ set prim_inputs_no_rst [remove_from_collection $prim_inputs [find port rst_n]]
 set_clock_uncertainty 0.15 clk
 
 ## Set input delay & drive on all inputs
-set_input_delay -clock clk 0.25 [copy_collection $prim_inputs]
+set_input_delay -clock clk 0.25 [copy_collection $prim_inputs_no_rst]
 ## rst_n goes to many places so don't touch
 set_dont_touch_network [find port rst_n]
 
