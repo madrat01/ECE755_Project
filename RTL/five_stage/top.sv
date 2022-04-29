@@ -142,6 +142,7 @@ end
 // FSM
 always_ff @ (posedge clk, negedge rst_n)
     if (~rst_n)
+        //dnn_state <= IDLE;
         dnn_state <= LAYER1_y4y5_MUL;
     else
         dnn_state <= next_dnn_state;
@@ -149,9 +150,12 @@ always_ff @ (posedge clk, negedge rst_n)
 always_comb begin
     next_dnn_state = dnn_state;
     case (dnn_state)
+        //IDLE                : next_dnn_state = in_ready ? LAYER1_y4y5_MUL : IDLE;
+        //LAYER1_y4y5_MUL     : next_dnn_state = LAYER1_y6y7_MUL;
         LAYER1_y4y5_MUL     : next_dnn_state = in_ready ? LAYER1_y6y7_MUL : LAYER1_y4y5_MUL;
         LAYER1_y6y7_MUL     : next_dnn_state = LAYER1_FINAL_ADD;
         LAYER1_FINAL_ADD    : next_dnn_state = OUTPUT_MUL;
+        //default             : next_dnn_state = IDLE;
         default             : next_dnn_state = LAYER1_y4y5_MUL;
     endcase
 end

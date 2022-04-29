@@ -1,8 +1,8 @@
 n155
-dnn0_clk
-dnn2_clk
 dnn1_clk
+dnn0_clk
 dnn3_clk
+dnn2_clk
 clk
 dnn0_clk_G3B2I1
 dnn0_clk_G3B2I2
@@ -19,4 +19,4 @@ dnn3_clk_G3B2I2
 dnn3_clk_G3B1I1
 clk_G1B2I1
 clk_G1B1I1
-CTS_clk_CTO_delay41
+CTS_clk_CTO_delay21
