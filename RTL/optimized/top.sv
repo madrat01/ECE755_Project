@@ -48,30 +48,30 @@ dnn_state_t         dnn_state, next_dnn_state;
 logic               in_ready_prev, in_ready_pulse;
 logic               out_comp_ready_p5, out_comp_ready_p5_nxt;
 
-logic               dnn0_clk, dnn1_clk, dnn2_clk, dnn3_clk;
-logic               dnn0_clk_en, dnn0_clk_en_lat;
-logic               dnn1_clk_en, dnn1_clk_en_lat;
-logic               dnn2_clk_en, dnn2_clk_en_lat;
-logic               dnn3_clk_en, dnn3_clk_en_lat;
-
-assign dnn0_clk_en = in_ready & ~(out10_ready_node0);
-assign dnn1_clk_en = in_ready & ~(out10_ready_node1);
-assign dnn2_clk_en = in_ready & ~(out10_ready_node2);
-assign dnn3_clk_en = in_ready & ~(out10_ready_node3);
-
-always_latch begin : dnn_clk_en_latch
-    if (~clk) begin
-        dnn0_clk_en_lat = dnn0_clk_en;
-        dnn1_clk_en_lat = dnn1_clk_en;
-        dnn2_clk_en_lat = dnn2_clk_en;
-        dnn3_clk_en_lat = dnn3_clk_en;
-    end
-end
-
-assign dnn0_clk = dnn0_clk_en_lat & clk;
-assign dnn1_clk = dnn1_clk_en_lat & clk;
-assign dnn2_clk = dnn2_clk_en_lat & clk;
-assign dnn3_clk = dnn3_clk_en_lat & clk;
+//logic               dnn0_clk, dnn1_clk, dnn2_clk, dnn3_clk;
+//logic               dnn0_clk_en, dnn0_clk_en_lat;
+//logic               dnn1_clk_en, dnn1_clk_en_lat;
+//logic               dnn2_clk_en, dnn2_clk_en_lat;
+//logic               dnn3_clk_en, dnn3_clk_en_lat;
+//
+//assign dnn0_clk_en = in_ready & ~(out10_ready_node0);
+//assign dnn1_clk_en = in_ready & ~(out10_ready_node1);
+//assign dnn2_clk_en = in_ready & ~(out10_ready_node2);
+//assign dnn3_clk_en = in_ready & ~(out10_ready_node3);
+//
+//always_latch begin : dnn_clk_en_latch
+//    if (~clk) begin
+//        dnn0_clk_en_lat = dnn0_clk_en;
+//        dnn1_clk_en_lat = dnn1_clk_en;
+//        dnn2_clk_en_lat = dnn2_clk_en;
+//        dnn3_clk_en_lat = dnn3_clk_en;
+//    end
+//end
+//
+//assign dnn0_clk = dnn0_clk_en_lat & clk;
+//assign dnn1_clk = dnn1_clk_en_lat & clk;
+//assign dnn2_clk = dnn2_clk_en_lat & clk;
+//assign dnn3_clk = dnn3_clk_en_lat & clk;
 
 // Aggregated i/p features
 // Aggregate x_inputs
@@ -151,7 +151,8 @@ end
 
 dnn node0 (
     //Inputs
-    .clk            (dnn0_clk),
+    //.clk            (dnn0_clk),
+    .clk            (clk),
     .rst_n          (rst_n),
     .in_ready       (in_ready),
     .x0(x0_node0_aggr), .x1(x1_node0_aggr), .x2(x2_node0_aggr), .x3(x3_node0_aggr), 
@@ -173,7 +174,8 @@ dnn node0 (
 
 dnn node1 (
     //Inputs
-    .clk            (dnn1_clk),
+    //.clk            (dnn1_clk),
+    .clk            (clk),
     .rst_n          (rst_n),
     .in_ready       (in_ready),
     .x0(x0_node1_aggr), .x1(x1_node1_aggr), .x2(x2_node1_aggr), .x3(x3_node1_aggr), 
@@ -195,7 +197,8 @@ dnn node1 (
 
 dnn node2 (
     //Inputs
-    .clk            (dnn2_clk),
+    //.clk            (dnn2_clk),
+    .clk            (clk),
     .rst_n          (rst_n),
     .in_ready       (in_ready),
     .x0(x0_node2_aggr), .x1(x1_node2_aggr), .x2(x2_node2_aggr), .x3(x3_node2_aggr), 
@@ -217,7 +220,8 @@ dnn node2 (
 
 dnn node3 (
     //Inputs
-    .clk            (dnn3_clk),
+    //.clk            (dnn3_clk),
+    .clk            (clk),
     .rst_n          (rst_n),
     .in_ready       (in_ready),
     .x0(x0_node3_aggr), .x1(x1_node3_aggr), .x2(x2_node3_aggr), .x3(x3_node3_aggr), 

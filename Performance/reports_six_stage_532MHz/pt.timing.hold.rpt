@@ -1,0 +1,422 @@
+****************************************
+Report : timing
+	-path_type full
+	-delay_type min
+	-slack_lesser_than 0.00
+	-max_paths 20
+	-sort_by slack
+Design : top
+Version: S-2021.06
+Date   : Fri Apr 29 17:31:55 2022
+****************************************
+
+
+  Startpoint: node1/y5_p3_reg[12]
+               (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node1/y5_relu_p4_reg[4]
+               (rising edge-triggered flip-flop clocked by clk)
+  Last common pin: clk
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.07       0.07
+  node1/y5_p3_reg[12]/CP (DFKCNQD1BWP)                    0.00       0.07 r
+  node1/y5_p3_reg[12]/Q (DFKCNQD1BWP)                     0.07 +     0.14 r
+  U3/ZN (CKND0BWP)                                        0.01 +     0.15 f
+  U387/Z (DEL075D1BWP)                                    0.05 +     0.20 f
+  U315/Z (BUFFD2BWP)                                      0.04 +     0.24 f
+  node1/y5_relu_p4_reg[4]/CN (DFKCNQD1BWP)                0.00 +     0.24 f
+  data arrival time                                                  0.24
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.07       0.07
+  clock reconvergence pessimism                           0.00       0.07
+  clock uncertainty                                       0.15       0.22
+  node1/y5_relu_p4_reg[4]/CP (DFKCNQD1BWP)                           0.22 r
+  library hold time                                       0.01       0.24
+  data required time                                                 0.24
+  ------------------------------------------------------------------------------
+  data required time                                                 0.24
+  data arrival time                                                 -0.24
+  ------------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: node1/y5_p3_reg[12]
+               (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node1/y5_relu_p4_reg[10]
+               (rising edge-triggered flip-flop clocked by clk)
+  Last common pin: clk
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.07       0.07
+  node1/y5_p3_reg[12]/CP (DFKCNQD1BWP)                    0.00       0.07 r
+  node1/y5_p3_reg[12]/Q (DFKCNQD1BWP)                     0.07 +     0.14 r
+  U3/ZN (CKND0BWP)                                        0.01 +     0.15 f
+  U387/Z (DEL075D1BWP)                                    0.05 +     0.20 f
+  U315/Z (BUFFD2BWP)                                      0.04 +     0.24 f
+  node1/y5_relu_p4_reg[10]/CN (DFKCNQD1BWP)               0.00 +     0.24 f
+  data arrival time                                                  0.24
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.07       0.07
+  clock reconvergence pessimism                           0.00       0.07
+  clock uncertainty                                       0.15       0.22
+  node1/y5_relu_p4_reg[10]/CP (DFKCNQD1BWP)                          0.22 r
+  library hold time                                       0.01       0.24
+  data required time                                                 0.24
+  ------------------------------------------------------------------------------
+  data required time                                                 0.24
+  data arrival time                                                 -0.24
+  ------------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: node1/y5_p3_reg[12]
+               (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node1/y5_relu_p4_reg[9]
+               (rising edge-triggered flip-flop clocked by clk)
+  Last common pin: clk
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.07       0.07
+  node1/y5_p3_reg[12]/CP (DFKCNQD1BWP)                    0.00       0.07 r
+  node1/y5_p3_reg[12]/Q (DFKCNQD1BWP)                     0.07 +     0.14 r
+  U3/ZN (CKND0BWP)                                        0.01 +     0.15 f
+  U387/Z (DEL075D1BWP)                                    0.05 +     0.20 f
+  U315/Z (BUFFD2BWP)                                      0.04 +     0.24 f
+  node1/y5_relu_p4_reg[9]/CN (DFKCNQD1BWP)                0.00 +     0.24 f
+  data arrival time                                                  0.24
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.07       0.07
+  clock reconvergence pessimism                           0.00       0.07
+  clock uncertainty                                       0.15       0.22
+  node1/y5_relu_p4_reg[9]/CP (DFKCNQD1BWP)                           0.22 r
+  library hold time                                       0.01       0.24
+  data required time                                                 0.24
+  ------------------------------------------------------------------------------
+  data required time                                                 0.24
+  data arrival time                                                 -0.24
+  ------------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: node1/y5_p3_reg[12]
+               (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node1/y5_relu_p4_reg[8]
+               (rising edge-triggered flip-flop clocked by clk)
+  Last common pin: clk
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.07       0.07
+  node1/y5_p3_reg[12]/CP (DFKCNQD1BWP)                    0.00       0.07 r
+  node1/y5_p3_reg[12]/Q (DFKCNQD1BWP)                     0.07 +     0.14 r
+  U3/ZN (CKND0BWP)                                        0.01 +     0.15 f
+  U387/Z (DEL075D1BWP)                                    0.05 +     0.20 f
+  U315/Z (BUFFD2BWP)                                      0.04 +     0.24 f
+  node1/y5_relu_p4_reg[8]/CN (DFKCNQD1BWP)                0.00 +     0.24 f
+  data arrival time                                                  0.24
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.07       0.07
+  clock reconvergence pessimism                           0.00       0.07
+  clock uncertainty                                       0.15       0.22
+  node1/y5_relu_p4_reg[8]/CP (DFKCNQD1BWP)                           0.22 r
+  library hold time                                       0.01       0.24
+  data required time                                                 0.24
+  ------------------------------------------------------------------------------
+  data required time                                                 0.24
+  data arrival time                                                 -0.24
+  ------------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: node1/y5_p3_reg[12]
+               (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node1/y5_relu_p4_reg[7]
+               (rising edge-triggered flip-flop clocked by clk)
+  Last common pin: clk
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.07       0.07
+  node1/y5_p3_reg[12]/CP (DFKCNQD1BWP)                    0.00       0.07 r
+  node1/y5_p3_reg[12]/Q (DFKCNQD1BWP)                     0.07 +     0.14 r
+  U3/ZN (CKND0BWP)                                        0.01 +     0.15 f
+  U387/Z (DEL075D1BWP)                                    0.05 +     0.20 f
+  U315/Z (BUFFD2BWP)                                      0.04 +     0.24 f
+  node1/y5_relu_p4_reg[7]/CN (DFKCNQD1BWP)                0.00 +     0.24 f
+  data arrival time                                                  0.24
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.07       0.07
+  clock reconvergence pessimism                           0.00       0.07
+  clock uncertainty                                       0.15       0.22
+  node1/y5_relu_p4_reg[7]/CP (DFKCNQD1BWP)                           0.22 r
+  library hold time                                       0.01       0.24
+  data required time                                                 0.24
+  ------------------------------------------------------------------------------
+  data required time                                                 0.24
+  data arrival time                                                 -0.24
+  ------------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: node1/y5_p3_reg[12]
+               (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node1/y5_relu_p4_reg[6]
+               (rising edge-triggered flip-flop clocked by clk)
+  Last common pin: clk
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.07       0.07
+  node1/y5_p3_reg[12]/CP (DFKCNQD1BWP)                    0.00       0.07 r
+  node1/y5_p3_reg[12]/Q (DFKCNQD1BWP)                     0.07 +     0.14 r
+  U3/ZN (CKND0BWP)                                        0.01 +     0.15 f
+  U387/Z (DEL075D1BWP)                                    0.05 +     0.20 f
+  U315/Z (BUFFD2BWP)                                      0.04 +     0.24 f
+  node1/y5_relu_p4_reg[6]/CN (DFKCNQD1BWP)                0.00 +     0.24 f
+  data arrival time                                                  0.24
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.07       0.07
+  clock reconvergence pessimism                           0.00       0.07
+  clock uncertainty                                       0.15       0.22
+  node1/y5_relu_p4_reg[6]/CP (DFKCNQD1BWP)                           0.22 r
+  library hold time                                       0.01       0.24
+  data required time                                                 0.24
+  ------------------------------------------------------------------------------
+  data required time                                                 0.24
+  data arrival time                                                 -0.24
+  ------------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: node1/y5_p3_reg[12]
+               (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node1/y5_relu_p4_reg[5]
+               (rising edge-triggered flip-flop clocked by clk)
+  Last common pin: clk
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.07       0.07
+  node1/y5_p3_reg[12]/CP (DFKCNQD1BWP)                    0.00       0.07 r
+  node1/y5_p3_reg[12]/Q (DFKCNQD1BWP)                     0.07 +     0.14 r
+  U3/ZN (CKND0BWP)                                        0.01 +     0.15 f
+  U387/Z (DEL075D1BWP)                                    0.05 +     0.20 f
+  U315/Z (BUFFD2BWP)                                      0.04 +     0.24 f
+  node1/y5_relu_p4_reg[5]/CN (DFKCNQD1BWP)                0.00 +     0.24 f
+  data arrival time                                                  0.24
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.07       0.07
+  clock reconvergence pessimism                           0.00       0.07
+  clock uncertainty                                       0.15       0.22
+  node1/y5_relu_p4_reg[5]/CP (DFKCNQD1BWP)                           0.22 r
+  library hold time                                       0.01       0.24
+  data required time                                                 0.24
+  ------------------------------------------------------------------------------
+  data required time                                                 0.24
+  data arrival time                                                 -0.24
+  ------------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: node1/y5_p3_reg[12]
+               (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node1/y5_relu_p4_reg[11]
+               (rising edge-triggered flip-flop clocked by clk)
+  Last common pin: clk
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.07       0.07
+  node1/y5_p3_reg[12]/CP (DFKCNQD1BWP)                    0.00       0.07 r
+  node1/y5_p3_reg[12]/Q (DFKCNQD1BWP)                     0.07 +     0.14 r
+  U3/ZN (CKND0BWP)                                        0.01 +     0.15 f
+  U387/Z (DEL075D1BWP)                                    0.05 +     0.20 f
+  U315/Z (BUFFD2BWP)                                      0.04 +     0.24 f
+  node1/y5_relu_p4_reg[11]/CN (DFKCNQD1BWP)               0.00 +     0.24 f
+  data arrival time                                                  0.24
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.07       0.07
+  clock reconvergence pessimism                           0.00       0.07
+  clock uncertainty                                       0.15       0.22
+  node1/y5_relu_p4_reg[11]/CP (DFKCNQD1BWP)                          0.22 r
+  library hold time                                       0.01       0.24
+  data required time                                                 0.24
+  ------------------------------------------------------------------------------
+  data required time                                                 0.24
+  data arrival time                                                 -0.24
+  ------------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: node1/y5_p3_reg[12]
+               (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node1/y5_relu_p4_reg[3]
+               (rising edge-triggered flip-flop clocked by clk)
+  Last common pin: clk
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.07       0.07
+  node1/y5_p3_reg[12]/CP (DFKCNQD1BWP)                    0.00       0.07 r
+  node1/y5_p3_reg[12]/Q (DFKCNQD1BWP)                     0.07 +     0.14 r
+  U3/ZN (CKND0BWP)                                        0.01 +     0.15 f
+  U387/Z (DEL075D1BWP)                                    0.05 +     0.20 f
+  U315/Z (BUFFD2BWP)                                      0.04 +     0.24 f
+  node1/y5_relu_p4_reg[3]/CN (DFKCNQD1BWP)                0.00 +     0.24 f
+  data arrival time                                                  0.24
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.07       0.07
+  clock reconvergence pessimism                           0.00       0.07
+  clock uncertainty                                       0.15       0.22
+  node1/y5_relu_p4_reg[3]/CP (DFKCNQD1BWP)                           0.22 r
+  library hold time                                       0.01       0.24
+  data required time                                                 0.24
+  ------------------------------------------------------------------------------
+  data required time                                                 0.24
+  data arrival time                                                 -0.24
+  ------------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: node1/y5_p3_reg[12]
+               (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node1/y5_relu_p4_reg[2]
+               (rising edge-triggered flip-flop clocked by clk)
+  Last common pin: clk
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.07       0.07
+  node1/y5_p3_reg[12]/CP (DFKCNQD1BWP)                    0.00       0.07 r
+  node1/y5_p3_reg[12]/Q (DFKCNQD1BWP)                     0.07 +     0.14 r
+  U3/ZN (CKND0BWP)                                        0.01 +     0.15 f
+  U387/Z (DEL075D1BWP)                                    0.05 +     0.20 f
+  U315/Z (BUFFD2BWP)                                      0.04 +     0.24 f
+  node1/y5_relu_p4_reg[2]/CN (DFKCNQD1BWP)                0.00 +     0.24 f
+  data arrival time                                                  0.24
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.07       0.07
+  clock reconvergence pessimism                           0.00       0.07
+  clock uncertainty                                       0.15       0.22
+  node1/y5_relu_p4_reg[2]/CP (DFKCNQD1BWP)                           0.22 r
+  library hold time                                       0.01       0.24
+  data required time                                                 0.24
+  ------------------------------------------------------------------------------
+  data required time                                                 0.24
+  data arrival time                                                 -0.24
+  ------------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: node1/y5_p3_reg[12]
+               (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node1/y5_relu_p4_reg[0]
+               (rising edge-triggered flip-flop clocked by clk)
+  Last common pin: clk
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.07       0.07
+  node1/y5_p3_reg[12]/CP (DFKCNQD1BWP)                    0.00       0.07 r
+  node1/y5_p3_reg[12]/Q (DFKCNQD1BWP)                     0.07 +     0.14 r
+  U3/ZN (CKND0BWP)                                        0.01 +     0.15 f
+  U387/Z (DEL075D1BWP)                                    0.05 +     0.20 f
+  U315/Z (BUFFD2BWP)                                      0.04 +     0.24 f
+  node1/y5_relu_p4_reg[0]/CN (DFKCNQD1BWP)                0.00 +     0.24 f
+  data arrival time                                                  0.24
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.07       0.07
+  clock reconvergence pessimism                           0.00       0.07
+  clock uncertainty                                       0.15       0.22
+  node1/y5_relu_p4_reg[0]/CP (DFKCNQD1BWP)                           0.22 r
+  library hold time                                       0.01       0.24
+  data required time                                                 0.24
+  ------------------------------------------------------------------------------
+  data required time                                                 0.24
+  data arrival time                                                 -0.24
+  ------------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: node1/y5_p3_reg[12]
+               (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node1/y5_relu_p4_reg[1]
+               (rising edge-triggered flip-flop clocked by clk)
+  Last common pin: clk
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.07       0.07
+  node1/y5_p3_reg[12]/CP (DFKCNQD1BWP)                    0.00       0.07 r
+  node1/y5_p3_reg[12]/Q (DFKCNQD1BWP)                     0.07 +     0.14 r
+  U3/ZN (CKND0BWP)                                        0.01 +     0.15 f
+  U387/Z (DEL075D1BWP)                                    0.05 +     0.20 f
+  U315/Z (BUFFD2BWP)                                      0.04 +     0.24 f
+  node1/y5_relu_p4_reg[1]/CN (DFKCNQD1BWP)                0.00 +     0.24 f
+  data arrival time                                                  0.24
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.07       0.07
+  clock reconvergence pessimism                           0.00       0.07
+  clock uncertainty                                       0.15       0.22
+  node1/y5_relu_p4_reg[1]/CP (DFKCNQD1BWP)                           0.22 r
+  library hold time                                       0.01       0.24
+  data required time                                                 0.24
+  ------------------------------------------------------------------------------
+  data required time                                                 0.24
+  data arrival time                                                 -0.24
+  ------------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+1
