@@ -1,5 +1,6 @@
 ## Clock with frequency of 200ns = 5 MHz
-create_clock -name "clk" -period 10 -waveform { 0 5 } { clk }
+## 1.88 = 532 MHz
+create_clock -name "clk" -period 1.88 -waveform { 0 0.94 } { clk }
 set_dont_touch_network [find port clk]
 
 ## Pointer to all inputs except clk

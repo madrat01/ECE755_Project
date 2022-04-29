@@ -1,0 +1,134 @@
+****************************************
+Report : timing
+	-path_type full
+	-delay_type min
+	-slack_lesser_than 0.00
+	-max_paths 20
+	-sort_by slack
+Design : top
+Version: S-2021.06
+Date   : Fri Apr 29 16:20:31 2022
+****************************************
+
+
+  Startpoint: dnn1_clk_en_lat_reg
+               (negative level-sensitive latch clocked by clk)
+  Endpoint: U38 (falling clock gating-check end-point clocked by clk')
+  Last common pin: clk
+  Path Group: **clock_gating_default**
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock clk (fall edge)                                   0.95       0.95
+  clock network delay (propagated)                        0.09       1.04
+  dnn1_clk_en_lat_reg/EN (LNQD1BWP)                       0.00       1.04 f
+  dnn1_clk_en_lat_reg/Q (LNQD1BWP)                        0.06 +     1.09 r
+  U38/A1 (INR2XD4BWP)                                     0.00 +     1.09 r
+  data arrival time                                                  1.09
+
+  clock clk' (rise edge)                                  0.95       0.95
+  clock network delay (propagated)                        0.01       0.96
+  clock reconvergence pessimism                           0.00       0.96
+  clock uncertainty                                       0.15       1.11
+  U38/B1 (INR2XD4BWP)                                                1.11 r
+  clock gating hold time                                  0.00       1.11
+  data required time                                                 1.11
+  ------------------------------------------------------------------------------
+  data required time                                                 1.11
+  data arrival time                                                 -1.09
+  ------------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.01
+
+
+  Startpoint: dnn0_clk_en_lat_reg
+               (negative level-sensitive latch clocked by clk)
+  Endpoint: U40 (falling clock gating-check end-point clocked by clk')
+  Last common pin: clk
+  Path Group: **clock_gating_default**
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock clk (fall edge)                                   0.95       0.95
+  clock network delay (propagated)                        0.09       1.04
+  dnn0_clk_en_lat_reg/EN (LNQD1BWP)                       0.00       1.04 f
+  dnn0_clk_en_lat_reg/Q (LNQD1BWP)                        0.06 +     1.10 r
+  U40/A1 (INR2XD2BWP)                                     0.00 +     1.10 r
+  data arrival time                                                  1.10
+
+  clock clk' (rise edge)                                  0.95       0.95
+  clock network delay (propagated)                        0.01       0.96
+  clock reconvergence pessimism                           0.00       0.96
+  clock uncertainty                                       0.15       1.11
+  U40/B1 (INR2XD2BWP)                                                1.11 r
+  clock gating hold time                                  0.00       1.11
+  data required time                                                 1.11
+  ------------------------------------------------------------------------------
+  data required time                                                 1.11
+  data arrival time                                                 -1.10
+  ------------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.01
+
+
+  Startpoint: dnn2_clk_en_lat_reg
+               (negative level-sensitive latch clocked by clk)
+  Endpoint: U36 (falling clock gating-check end-point clocked by clk')
+  Last common pin: clk
+  Path Group: **clock_gating_default**
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock clk (fall edge)                                   0.95       0.95
+  clock network delay (propagated)                        0.09       1.04
+  dnn2_clk_en_lat_reg/EN (LNQD1BWP)                       0.00       1.04 f
+  dnn2_clk_en_lat_reg/Q (LNQD1BWP)                        0.07 +     1.10 r
+  U36/A1 (INR2XD4BWP)                                     0.00 +     1.10 r
+  data arrival time                                                  1.10
+
+  clock clk' (rise edge)                                  0.95       0.95
+  clock network delay (propagated)                        0.01       0.96
+  clock reconvergence pessimism                           0.00       0.96
+  clock uncertainty                                       0.15       1.11
+  U36/B1 (INR2XD4BWP)                                                1.11 r
+  clock gating hold time                                  0.00       1.11
+  data required time                                                 1.11
+  ------------------------------------------------------------------------------
+  data required time                                                 1.11
+  data arrival time                                                 -1.10
+  ------------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: dnn3_clk_en_lat_reg
+               (negative level-sensitive latch clocked by clk)
+  Endpoint: U34 (falling clock gating-check end-point clocked by clk')
+  Last common pin: clk
+  Path Group: **clock_gating_default**
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock clk (fall edge)                                   0.95       0.95
+  clock network delay (propagated)                        0.09       1.04
+  dnn3_clk_en_lat_reg/EN (LNQD1BWP)                       0.00       1.04 f
+  dnn3_clk_en_lat_reg/Q (LNQD1BWP)                        0.07 +     1.10 r
+  U34/A1 (INR2XD1BWP)                                     0.00 +     1.11 r
+  data arrival time                                                  1.11
+
+  clock clk' (rise edge)                                  0.95       0.95
+  clock network delay (propagated)                        0.01       0.96
+  clock reconvergence pessimism                           0.00       0.96
+  clock uncertainty                                       0.15       1.11
+  U34/B1 (INR2XD1BWP)                                                1.11 r
+  clock gating hold time                                  0.00       1.11
+  data required time                                                 1.11
+  ------------------------------------------------------------------------------
+  data required time                                                 1.11
+  data arrival time                                                 -1.11
+  ------------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+1

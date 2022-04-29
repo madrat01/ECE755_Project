@@ -1,0 +1,44 @@
+ 
+****************************************
+Report : area
+Design : top
+Version: S-2021.06
+Date   : Fri Apr 29 16:08:52 2022
+****************************************
+
+Information: Updating design information... (UID-85)
+Library(s) Used:
+
+    tcbn45gsbwptc (File: /cae/apps/data/tsmclibs-2013/digital/Front_End/timing_power_noise/NLDM/tcbn45gsbwp_120a/tcbn45gsbwptc.db)
+
+Number of ports:                          379
+Number of nets:                         12418
+Number of cells:                         9666
+Number of combinational cells:           8585
+Number of sequential cells:              1081
+Number of macros/black boxes:               0
+Number of buf/inv:                       1442
+Number of references:                      49
+
+Combinational area:              17393.568981
+Buf/Inv area:                     1335.877238
+Noncombinational area:            4519.897319
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                 21913.466300
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area            Local cell area
+                                  -------------------  ----------------------------- 
+Hierarchical cell                 Absolute    Percent  Combi-      Noncombi-  Black-
+                                  Total       Total    national    national   boxes   Design
+--------------------------------  ----------  -------  ----------  ---------  ------  ---------
+top                               21913.4663    100.0  17393.5690  4519.8973  0.0000  top
+--------------------------------  ----------  -------  ----------  ---------  ------  ---------
+Total                                                  17393.5690  4519.8973  0.0000
+
+1

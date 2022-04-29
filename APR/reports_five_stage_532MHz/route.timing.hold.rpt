@@ -1,0 +1,641 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -max_paths 20
+Design : top
+Version: S-2021.06
+Date   : Fri Apr 29 15:56:08 2022
+****************************************
+
+ * Some/all delay information is back-annotated.
+
+Operating Conditions: NCCOM   Library: tcbn45gsbwptc
+	Parasitic source    : LPE
+	Parasitic mode      : RealRC
+	Extraction mode     : MAX
+	Extraction derating : 25/25/25
+
+Information: Percent of Arnoldi-based delays = 21.78%
+
+  Startpoint: dnn_state_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: dnn_state_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (propagated)         0.07       0.07
+  dnn_state_reg[0]/CP (DFCNQD1BWP)         0.00       0.07 r
+  dnn_state_reg[0]/Q (DFCNQD1BWP)          0.09       0.16 r
+  U2/ZN (INVD4BWP)                         0.04 @     0.20 f
+  U10312/ZN (IOA21D0BWP)                   0.05 @     0.25 f
+  dnn_state_reg[0]/D (DFCNQD1BWP)          0.00 &     0.25 f
+  data arrival time                                   0.25
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (propagated)         0.07       0.07
+  clock uncertainty                        0.15       0.22
+  dnn_state_reg[0]/CP (DFCNQD1BWP)         0.00       0.22 r
+  library hold time                        0.03       0.25
+  data required time                                  0.25
+  -----------------------------------------------------------
+  data required time                                  0.25
+  data arrival time                                  -0.25
+  -----------------------------------------------------------
+  slack (MET)                                         0.00
+
+
+  Startpoint: node2/y4_p3_reg[12]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node2/y4_relu_p4_reg[2]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.07       0.07
+  node2/y4_p3_reg[12]/CP (DFKCNQD1BWP)                    0.00       0.07 r
+  node2/y4_p3_reg[12]/Q (DFKCNQD1BWP)                     0.07       0.14 r
+  U26/ZN (CKND0BWP)                                       0.01 &     0.15 f
+  U148/Z (DEL075D1BWP)                                    0.08 @     0.23 f
+  node2/y4_relu_p4_reg[2]/CN (DFKCNQD1BWP)                0.00 @     0.23 f
+  data arrival time                                                  0.23
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.07       0.07
+  clock uncertainty                                       0.15       0.22
+  node2/y4_relu_p4_reg[2]/CP (DFKCNQD1BWP)                0.00       0.22 r
+  library hold time                                       0.01       0.23
+  data required time                                                 0.23
+  --------------------------------------------------------------------------
+  data required time                                                 0.23
+  data arrival time                                                 -0.23
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+  Startpoint: node2/y4_p3_reg[12]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node2/y4_relu_p4_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.07       0.07
+  node2/y4_p3_reg[12]/CP (DFKCNQD1BWP)                    0.00       0.07 r
+  node2/y4_p3_reg[12]/Q (DFKCNQD1BWP)                     0.07       0.14 r
+  U26/ZN (CKND0BWP)                                       0.01 &     0.15 f
+  U148/Z (DEL075D1BWP)                                    0.08 @     0.23 f
+  node2/y4_relu_p4_reg[0]/CN (DFKCNQD1BWP)                0.00 @     0.23 f
+  data arrival time                                                  0.23
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.07       0.07
+  clock uncertainty                                       0.15       0.22
+  node2/y4_relu_p4_reg[0]/CP (DFKCNQD1BWP)                0.00       0.22 r
+  library hold time                                       0.01       0.23
+  data required time                                                 0.23
+  --------------------------------------------------------------------------
+  data required time                                                 0.23
+  data arrival time                                                 -0.23
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+  Startpoint: node2/y4_p3_reg[12]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node2/y4_relu_p4_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.07       0.07
+  node2/y4_p3_reg[12]/CP (DFKCNQD1BWP)                    0.00       0.07 r
+  node2/y4_p3_reg[12]/Q (DFKCNQD1BWP)                     0.07       0.14 r
+  U26/ZN (CKND0BWP)                                       0.01 &     0.15 f
+  U148/Z (DEL075D1BWP)                                    0.08 @     0.23 f
+  node2/y4_relu_p4_reg[1]/CN (DFKCNQD1BWP)                0.00 @     0.23 f
+  data arrival time                                                  0.23
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.07       0.07
+  clock uncertainty                                       0.15       0.22
+  node2/y4_relu_p4_reg[1]/CP (DFKCNQD1BWP)                0.00       0.22 r
+  library hold time                                       0.01       0.23
+  data required time                                                 0.23
+  --------------------------------------------------------------------------
+  data required time                                                 0.23
+  data arrival time                                                 -0.23
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+  Startpoint: node2/y4_p3_reg[12]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node2/y4_relu_p4_reg[4]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.07       0.07
+  node2/y4_p3_reg[12]/CP (DFKCNQD1BWP)                    0.00       0.07 r
+  node2/y4_p3_reg[12]/Q (DFKCNQD1BWP)                     0.07       0.14 r
+  U26/ZN (CKND0BWP)                                       0.01 &     0.15 f
+  U148/Z (DEL075D1BWP)                                    0.08 @     0.23 f
+  node2/y4_relu_p4_reg[4]/CN (DFKCNQD1BWP)                0.00 @     0.23 f
+  data arrival time                                                  0.23
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.07       0.07
+  clock uncertainty                                       0.15       0.22
+  node2/y4_relu_p4_reg[4]/CP (DFKCNQD1BWP)                0.00       0.22 r
+  library hold time                                       0.01       0.23
+  data required time                                                 0.23
+  --------------------------------------------------------------------------
+  data required time                                                 0.23
+  data arrival time                                                 -0.23
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+  Startpoint: dnn_state_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out_comp_ready_p5_reg
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.07       0.07
+  dnn_state_reg[0]/CP (DFCNQD1BWP)                        0.00       0.07 r
+  dnn_state_reg[0]/Q (DFCNQD1BWP)                         0.10       0.17 f
+  U126/Z (CKBD0BWP)                                       0.03 &     0.19 f
+  U125/ZN (CKND0BWP)                                      0.02 &     0.21 r
+  U130/Z (CKBD0BWP)                                       0.02 &     0.23 r
+  U175/ZN (CKND0BWP)                                      0.01 &     0.24 f
+  out_comp_ready_p5_reg/CN (DFKCNQD1BWP)                  0.00 &     0.24 f
+  data arrival time                                                  0.24
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.07       0.07
+  clock uncertainty                                       0.15       0.22
+  out_comp_ready_p5_reg/CP (DFKCNQD1BWP)                  0.00       0.22 r
+  library hold time                                       0.02       0.24
+  data required time                                                 0.24
+  --------------------------------------------------------------------------
+  data required time                                                 0.24
+  data arrival time                                                 -0.24
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+  Startpoint: node2/y4_p3_reg[12]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node2/y4_relu_p4_reg[3]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.07       0.07
+  node2/y4_p3_reg[12]/CP (DFKCNQD1BWP)                    0.00       0.07 r
+  node2/y4_p3_reg[12]/Q (DFKCNQD1BWP)                     0.07       0.14 r
+  U26/ZN (CKND0BWP)                                       0.01 &     0.15 f
+  U148/Z (DEL075D1BWP)                                    0.08 @     0.23 f
+  node2/y4_relu_p4_reg[3]/CN (DFKCNQD1BWP)                0.00 @     0.23 f
+  data arrival time                                                  0.23
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.07       0.07
+  clock uncertainty                                       0.15       0.22
+  node2/y4_relu_p4_reg[3]/CP (DFKCNQD1BWP)                0.00       0.22 r
+  library hold time                                       0.01       0.23
+  data required time                                                 0.23
+  --------------------------------------------------------------------------
+  data required time                                                 0.23
+  data arrival time                                                 -0.23
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+  Startpoint: node2/y4_p3_reg[12]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node2/y4_relu_p4_reg[5]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.07       0.07
+  node2/y4_p3_reg[12]/CP (DFKCNQD1BWP)                    0.00       0.07 r
+  node2/y4_p3_reg[12]/Q (DFKCNQD1BWP)                     0.07       0.14 r
+  U26/ZN (CKND0BWP)                                       0.01 &     0.15 f
+  U148/Z (DEL075D1BWP)                                    0.08 @     0.23 f
+  node2/y4_relu_p4_reg[5]/CN (DFKCNQD1BWP)                0.00 @     0.23 f
+  data arrival time                                                  0.23
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.07       0.07
+  clock uncertainty                                       0.15       0.22
+  node2/y4_relu_p4_reg[5]/CP (DFKCNQD1BWP)                0.00       0.22 r
+  library hold time                                       0.01       0.23
+  data required time                                                 0.23
+  --------------------------------------------------------------------------
+  data required time                                                 0.23
+  data arrival time                                                 -0.23
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+  Startpoint: node2/y4_p3_reg[12]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node2/y4_relu_p4_reg[11]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.07       0.07
+  node2/y4_p3_reg[12]/CP (DFKCNQD1BWP)                    0.00       0.07 r
+  node2/y4_p3_reg[12]/Q (DFKCNQD1BWP)                     0.07       0.14 r
+  U26/ZN (CKND0BWP)                                       0.01 &     0.15 f
+  U148/Z (DEL075D1BWP)                                    0.08 @     0.23 f
+  node2/y4_relu_p4_reg[11]/CN (DFKCNQD1BWP)               0.00 @     0.23 f
+  data arrival time                                                  0.23
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.06       0.06
+  clock uncertainty                                       0.15       0.21
+  node2/y4_relu_p4_reg[11]/CP (DFKCNQD1BWP)               0.00       0.21 r
+  library hold time                                       0.01       0.23
+  data required time                                                 0.23
+  --------------------------------------------------------------------------
+  data required time                                                 0.23
+  data arrival time                                                 -0.23
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+  Startpoint: node2/y4_p3_reg[12]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node2/y4_relu_p4_reg[10]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.07       0.07
+  node2/y4_p3_reg[12]/CP (DFKCNQD1BWP)                    0.00       0.07 r
+  node2/y4_p3_reg[12]/Q (DFKCNQD1BWP)                     0.07       0.14 r
+  U26/ZN (CKND0BWP)                                       0.01 &     0.15 f
+  U148/Z (DEL075D1BWP)                                    0.08 @     0.23 f
+  node2/y4_relu_p4_reg[10]/CN (DFKCNQD1BWP)               0.00 @     0.23 f
+  data arrival time                                                  0.23
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.06       0.06
+  clock uncertainty                                       0.15       0.21
+  node2/y4_relu_p4_reg[10]/CP (DFKCNQD1BWP)               0.00       0.21 r
+  library hold time                                       0.01       0.23
+  data required time                                                 0.23
+  --------------------------------------------------------------------------
+  data required time                                                 0.23
+  data arrival time                                                 -0.23
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+  Startpoint: node2/y4_p3_reg[12]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node2/y4_relu_p4_reg[9]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.07       0.07
+  node2/y4_p3_reg[12]/CP (DFKCNQD1BWP)                    0.00       0.07 r
+  node2/y4_p3_reg[12]/Q (DFKCNQD1BWP)                     0.07       0.14 r
+  U26/ZN (CKND0BWP)                                       0.01 &     0.15 f
+  U148/Z (DEL075D1BWP)                                    0.08 @     0.23 f
+  node2/y4_relu_p4_reg[9]/CN (DFKCNQD1BWP)                0.00 @     0.23 f
+  data arrival time                                                  0.23
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.06       0.06
+  clock uncertainty                                       0.15       0.21
+  node2/y4_relu_p4_reg[9]/CP (DFKCNQD1BWP)                0.00       0.21 r
+  library hold time                                       0.01       0.23
+  data required time                                                 0.23
+  --------------------------------------------------------------------------
+  data required time                                                 0.23
+  data arrival time                                                 -0.23
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+  Startpoint: node2/y4_p3_reg[12]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node2/y4_relu_p4_reg[8]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.07       0.07
+  node2/y4_p3_reg[12]/CP (DFKCNQD1BWP)                    0.00       0.07 r
+  node2/y4_p3_reg[12]/Q (DFKCNQD1BWP)                     0.07       0.14 r
+  U26/ZN (CKND0BWP)                                       0.01 &     0.15 f
+  U148/Z (DEL075D1BWP)                                    0.08 @     0.23 f
+  node2/y4_relu_p4_reg[8]/CN (DFKCNQD1BWP)                0.00 @     0.23 f
+  data arrival time                                                  0.23
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.06       0.06
+  clock uncertainty                                       0.15       0.21
+  node2/y4_relu_p4_reg[8]/CP (DFKCNQD1BWP)                0.00       0.21 r
+  library hold time                                       0.01       0.22
+  data required time                                                 0.22
+  --------------------------------------------------------------------------
+  data required time                                                 0.22
+  data arrival time                                                 -0.23
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: node2/y4_p3_reg[12]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node2/y4_relu_p4_reg[6]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.07       0.07
+  node2/y4_p3_reg[12]/CP (DFKCNQD1BWP)                    0.00       0.07 r
+  node2/y4_p3_reg[12]/Q (DFKCNQD1BWP)                     0.07       0.14 r
+  U26/ZN (CKND0BWP)                                       0.01 &     0.15 f
+  U148/Z (DEL075D1BWP)                                    0.08 @     0.23 f
+  node2/y4_relu_p4_reg[6]/CN (DFKCNQD1BWP)                0.00 @     0.23 f
+  data arrival time                                                  0.23
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.06       0.06
+  clock uncertainty                                       0.15       0.21
+  node2/y4_relu_p4_reg[6]/CP (DFKCNQD1BWP)                0.00       0.21 r
+  library hold time                                       0.01       0.22
+  data required time                                                 0.22
+  --------------------------------------------------------------------------
+  data required time                                                 0.22
+  data arrival time                                                 -0.23
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: node2/y4_p3_reg[12]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node2/y4_relu_p4_reg[7]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.07       0.07
+  node2/y4_p3_reg[12]/CP (DFKCNQD1BWP)                    0.00       0.07 r
+  node2/y4_p3_reg[12]/Q (DFKCNQD1BWP)                     0.07       0.14 r
+  U26/ZN (CKND0BWP)                                       0.01 &     0.15 f
+  U148/Z (DEL075D1BWP)                                    0.08 @     0.23 f
+  node2/y4_relu_p4_reg[7]/CN (DFKCNQD1BWP)                0.00 @     0.23 f
+  data arrival time                                                  0.23
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.06       0.06
+  clock uncertainty                                       0.15       0.21
+  node2/y4_relu_p4_reg[7]/CP (DFKCNQD1BWP)                0.00       0.21 r
+  library hold time                                       0.01       0.22
+  data required time                                                 0.22
+  --------------------------------------------------------------------------
+  data required time                                                 0.22
+  data arrival time                                                 -0.23
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: node3/y7_relu_p4_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node1/mul8_out_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.07       0.07
+  node3/y7_relu_p4_reg[0]/CP (DFKCNQD1BWP)                0.00       0.07 r
+  node3/y7_relu_p4_reg[0]/Q (DFKCNQD1BWP)                 0.08       0.15 r
+  U3572/Z (XOR2D0BWP)                                     0.06 &     0.21 r
+  U5517/ZN (OAI22D4BWP)                                   0.03 @     0.24 f
+  node1/mul8_out_reg[0]/CN (DFKCNQD1BWP)                  0.00 @     0.24 f
+  data arrival time                                                  0.24
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.07       0.07
+  clock uncertainty                                       0.15       0.22
+  node1/mul8_out_reg[0]/CP (DFKCNQD1BWP)                  0.00       0.22 r
+  library hold time                                       0.02       0.23
+  data required time                                                 0.23
+  --------------------------------------------------------------------------
+  data required time                                                 0.23
+  data arrival time                                                 -0.24
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: node2/y7_relu_p4_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node0/mul8_out_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.07       0.07
+  node2/y7_relu_p4_reg[0]/CP (DFKCNQD1BWP)                0.00       0.07 r
+  node2/y7_relu_p4_reg[0]/Q (DFKCNQD1BWP)                 0.08       0.15 r
+  U5538/Z (XOR2D0BWP)                                     0.06 &     0.21 r
+  U199/ZN (OAI22D4BWP)                                    0.03 @     0.24 f
+  node0/mul8_out_reg[0]/CN (DFKCNQD1BWP)                  0.00 @     0.24 f
+  data arrival time                                                  0.24
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.07       0.07
+  clock uncertainty                                       0.15       0.22
+  node0/mul8_out_reg[0]/CP (DFKCNQD1BWP)                  0.00       0.22 r
+  library hold time                                       0.02       0.23
+  data required time                                                 0.23
+  --------------------------------------------------------------------------
+  data required time                                                 0.23
+  data arrival time                                                 -0.24
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: node3/y7_relu_p4_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node1/mul4_out_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.07       0.07
+  node3/y7_relu_p4_reg[0]/CP (DFKCNQD1BWP)                0.00       0.07 r
+  node3/y7_relu_p4_reg[0]/Q (DFKCNQD1BWP)                 0.08       0.15 r
+  U3572/Z (XOR2D0BWP)                                     0.06 &     0.21 r
+  U5517/ZN (OAI22D4BWP)                                   0.03 @     0.24 f
+  node1/mul4_out_reg[0]/CN (DFKCNQD1BWP)                  0.00 @     0.24 f
+  data arrival time                                                  0.24
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.07       0.07
+  clock uncertainty                                       0.15       0.22
+  node1/mul4_out_reg[0]/CP (DFKCNQD1BWP)                  0.00       0.22 r
+  library hold time                                       0.02       0.23
+  data required time                                                 0.23
+  --------------------------------------------------------------------------
+  data required time                                                 0.23
+  data arrival time                                                 -0.24
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: node1/y4_p3_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node1/y4_relu_p4_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.06       0.06
+  node1/y4_p3_reg[0]/CP (DFKCNQD1BWP)                     0.00       0.06 r
+  node1/y4_p3_reg[0]/Q (DFKCNQD1BWP)                      0.08       0.15 f
+  U5443/Z (DEL150D1BWP)                                   0.10 &     0.24 f
+  node1/y4_relu_p4_reg[0]/D (DFKCNQD1BWP)                 0.00 &     0.24 f
+  data arrival time                                                  0.24
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.07       0.07
+  clock uncertainty                                       0.15       0.22
+  node1/y4_relu_p4_reg[0]/CP (DFKCNQD1BWP)                0.00       0.22 r
+  library hold time                                       0.02       0.24
+  data required time                                                 0.24
+  --------------------------------------------------------------------------
+  data required time                                                 0.24
+  data arrival time                                                 -0.24
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: node1/y4_p3_reg[9]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node1/y4_relu_p4_reg[9]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.06       0.06
+  node1/y4_p3_reg[9]/CP (DFKCNQD1BWP)                     0.00       0.06 r
+  node1/y4_p3_reg[9]/Q (DFKCNQD1BWP)                      0.08       0.14 f
+  U5426/Z (DEL150D1BWP)                                   0.10 &     0.24 f
+  node1/y4_relu_p4_reg[9]/D (DFKCNQD1BWP)                 0.00 &     0.24 f
+  data arrival time                                                  0.24
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.06       0.06
+  clock uncertainty                                       0.15       0.21
+  node1/y4_relu_p4_reg[9]/CP (DFKCNQD1BWP)                0.00       0.21 r
+  library hold time                                       0.02       0.23
+  data required time                                                 0.23
+  --------------------------------------------------------------------------
+  data required time                                                 0.23
+  data arrival time                                                 -0.24
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: node3/y4_p3_reg[2]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node3/y4_relu_p4_reg[2]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.07       0.07
+  node3/y4_p3_reg[2]/CP (DFKCNQD1BWP)                     0.00       0.07 r
+  node3/y4_p3_reg[2]/Q (DFKCNQD1BWP)                      0.08       0.15 f
+  U5380/Z (DEL150D1BWP)                                   0.10 &     0.25 f
+  node3/y4_relu_p4_reg[2]/D (DFKCNQD1BWP)                 0.00 &     0.25 f
+  data arrival time                                                  0.25
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.07       0.07
+  clock uncertainty                                       0.15       0.22
+  node3/y4_relu_p4_reg[2]/CP (DFKCNQD1BWP)                0.00       0.22 r
+  library hold time                                       0.02       0.24
+  data required time                                                 0.24
+  --------------------------------------------------------------------------
+  data required time                                                 0.24
+  data arrival time                                                 -0.25
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+1

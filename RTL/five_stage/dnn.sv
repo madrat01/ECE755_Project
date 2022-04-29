@@ -72,7 +72,7 @@ assign multiplier8   = dnn_state == LAYER1_y6y7_MUL ? w37 :  // Layer-1 y7 x3*w3
                                                       w35;      // Layer-1 y5 x3*w35
 
 // Flop these multiplication outputs to be added in the next cycle
-always_ff @(posedge clk) begin
+always_ff @ (posedge clk) begin
     // y4, y5, out0
     mul1_out <= multiplicand1 * multiplier1;
     mul2_out <= multiplicand2 * multiplier2;
