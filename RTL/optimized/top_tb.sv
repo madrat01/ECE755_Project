@@ -233,6 +233,6 @@ always
 
 
 initial
-    #200 $finish;
+    #200 $stop;
 
 endmodule
