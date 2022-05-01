@@ -1,0 +1,643 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -max_paths 20
+Design : top
+Version: S-2021.06
+Date   : Sun May  1 15:20:47 2022
+****************************************
+
+ * Some/all delay information is back-annotated.
+
+Operating Conditions: NCCOM   Library: tcbn45gsbwptc
+
+  Startpoint: node2/out0_ready_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out10_ready_node2_dly_reg
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  node2/out0_ready_reg/CP (DFCNQD1BWP)                    0.00       0.00 r
+  node2/out0_ready_reg/Q (DFCNQD1BWP)                     0.07       0.07 f
+  U434/Z (BUFFD8BWP)                                      0.06 *     0.13 f
+  out10_ready_node2_dly_reg/D (DFQD1BWP)                  0.03 *     0.16 f
+  data arrival time                                                  0.16
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.15       0.15
+  out10_ready_node2_dly_reg/CP (DFQD1BWP)                 0.00       0.15 r
+  library hold time                                       0.01       0.16
+  data required time                                                 0.16
+  --------------------------------------------------------------------------
+  data required time                                                 0.16
+  data arrival time                                                 -0.16
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+  Startpoint: node0/out_comp_ready_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node0/mul1_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  node0/out_comp_ready_reg/CP (DFCNQD1BWP)                0.00       0.00 r
+  node0/out_comp_ready_reg/Q (DFCNQD1BWP)                 0.07       0.07 f
+  U413/Z (CKBD8BWP)                                       0.03 *     0.09 f
+  U414/ZN (CKND4BWP)                                      0.02 *     0.12 r
+  U23388/ZN (OAI22D2BWP)                                  0.03 *     0.14 f
+  node0/mul1_reg[0]/D (EDFQD2BWP)                         0.00 *     0.14 f
+  data arrival time                                                  0.14
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.15       0.15
+  node0/mul1_reg[0]/CP (EDFQD2BWP)                        0.00       0.15 r
+  library hold time                                      -0.01       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.14
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: node3/out_comp_ready_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node3/mul2_reg[20]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  node3/out_comp_ready_reg/CP (DFCNQD1BWP)                0.00       0.00 r
+  node3/out_comp_ready_reg/Q (DFCNQD1BWP)                 0.07       0.07 f
+  U419/Z (BUFFD6BWP)                                      0.05 *     0.11 f
+  U16754/Z (AO21D1BWP)                                    0.04 *     0.15 f
+  node3/mul2_reg[20]/D (EDFQD2BWP)                        0.00 *     0.15 f
+  data arrival time                                                  0.15
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.15       0.15
+  node3/mul2_reg[20]/CP (EDFQD2BWP)                       0.00       0.15 r
+  library hold time                                      -0.01       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.15
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: node3/out_comp_ready_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node3/mul1_reg[20]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  node3/out_comp_ready_reg/CP (DFCNQD1BWP)                0.00       0.00 r
+  node3/out_comp_ready_reg/Q (DFCNQD1BWP)                 0.07       0.07 f
+  U419/Z (BUFFD6BWP)                                      0.05 *     0.11 f
+  U16753/Z (AO21D1BWP)                                    0.04 *     0.15 f
+  node3/mul1_reg[20]/D (EDFQD2BWP)                        0.00 *     0.15 f
+  data arrival time                                                  0.15
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.15       0.15
+  node3/mul1_reg[20]/CP (EDFQD2BWP)                       0.00       0.15 r
+  library hold time                                      -0.01       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.15
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: node1/out_comp_ready_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node1/mul1_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  node1/out_comp_ready_reg/CP (DFCNQD1BWP)                0.00       0.00 r
+  node1/out_comp_ready_reg/Q (DFCNQD1BWP)                 0.07       0.07 f
+  U415/Z (CKBD8BWP)                                       0.03 *     0.10 f
+  U416/ZN (CKND6BWP)                                      0.02 *     0.11 r
+  U23386/ZN (OAI22D0BWP)                                  0.02 *     0.13 f
+  U1688/Z (CKBD0BWP)                                      0.03 *     0.15 f
+  node1/mul1_reg[0]/D (EDFQD2BWP)                         0.00 *     0.15 f
+  data arrival time                                                  0.15
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.15       0.15
+  node1/mul1_reg[0]/CP (EDFQD2BWP)                        0.00       0.15 r
+  library hold time                                      -0.01       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.15
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: node3/out_comp_ready_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node3/mul1_reg[12]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  node3/out_comp_ready_reg/CP (DFCNQD1BWP)                0.00       0.00 r
+  node3/out_comp_ready_reg/Q (DFCNQD1BWP)                 0.07       0.07 f
+  U419/Z (BUFFD6BWP)                                      0.05 *     0.11 f
+  U19736/Z (AO22D0BWP)                                    0.04 *     0.15 f
+  node3/mul1_reg[12]/D (EDFQD2BWP)                        0.00 *     0.15 f
+  data arrival time                                                  0.15
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.15       0.15
+  node3/mul1_reg[12]/CP (EDFQD2BWP)                       0.00       0.15 r
+  library hold time                                      -0.01       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.15
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: node3/out_comp_ready_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node3/mul1_reg[19]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  node3/out_comp_ready_reg/CP (DFCNQD1BWP)                0.00       0.00 r
+  node3/out_comp_ready_reg/Q (DFCNQD1BWP)                 0.07       0.07 f
+  U419/Z (BUFFD6BWP)                                      0.05 *     0.11 f
+  U17004/Z (AO21D0BWP)                                    0.04 *     0.16 f
+  node3/mul1_reg[19]/D (EDFQD2BWP)                        0.00 *     0.16 f
+  data arrival time                                                  0.16
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.15       0.15
+  node3/mul1_reg[19]/CP (EDFQD2BWP)                       0.00       0.15 r
+  library hold time                                      -0.01       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.16
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: node3/out_comp_ready_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node3/mul1_reg[13]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  node3/out_comp_ready_reg/CP (DFCNQD1BWP)                0.00       0.00 r
+  node3/out_comp_ready_reg/Q (DFCNQD1BWP)                 0.07       0.07 f
+  U419/Z (BUFFD6BWP)                                      0.05 *     0.11 f
+  U19174/Z (AO22D0BWP)                                    0.04 *     0.15 f
+  node3/mul1_reg[13]/D (EDFQD2BWP)                        0.00 *     0.16 f
+  data arrival time                                                  0.16
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.15       0.15
+  node3/mul1_reg[13]/CP (EDFQD2BWP)                       0.00       0.15 r
+  library hold time                                      -0.01       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.16
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: node2/out_comp_ready_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node2/mul2_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  node2/out_comp_ready_reg/CP (DFCNQD1BWP)                0.00       0.00 r
+  node2/out_comp_ready_reg/Q (DFCNQD1BWP)                 0.07       0.07 f
+  U417/Z (BUFFD8BWP)                                      0.03 *     0.10 f
+  U418/ZN (INVD3BWP)                                      0.02 *     0.12 r
+  U23385/ZN (OAI22D2BWP)                                  0.03 *     0.15 f
+  node2/mul2_reg[0]/D (EDFQD2BWP)                         0.00 *     0.15 f
+  data arrival time                                                  0.15
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.15       0.15
+  node2/mul2_reg[0]/CP (EDFQD2BWP)                        0.00       0.15 r
+  library hold time                                      -0.01       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.15
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: node3/out_comp_ready_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node3/mul1_reg[16]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  node3/out_comp_ready_reg/CP (DFCNQD1BWP)                0.00       0.00 r
+  node3/out_comp_ready_reg/Q (DFCNQD1BWP)                 0.07       0.07 f
+  U419/Z (BUFFD6BWP)                                      0.05 *     0.11 f
+  U18018/Z (AO21D0BWP)                                    0.05 *     0.16 f
+  node3/mul1_reg[16]/D (EDFQD2BWP)                        0.00 *     0.16 f
+  data arrival time                                                  0.16
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.15       0.15
+  node3/mul1_reg[16]/CP (EDFQD2BWP)                       0.00       0.15 r
+  library hold time                                      -0.01       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.16
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: node3/out_comp_ready_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node3/mul1_reg[10]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  node3/out_comp_ready_reg/CP (DFCNQD1BWP)                0.00       0.00 r
+  node3/out_comp_ready_reg/Q (DFCNQD1BWP)                 0.07       0.07 f
+  U419/Z (BUFFD6BWP)                                      0.05 *     0.11 f
+  U19936/Z (AO22D0BWP)                                    0.05 *     0.16 f
+  node3/mul1_reg[10]/D (EDFQD2BWP)                        0.00 *     0.16 f
+  data arrival time                                                  0.16
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.15       0.15
+  node3/mul1_reg[10]/CP (EDFQD2BWP)                       0.00       0.15 r
+  library hold time                                      -0.01       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.16
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: node3/out_comp_ready_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node3/mul1_reg[17]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  node3/out_comp_ready_reg/CP (DFCNQD1BWP)                0.00       0.00 r
+  node3/out_comp_ready_reg/Q (DFCNQD1BWP)                 0.07       0.07 f
+  U419/Z (BUFFD6BWP)                                      0.05 *     0.11 f
+  U18019/Z (AO21D0BWP)                                    0.05 *     0.16 f
+  node3/mul1_reg[17]/D (EDFQD2BWP)                        0.00 *     0.16 f
+  data arrival time                                                  0.16
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.15       0.15
+  node3/mul1_reg[17]/CP (EDFQD2BWP)                       0.00       0.15 r
+  library hold time                                      -0.01       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.16
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: node3/out_comp_ready_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node3/mul2_reg[19]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  node3/out_comp_ready_reg/CP (DFCNQD1BWP)                0.00       0.00 r
+  node3/out_comp_ready_reg/Q (DFCNQD1BWP)                 0.07       0.07 f
+  U419/Z (BUFFD6BWP)                                      0.05 *     0.11 f
+  U17005/Z (AO21D0BWP)                                    0.05 *     0.16 f
+  node3/mul2_reg[19]/D (EDFQD2BWP)                        0.00 *     0.16 f
+  data arrival time                                                  0.16
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.15       0.15
+  node3/mul2_reg[19]/CP (EDFQD2BWP)                       0.00       0.15 r
+  library hold time                                      -0.01       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.16
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.02
+
+
+  Startpoint: node3/out_comp_ready_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node3/mul2_reg[16]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  node3/out_comp_ready_reg/CP (DFCNQD1BWP)                0.00       0.00 r
+  node3/out_comp_ready_reg/Q (DFCNQD1BWP)                 0.07       0.07 f
+  U419/Z (BUFFD6BWP)                                      0.05 *     0.11 f
+  U18022/Z (AO21D0BWP)                                    0.05 *     0.16 f
+  node3/mul2_reg[16]/D (EDFQD2BWP)                        0.00 *     0.16 f
+  data arrival time                                                  0.16
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.15       0.15
+  node3/mul2_reg[16]/CP (EDFQD2BWP)                       0.00       0.15 r
+  library hold time                                      -0.01       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.16
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.02
+
+
+  Startpoint: node3/out_comp_ready_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node3/mul1_reg[18]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  node3/out_comp_ready_reg/CP (DFCNQD1BWP)                0.00       0.00 r
+  node3/out_comp_ready_reg/Q (DFCNQD1BWP)                 0.07       0.07 f
+  U419/Z (BUFFD6BWP)                                      0.05 *     0.11 f
+  U17557/Z (AO21D0BWP)                                    0.05 *     0.16 f
+  node3/mul1_reg[18]/D (EDFQD2BWP)                        0.00 *     0.16 f
+  data arrival time                                                  0.16
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.15       0.15
+  node3/mul1_reg[18]/CP (EDFQD2BWP)                       0.00       0.15 r
+  library hold time                                      -0.01       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.16
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.02
+
+
+  Startpoint: node3/out_comp_ready_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node3/mul2_reg[15]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  node3/out_comp_ready_reg/CP (DFCNQD1BWP)                0.00       0.00 r
+  node3/out_comp_ready_reg/Q (DFCNQD1BWP)                 0.07       0.07 f
+  U419/Z (BUFFD6BWP)                                      0.05 *     0.11 f
+  U18021/Z (AO21D0BWP)                                    0.05 *     0.16 f
+  node3/mul2_reg[15]/D (EDFQD2BWP)                        0.00 *     0.16 f
+  data arrival time                                                  0.16
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.15       0.15
+  node3/mul2_reg[15]/CP (EDFQD2BWP)                       0.00       0.15 r
+  library hold time                                      -0.01       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.16
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.02
+
+
+  Startpoint: node1/out_comp_ready_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node1/mul2_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  node1/out_comp_ready_reg/CP (DFCNQD1BWP)                0.00       0.00 r
+  node1/out_comp_ready_reg/Q (DFCNQD1BWP)                 0.07       0.07 f
+  U415/Z (CKBD8BWP)                                       0.03 *     0.10 f
+  U416/ZN (CKND6BWP)                                      0.02 *     0.11 r
+  U23387/ZN (OAI22D0BWP)                                  0.02 *     0.13 f
+  U1667/Z (CKBD0BWP)                                      0.03 *     0.16 f
+  node1/mul2_reg[0]/D (EDFQD2BWP)                         0.00 *     0.16 f
+  data arrival time                                                  0.16
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.15       0.15
+  node1/mul2_reg[0]/CP (EDFQD2BWP)                        0.00       0.15 r
+  library hold time                                      -0.01       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.16
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.02
+
+
+  Startpoint: node3/out_comp_ready_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node3/mul2_reg[13]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  node3/out_comp_ready_reg/CP (DFCNQD1BWP)                0.00       0.00 r
+  node3/out_comp_ready_reg/Q (DFCNQD1BWP)                 0.07       0.07 f
+  U419/Z (BUFFD6BWP)                                      0.05 *     0.11 f
+  U19175/Z (AO22D0BWP)                                    0.05 *     0.16 f
+  node3/mul2_reg[13]/D (EDFQD2BWP)                        0.00 *     0.16 f
+  data arrival time                                                  0.16
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.15       0.15
+  node3/mul2_reg[13]/CP (EDFQD2BWP)                       0.00       0.15 r
+  library hold time                                      -0.01       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.16
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.02
+
+
+  Startpoint: node3/out_comp_ready_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node3/mul2_reg[17]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  node3/out_comp_ready_reg/CP (DFCNQD1BWP)                0.00       0.00 r
+  node3/out_comp_ready_reg/Q (DFCNQD1BWP)                 0.07       0.07 f
+  U419/Z (BUFFD6BWP)                                      0.05 *     0.11 f
+  U18023/Z (AO21D0BWP)                                    0.05 *     0.16 f
+  node3/mul2_reg[17]/D (EDFQD2BWP)                        0.00 *     0.16 f
+  data arrival time                                                  0.16
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.15       0.15
+  node3/mul2_reg[17]/CP (EDFQD2BWP)                       0.00       0.15 r
+  library hold time                                      -0.01       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.16
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.02
+
+
+  Startpoint: node0/out_comp_ready_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node0/mul2_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  node0/out_comp_ready_reg/CP (DFCNQD1BWP)                0.00       0.00 r
+  node0/out_comp_ready_reg/Q (DFCNQD1BWP)                 0.07       0.07 f
+  U413/Z (CKBD8BWP)                                       0.03 *     0.09 f
+  U414/ZN (CKND4BWP)                                      0.02 *     0.12 r
+  U23389/ZN (OAI22D0BWP)                                  0.02 *     0.14 f
+  U1947/Z (CKBD0BWP)                                      0.02 *     0.16 f
+  node0/mul2_reg[0]/D (EDFQD2BWP)                         0.00 *     0.16 f
+  data arrival time                                                  0.16
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.15       0.15
+  node0/mul2_reg[0]/CP (EDFQD2BWP)                        0.00       0.15 r
+  library hold time                                      -0.01       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.16
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.02
+
+
+1

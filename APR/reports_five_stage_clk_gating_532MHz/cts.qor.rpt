@@ -74,7 +74,7 @@ Information: The distance unit in Capacitance and Resistance is 1 micron. (RCEX-
 Information: The RC model used is detail route TLU+. (RCEX-015)
 Information: Start mixed mode parasitic extraction. (RCEX-023)
 Information: Start rc extraction...
-Warning: Not enough nets are routed (22/11964 < 0.66667); will do extraction by using placement congestion map as background. (RCEX-047)
+Warning: Not enough nets are routed (22/11939 < 0.66667); will do extraction by using placement congestion map as background. (RCEX-047)
 Information: Parasitic source is LPE. (RCEX-040)
 Information: Parasitic mode is RealRVirtualC. (RCEX-041)
 Information: Using virtual shield extraction. (RCEX-081)
@@ -137,21 +137,21 @@ Information: Input delay ('fall') on clock port 'clk' will be added to the clock
 Report : qor
 Design : top
 Version: S-2021.06
-Date   : Fri Apr 29 17:05:44 2022
+Date   : Sun May  1 15:47:05 2022
 ****************************************
 
 
   Timing Path Group 'clk'
   -----------------------------------
-  Levels of Logic:              28.00
-  Critical Path Length:          1.67
+  Levels of Logic:              26.00
+  Critical Path Length:          1.50
   Critical Path Slack:           0.06
   Critical Path Clk Period:      1.88
   Total Negative Slack:          0.00
   No. of Violating Paths:        0.00
-  Worst Hold Violation:         -0.00
-  Total Hold Violation:         -0.00
-  No. of Hold Violations:        1.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
   -----------------------------------
 
 
@@ -159,60 +159,60 @@ Date   : Fri Apr 29 17:05:44 2022
   -----------------------------------
   Hierarchical Cell Count:          0
   Hierarchical Port Count:          0
-  Leaf Cell Count:               9214
-  Buf/Inv Cell Count:            1026
-  Buf Cell Count:                 538
+  Leaf Cell Count:               9189
+  Buf/Inv Cell Count:            1003
+  Buf Cell Count:                 515
   Inv Cell Count:                 488
   CT Buf/Inv Cell Count:           17
-  Combinational Cell Count:      8134
-  Sequential Cell Count:         1080
+  Combinational Cell Count:      8110
+  Sequential Cell Count:         1079
   Macro Count:                      0
   -----------------------------------
 
 
   Area
   -----------------------------------
-  Combinational Area:    17335.356970
-  Noncombinational Area:  3785.367651
-  Buf/Inv Area:           1119.787228
-  Total Buffer Area:           795.74
-  Total Inverter Area:         324.05
+  Combinational Area:    17328.830170
+  Noncombinational Area:  3782.016051
+  Buf/Inv Area:           1109.026828
+  Total Buffer Area:           781.10
+  Total Inverter Area:         327.93
   Macro/Black Box Area:      0.000000
   Net Area:                  0.000000
-  Net XLength        :       89277.34
-  Net YLength        :       85050.61
+  Net XLength        :       87246.88
+  Net YLength        :       85351.55
   -----------------------------------
-  Cell Area:             21120.724621
-  Design Area:           21120.724621
-  Net Length        :       174327.95
+  Cell Area:             21110.846221
+  Design Area:           21110.846221
+  Net Length        :       172598.44
 
 
   Design Rules
   -----------------------------------
-  Total Number of Nets:         11964
-  Nets With Violations:             1
-  Max Trans Violations:             1
+  Total Number of Nets:         11939
+  Nets With Violations:             0
+  Max Trans Violations:             0
   Max Cap Violations:               0
   -----------------------------------
 
 
-  Hostname: tux-160
+  Hostname: tux-144
 
   Compile CPU Statistics
   -----------------------------------------
   Resource Sharing:                    0.00
   Logic Optimization:                  0.00
-  Mapping Optimization:               16.67
+  Mapping Optimization:               16.18
   -----------------------------------------
-  Overall Compile Time:               17.47
-  Overall Compile Wall Clock Time:    17.62
+  Overall Compile Time:               16.97
+  Overall Compile Wall Clock Time:    17.08
 
   --------------------------------------------------------------------
 
   Design  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
 
 
-  Design (Hold)  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 1
+  Design (Hold)  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
 
   --------------------------------------------------------------------
 

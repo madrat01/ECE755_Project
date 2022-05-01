@@ -1,4 +1,6 @@
-cd RTL/optimized/
+#cd RTL/unoptimized/
+#cd RTL/optimized/
+cd RTL/five_stage/
 vlog -sv *.sv
 vsim -c tb_top -do "run -all"
 cd ../../Synthesis/

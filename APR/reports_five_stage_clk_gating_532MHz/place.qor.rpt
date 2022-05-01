@@ -4,14 +4,14 @@ Information: Updating graph... (UID-83)
 Report : qor
 Design : top
 Version: S-2021.06
-Date   : Fri Apr 29 17:05:14 2022
+Date   : Sun May  1 15:46:34 2022
 ****************************************
 
 
   Timing Path Group 'clk'
   -----------------------------------
-  Levels of Logic:              28.00
-  Critical Path Length:          1.46
+  Levels of Logic:              31.00
+  Critical Path Length:          1.71
   Critical Path Slack:           0.00
   Critical Path Clk Period:      1.88
   Total Negative Slack:          0.00
@@ -26,53 +26,53 @@ Date   : Fri Apr 29 17:05:14 2022
   -----------------------------------
   Hierarchical Cell Count:          0
   Hierarchical Port Count:          0
-  Leaf Cell Count:               9195
-  Buf/Inv Cell Count:            1007
-  Buf Cell Count:                 530
-  Inv Cell Count:                 477
+  Leaf Cell Count:               9166
+  Buf/Inv Cell Count:             980
+  Buf Cell Count:                 504
+  Inv Cell Count:                 476
   CT Buf/Inv Cell Count:            1
-  Combinational Cell Count:      8115
-  Sequential Cell Count:         1080
+  Combinational Cell Count:      8087
+  Sequential Cell Count:         1079
   Macro Count:                      0
   -----------------------------------
 
 
   Area
   -----------------------------------
-  Combinational Area:    17271.147370
-  Noncombinational Area:  3785.014851
-  Buf/Inv Area:           1068.278428
-  Total Buffer Area:           787.45
-  Total Inverter Area:         280.83
+  Combinational Area:    17254.565769
+  Noncombinational Area:  3781.663251
+  Buf/Inv Area:           1051.520428
+  Total Buffer Area:           767.69
+  Total Inverter Area:         283.83
   Macro/Black Box Area:      0.000000
   Net Area:                  0.000000
-  Net XLength        :       96158.28
-  Net YLength        :       86923.66
+  Net XLength        :       93339.45
+  Net YLength        :       87335.55
   -----------------------------------
-  Cell Area:             21056.162221
-  Design Area:           21056.162221
-  Net Length        :       183081.94
+  Cell Area:             21036.229020
+  Design Area:           21036.229020
+  Net Length        :       180675.00
 
 
   Design Rules
   -----------------------------------
-  Total Number of Nets:         11945
+  Total Number of Nets:         11916
   Nets With Violations:             0
   Max Trans Violations:             0
   Max Cap Violations:               0
   -----------------------------------
 
 
-  Hostname: tux-160
+  Hostname: tux-144
 
   Compile CPU Statistics
   -----------------------------------------
   Resource Sharing:                    0.00
   Logic Optimization:                  0.00
-  Mapping Optimization:               14.83
+  Mapping Optimization:               14.19
   -----------------------------------------
-  Overall Compile Time:               15.39
-  Overall Compile Wall Clock Time:    15.50
+  Overall Compile Time:               14.73
+  Overall Compile Wall Clock Time:    14.79
 
   --------------------------------------------------------------------
 

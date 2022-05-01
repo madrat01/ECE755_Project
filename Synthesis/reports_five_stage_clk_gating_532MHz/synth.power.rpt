@@ -8,7 +8,7 @@ Report : power
         -analysis_effort low
 Design : top
 Version: S-2021.06
-Date   : Fri Apr 29 17:04:01 2022
+Date   : Sun May  1 15:45:22 2022
 ****************************************
 
 
@@ -39,5 +39,5 @@ Power-specific unit information :
                                        Switch   Int      Leak     Total
 Hierarchy                              Power    Power    Power    Power    %
 --------------------------------------------------------------------------------
-top                                       1.898    3.772 3.09e+05    5.980 100.0
+top                                       2.108    4.031 3.08e+05    6.447 100.0
 1

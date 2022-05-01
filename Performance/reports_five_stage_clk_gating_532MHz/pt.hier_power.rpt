@@ -4,7 +4,7 @@ Report : Averaged Power
 	-nosplit
 Design : top
 Version: S-2021.06
-Date   : Fri Apr 29 17:07:34 2022
+Date   : Sun May  1 15:48:55 2022
 ****************************************
 
 
@@ -12,5 +12,5 @@ Date   : Fri Apr 29 17:07:34 2022
                                       Int      Switch   Leak     Total
 Hierarchy                             Power    Power    Power    Power    %
 ----------------------------------------------------------------------------------
-top                                   3.68e-03 1.90e-03 2.86e-04 5.87e-03 100.0
+top                                   3.98e-03 2.16e-03 2.86e-04 6.43e-03 100.0
 1

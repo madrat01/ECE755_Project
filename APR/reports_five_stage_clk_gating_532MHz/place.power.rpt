@@ -7,7 +7,7 @@ Report : power
         -analysis_effort low
 Design : top
 Version: S-2021.06
-Date   : Fri Apr 29 17:05:14 2022
+Date   : Sun May  1 15:46:34 2022
 ****************************************
 
 
@@ -33,12 +33,12 @@ Power-specific unit information :
     Leakage Power Units = 1nW
 
 
-  Cell Internal Power  =   3.6021 mW   (66%)
-  Net Switching Power  =   1.8870 mW   (34%)
+  Cell Internal Power  =   3.8602 mW   (65%)
+  Net Switching Power  =   2.0740 mW   (35%)
                          ---------
-Total Dynamic Power    =   5.4891 mW  (100%)
+Total Dynamic Power    =   5.9342 mW  (100%)
 
-Cell Leakage Power     = 284.0996 uW
+Cell Leakage Power     = 283.9795 uW
 
 
                  Internal         Switching           Leakage            Total
@@ -47,10 +47,10 @@ Power Group      Power            Power               Power              Power  
 io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
-clock_network  4.1132e-03            0.1889          209.8568            0.1933  (   3.35%)
-register           1.1291        8.7267e-02        3.3130e+04            1.2495  (  21.64%)
-sequential     1.2579e-02        6.4690e-03        3.4790e+03        2.2527e-02  (   0.39%)
-combinational      2.4562            1.6044        2.4728e+05            4.3079  (  74.62%)
+clock_network  4.1518e-03            0.2047          215.0069            0.2091  (   3.36%)
+register           1.2253        9.6397e-02        3.3007e+04            1.3548  (  21.79%)
+sequential     1.6341e-02        9.1880e-03        3.4786e+03        2.9008e-02  (   0.47%)
+combinational      2.6144            1.7636        2.4728e+05            4.6253  (  74.38%)
 --------------------------------------------------------------------------------------------------
-Total              3.6021 mW         1.8870 mW     2.8410e+05 nW         5.7732 mW
+Total              3.8602 mW         2.0740 mW     2.8398e+05 nW         6.2182 mW
 1

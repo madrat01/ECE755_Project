@@ -1,0 +1,77 @@
+****************************************
+Report : timing
+	-path_type full
+	-delay_type min
+	-slack_lesser_than 0.00
+	-max_paths 20
+	-sort_by slack
+Design : top
+Version: S-2021.06
+Date   : Sun May  1 15:25:19 2022
+****************************************
+
+
+  Startpoint: dnn3_clk_en_lat_reg
+               (negative level-sensitive latch clocked by clk)
+  Endpoint: U204 (rising clock gating-check end-point clocked by clk)
+  Last common pin: clk
+  Path Group: **clock_gating_default**
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock clk (fall edge)                                   0.94       0.94
+  clock network delay (propagated)                        0.07       1.01
+  dnn3_clk_en_lat_reg/EN (LNQD1BWP)                       0.00       1.01 f
+  dnn3_clk_en_lat_reg/Q (LNQD1BWP)                        0.06 +     1.07 r
+  U204/A1 (AN2D4BWP)                                      0.00 +     1.07 r
+  data arrival time                                                  1.07
+
+  clock clk (fall edge)                                   0.94       0.94
+  clock network delay (propagated)                        0.00       0.94
+  clock reconvergence pessimism                           0.00       0.94
+  clock uncertainty                                       0.15       1.09
+  U204/A2 (AN2D4BWP)                                                 1.09 f
+  clock gating hold time                                  0.00       1.09
+  data required time                                                 1.09
+  ------------------------------------------------------------------------------
+  data required time                                                 1.09
+  data arrival time                                                 -1.07
+  ------------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.02
+
+
+  Startpoint: node3/out_comp_ready_reg
+               (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node3/mul1_reg[13]
+               (rising edge-triggered flip-flop clocked by clk)
+  Last common pin: clk
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.07       0.07
+  node3/out_comp_ready_reg/CP (DFCNQD1BWP)                0.00       0.07 r
+  node3/out_comp_ready_reg/Q (DFCNQD1BWP)                 0.08 +     0.15 f
+  U419/Z (BUFFD12BWP)                                     0.03 +     0.19 f
+  U19174/Z (AO22D0BWP)                                    0.03 +     0.22 f
+  node3/mul1_reg[13]/D (EDFQD2BWP)                        0.00 +     0.22 f
+  data arrival time                                                  0.22
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.07       0.07
+  clock reconvergence pessimism                           0.00       0.07
+  clock uncertainty                                       0.15       0.22
+  node3/mul1_reg[13]/CP (EDFQD2BWP)                                  0.22 r
+  library hold time                                       0.00       0.22
+  data required time                                                 0.22
+  ------------------------------------------------------------------------------
+  data required time                                                 0.22
+  data arrival time                                                 -0.22
+  ------------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+1

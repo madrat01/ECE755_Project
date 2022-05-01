@@ -6,7 +6,7 @@ Report : timing
         -max_paths 20
 Design : top
 Version: S-2021.06
-Date   : Fri Apr 29 17:05:44 2022
+Date   : Sun May  1 15:47:06 2022
 ****************************************
 
  * Some/all delay information is back-annotated.
@@ -19,9 +19,9 @@ Operating Conditions: NCCOM   Library: tcbn45gsbwptc
 
 Information: Percent of Arnoldi-based delays =  2.85%
 
-  Startpoint: dnn_state_reg[1]
-              (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: node3/mul2_out_reg[18]
+  Startpoint: x1_node0[0]
+              (input port clocked by clk)
+  Endpoint: node0/mul6_out_reg[18]
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: max
@@ -29,111 +29,112 @@ Information: Percent of Arnoldi-based delays =  2.85%
   Point                                    Incr       Path
   -----------------------------------------------------------
   clock clk (rise edge)                    0.00       0.00
-  clock network delay (propagated)         0.08       0.08
-  dnn_state_reg[1]/CP (DFCNQD1BWP)         0.00       0.08 r
-  dnn_state_reg[1]/Q (DFCNQD1BWP)          0.07       0.16 r
-  U10313/ZN (CKND0BWP)                     0.02 *     0.18 f
-  U5413/ZN (NR3D2BWP)                      0.05 *     0.23 r
-  U19/Z (BUFFD2BWP)                        0.07 *     0.29 r
-  U5832/ZN (NR2XD3BWP)                     0.06 *     0.36 f
-  U10320/ZN (AOI222D4BWP)                  0.13 *     0.49 r
-  U145/ZN (INVD2BWP)                       0.08 *     0.56 f
-  U9195/ZN (CKND2D0BWP)                    0.03 *     0.60 r
-  U1040/Z (XOR2D0BWP)                      0.04 *     0.63 r
-  node3/mult_78/S2_2_2/CO (FA1D0BWP)       0.04 *     0.68 r
-  node3/mult_78/S2_3_2/CO (FA1D0BWP)       0.07 *     0.75 r
-  node3/mult_78/S2_4_2/CO (FA1D0BWP)       0.07 *     0.82 r
-  node3/mult_78/S2_5_2/CO (FA1D0BWP)       0.07 *     0.89 r
-  node3/mult_78/S2_6_2/CO (FA1D0BWP)       0.07 *     0.95 r
-  node3/mult_78/S2_7_2/CO (FA1D0BWP)       0.07 *     1.02 r
-  node3/mult_78/S2_8_2/CO (FA1D0BWP)       0.07 *     1.09 r
-  node3/mult_78/S2_9_2/CO (FA1D0BWP)       0.07 *     1.16 r
-  node3/mult_78/S2_10_2/CO (FA1D0BWP)      0.07 *     1.23 r
-  node3/mult_78/S2_11_2/CO (FA1D0BWP)      0.07 *     1.30 r
-  node3/mult_78/S2_12_2/CO (FA1D0BWP)      0.07 *     1.37 r
-  node3/mult_78/S2_13_2/S (FA1D0BWP)       0.07 *     1.45 f
-  node3/mult_78/S4_1/S (FA1D0BWP)          0.06 *     1.50 r
-  U1279/Z (XOR2D0BWP)                      0.04 *     1.54 f
-  U6474/ZN (NR2D0BWP)                      0.03 *     1.57 r
-  U6181/ZN (CKND0BWP)                      0.01 *     1.59 f
-  U6180/ZN (AOI21D0BWP)                    0.03 *     1.62 r
-  U6337/ZN (OAI21D0BWP)                    0.03 *     1.64 f
-  U9540/Z (AO221D0BWP)                     0.06 *     1.71 f
-  U9539/Z (XOR3D0BWP)                      0.05 *     1.76 r
-  node3/mul2_out_reg[18]/D (DFQD1BWP)      0.00 *     1.76 r
-  data arrival time                                   1.76
-
-  clock clk (rise edge)                    1.88       1.88
-  clock network delay (propagated)         0.09       1.97
-  clock uncertainty                       -0.15       1.82
-  node3/mul2_out_reg[18]/CP (DFQD1BWP)     0.00       1.82 r
-  library setup time                       0.00       1.81
-  data required time                                  1.81
-  -----------------------------------------------------------
-  data required time                                  1.81
-  data arrival time                                  -1.76
-  -----------------------------------------------------------
-  slack (MET)                                         0.06
-
-
-  Startpoint: dnn_state_reg[1]
-              (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: node2/mul6_out_reg[18]
-            (rising edge-triggered flip-flop clocked by clk)
-  Path Group: clk
-  Path Type: max
-
-  Point                                    Incr       Path
-  -----------------------------------------------------------
-  clock clk (rise edge)                    0.00       0.00
-  clock network delay (propagated)         0.08       0.08
-  dnn_state_reg[1]/CP (DFCNQD1BWP)         0.00       0.08 r
-  dnn_state_reg[1]/Q (DFCNQD1BWP)          0.07       0.16 r
-  U10313/ZN (CKND0BWP)                     0.02 *     0.18 f
-  U5413/ZN (NR3D2BWP)                      0.05 *     0.23 r
-  U19/Z (BUFFD2BWP)                        0.07 *     0.29 r
-  U5832/ZN (NR2XD3BWP)                     0.06 *     0.36 f
-  U10295/Z (AO222D2BWP)                    0.11 *     0.47 f
-  U256/Z (BUFFD2BWP)                       0.05 *     0.51 f
-  U257/ZN (CKND2BWP)                       0.06 *     0.58 r
-  U7477/ZN (NR3D0BWP)                      0.03 *     0.61 f
-  node2/mult_83/S2_2_1/S (FA1D0BWP)        0.07 *     0.68 r
-  node2/mult_83/S1_3_0/CO (FA1D0BWP)       0.04 *     0.73 r
-  node2/mult_83/S1_4_0/CO (FA1D0BWP)       0.07 *     0.79 r
-  node2/mult_83/S1_5_0/CO (FA1D0BWP)       0.07 *     0.86 r
-  node2/mult_83/S1_6_0/CO (FA1D0BWP)       0.07 *     0.93 r
-  node2/mult_83/S1_7_0/CO (FA1D0BWP)       0.07 *     1.00 r
-  node2/mult_83/S1_8_0/CO (FA1D0BWP)       0.07 *     1.07 r
-  node2/mult_83/S1_9_0/CO (FA1D0BWP)       0.07 *     1.13 r
-  node2/mult_83/S1_10_0/CO (FA1D0BWP)      0.07 *     1.20 r
-  node2/mult_83/S1_11_0/CO (FA1D0BWP)      0.07 *     1.26 r
-  node2/mult_83/S1_12_0/CO (FA1D0BWP)      0.07 *     1.33 r
-  node2/mult_83/S1_13_0/CO (FA1D0BWP)      0.07 *     1.40 r
-  node2/mult_83/S4_0/CO (FA1D0BWP)         0.07 *     1.46 r
-  U2561/Z (XOR2D0BWP)                      0.05 *     1.51 f
-  U6570/ZN (NR2D0BWP)                      0.03 *     1.54 r
-  U6229/ZN (CKND0BWP)                      0.02 *     1.55 f
-  U6228/ZN (AOI21D0BWP)                    0.03 *     1.58 r
-  U6458/ZN (OAI21D0BWP)                    0.03 *     1.61 f
-  U9651/Z (AO221D0BWP)                     0.06 *     1.67 f
-  U9650/Z (XOR3D0BWP)                      0.06 *     1.74 r
-  node2/mul6_out_reg[18]/D (DFQD1BWP)      0.00 *     1.74 r
-  data arrival time                                   1.74
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.25       0.25 r
+  x1_node0[0] (in)                         0.00       0.25 r
+  U10201/ZN (CKND0BWP)                     0.02 *     0.27 f
+  U10174/ZN (NR2D0BWP)                     0.02 *     0.29 r
+  U538/CO (FA1D0BWP)                       0.05 *     0.34 r
+  U9/Z (XOR2D0BWP)                         0.06 *     0.40 f
+  U542/S (FA1D0BWP)                        0.08 *     0.47 r
+  U796/ZN (AOI22D1BWP)                     0.04 *     0.51 f
+  U7657/ZN (NR2D0BWP)                      0.04 *     0.55 r
+  node0/mult_83/S1_2_0/CO (FA1D0BWP)       0.08 *     0.63 r
+  node0/mult_83/S1_3_0/CO (FA1D0BWP)       0.07 *     0.70 r
+  node0/mult_83/S1_4_0/CO (FA1D0BWP)       0.07 *     0.77 r
+  node0/mult_83/S1_5_0/CO (FA1D0BWP)       0.07 *     0.84 r
+  node0/mult_83/S1_6_0/CO (FA1D0BWP)       0.07 *     0.92 r
+  node0/mult_83/S1_7_0/CO (FA1D0BWP)       0.07 *     0.99 r
+  node0/mult_83/S1_8_0/CO (FA1D0BWP)       0.07 *     1.06 r
+  node0/mult_83/S1_9_0/CO (FA1D0BWP)       0.07 *     1.13 r
+  node0/mult_83/S1_10_0/CO (FA1D0BWP)      0.07 *     1.20 r
+  node0/mult_83/S1_11_0/CO (FA1D0BWP)      0.07 *     1.27 r
+  node0/mult_83/S1_12_0/CO (FA1D0BWP)      0.07 *     1.34 r
+  node0/mult_83/S1_13_0/CO (FA1D0BWP)      0.07 *     1.41 r
+  node0/mult_83/S4_0/S (FA1D0BWP)          0.07 *     1.48 f
+  U4780/Z (XOR2D0BWP)                      0.05 *     1.53 f
+  U6541/ZN (INR2XD0BWP)                    0.03 *     1.56 f
+  U6198/ZN (AOI21D0BWP)                    0.04 *     1.60 r
+  U6383/ZN (OAI21D0BWP)                    0.03 *     1.63 f
+  U9560/Z (AO221D0BWP)                     0.07 *     1.69 f
+  U9559/Z (XOR3D0BWP)                      0.06 *     1.75 r
+  node0/mul6_out_reg[18]/D (DFQD1BWP)      0.00 *     1.75 r
+  data arrival time                                   1.75
 
   clock clk (rise edge)                    1.88       1.88
   clock network delay (propagated)         0.08       1.96
   clock uncertainty                       -0.15       1.81
-  node2/mul6_out_reg[18]/CP (DFQD1BWP)     0.00       1.81 r
+  node0/mul6_out_reg[18]/CP (DFQD1BWP)     0.00       1.81 r
   library setup time                      -0.01       1.80
   data required time                                  1.80
   -----------------------------------------------------------
   data required time                                  1.80
-  data arrival time                                  -1.74
+  data arrival time                                  -1.75
   -----------------------------------------------------------
   slack (MET)                                         0.06
 
 
-  Startpoint: dnn_state_reg[1]
+  Startpoint: dnn_state_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node1/mul5_out_reg[18]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (propagated)         0.08       0.08
+  dnn_state_reg[0]/CP (DFCNQD1BWP)         0.00       0.08 r
+  dnn_state_reg[0]/Q (DFCNQD1BWP)          0.08       0.16 f
+  U175/Z (CKBD1BWP)                        0.02 *     0.17 f
+  U40/ZN (INVD1BWP)                        0.01 *     0.18 r
+  U187/Z (BUFFD0BWP)                       0.02 *     0.21 r
+  U67/ZN (CKND2BWP)                        0.02 *     0.22 f
+  U2/ZN (CKND12BWP)                        0.02 *     0.25 r
+  U10248/ZN (NR2XD0BWP)                    0.04 *     0.29 f
+  U82/Z (CKBD4BWP)                         0.06 *     0.34 f
+  U10238/ZN (AOI222D4BWP)                  0.12 *     0.46 r
+  U108/Z (BUFFD3BWP)                       0.06 *     0.53 r
+  U109/ZN (CKND2BWP)                       0.05 *     0.58 f
+  U8978/ZN (CKND2D0BWP)                    0.04 *     0.61 r
+  U2940/Z (XOR2D0BWP)                      0.04 *     0.66 f
+  node1/mult_82/S2_2_2/S (FA1D0BWP)        0.05 *     0.71 r
+  node1/mult_82/S2_3_1/CO (FA1D0BWP)       0.04 *     0.75 r
+  node1/mult_82/S2_4_1/CO (FA1D0BWP)       0.07 *     0.82 r
+  node1/mult_82/S2_5_1/CO (FA1D0BWP)       0.07 *     0.88 r
+  node1/mult_82/S2_6_1/CO (FA1D0BWP)       0.07 *     0.95 r
+  node1/mult_82/S2_7_1/CO (FA1D0BWP)       0.07 *     1.02 r
+  node1/mult_82/S2_8_1/CO (FA1D0BWP)       0.07 *     1.09 r
+  node1/mult_82/S2_9_1/CO (FA1D0BWP)       0.07 *     1.15 r
+  node1/mult_82/S2_10_1/CO (FA1D0BWP)      0.07 *     1.22 r
+  node1/mult_82/S2_11_1/CO (FA1D0BWP)      0.07 *     1.29 r
+  node1/mult_82/S2_12_1/CO (FA1D0BWP)      0.07 *     1.36 r
+  node1/mult_82/S2_13_1/CO (FA1D0BWP)      0.07 *     1.42 r
+  node1/mult_82/S4_1/S (FA1D0BWP)          0.07 *     1.50 r
+  U3707/Z (XOR2D0BWP)                      0.04 *     1.54 f
+  U6462/Z (CKAN2D0BWP)                     0.03 *     1.57 f
+  U6172/ZN (AOI21D0BWP)                    0.04 *     1.61 r
+  U6350/ZN (OAI21D0BWP)                    0.03 *     1.64 f
+  U9512/Z (AO221D0BWP)                     0.06 *     1.70 f
+  U9511/Z (XOR3D0BWP)                      0.05 *     1.75 r
+  node1/mul5_out_reg[18]/D (DFQD1BWP)      0.00 *     1.75 r
+  data arrival time                                   1.75
+
+  clock clk (rise edge)                    1.88       1.88
+  clock network delay (propagated)         0.08       1.96
+  clock uncertainty                       -0.15       1.81
+  node1/mul5_out_reg[18]/CP (DFQD1BWP)     0.00       1.81 r
+  library setup time                       0.00       1.81
+  data required time                                  1.81
+  -----------------------------------------------------------
+  data required time                                  1.81
+  data arrival time                                  -1.75
+  -----------------------------------------------------------
+  slack (MET)                                         0.06
+
+
+  Startpoint: dnn_state_reg[0]
               (rising edge-triggered flip-flop clocked by clk)
   Endpoint: node0/mul5_out_reg[18]
             (rising edge-triggered flip-flop clocked by clk)
@@ -144,38 +145,41 @@ Information: Percent of Arnoldi-based delays =  2.85%
   -----------------------------------------------------------
   clock clk (rise edge)                    0.00       0.00
   clock network delay (propagated)         0.08       0.08
-  dnn_state_reg[1]/CP (DFCNQD1BWP)         0.00       0.08 r
-  dnn_state_reg[1]/Q (DFCNQD1BWP)          0.07       0.16 r
-  U10313/ZN (CKND0BWP)                     0.02 *     0.18 f
-  U5413/ZN (NR3D2BWP)                      0.05 *     0.23 r
-  U19/Z (BUFFD2BWP)                        0.07 *     0.29 r
-  U5832/ZN (NR2XD3BWP)                     0.06 *     0.36 f
-  U10314/ZN (AOI222D4BWP)                  0.12 *     0.48 r
-  U134/Z (BUFFD3BWP)                       0.06 *     0.54 r
-  U135/ZN (INVD3BWP)                       0.04 *     0.58 f
-  U9069/ZN (CKND2D0BWP)                    0.03 *     0.62 r
-  U4037/Z (XOR2D0BWP)                      0.04 *     0.66 f
-  node0/mult_82/S2_2_2/S (FA1D0BWP)        0.05 *     0.71 r
-  node0/mult_82/S2_3_1/CO (FA1D0BWP)       0.04 *     0.75 r
-  node0/mult_82/S2_4_1/CO (FA1D0BWP)       0.07 *     0.82 r
-  node0/mult_82/S2_5_1/CO (FA1D0BWP)       0.07 *     0.88 r
-  node0/mult_82/S2_6_1/CO (FA1D0BWP)       0.07 *     0.95 r
-  node0/mult_82/S2_7_1/CO (FA1D0BWP)       0.07 *     1.01 r
-  node0/mult_82/S2_8_1/CO (FA1D0BWP)       0.07 *     1.08 r
-  node0/mult_82/S2_9_1/CO (FA1D0BWP)       0.07 *     1.15 r
-  node0/mult_82/S2_10_1/CO (FA1D0BWP)      0.07 *     1.21 r
-  node0/mult_82/S2_11_1/CO (FA1D0BWP)      0.07 *     1.28 r
-  node0/mult_82/S2_12_1/CO (FA1D0BWP)      0.07 *     1.34 r
-  node0/mult_82/S2_13_1/CO (FA1D0BWP)      0.07 *     1.41 r
-  node0/mult_82/S4_1/S (FA1D0BWP)          0.08 *     1.49 r
-  U4827/Z (XOR2D0BWP)                      0.04 *     1.53 f
-  U6494/Z (CKAN2D0BWP)                     0.03 *     1.56 f
-  U6204/ZN (AOI21D0BWP)                    0.04 *     1.60 r
-  U6396/ZN (OAI21D0BWP)                    0.03 *     1.63 f
-  U9606/Z (AO221D0BWP)                     0.06 *     1.69 f
-  U9605/Z (XOR3D0BWP)                      0.05 *     1.74 r
-  node0/mul5_out_reg[18]/D (DFQD1BWP)      0.00 *     1.74 r
-  data arrival time                                   1.74
+  dnn_state_reg[0]/CP (DFCNQD1BWP)         0.00       0.08 r
+  dnn_state_reg[0]/Q (DFCNQD1BWP)          0.08       0.16 f
+  U175/Z (CKBD1BWP)                        0.02 *     0.17 f
+  U40/ZN (INVD1BWP)                        0.01 *     0.18 r
+  U187/Z (BUFFD0BWP)                       0.02 *     0.21 r
+  U67/ZN (CKND2BWP)                        0.02 *     0.22 f
+  U2/ZN (CKND12BWP)                        0.02 *     0.25 r
+  U10248/ZN (NR2XD0BWP)                    0.04 *     0.29 f
+  U82/Z (CKBD4BWP)                         0.06 *     0.34 f
+  U10238/ZN (AOI222D4BWP)                  0.12 *     0.46 r
+  U108/Z (BUFFD3BWP)                       0.06 *     0.53 r
+  U109/ZN (CKND2BWP)                       0.05 *     0.58 f
+  U8974/ZN (CKND2D1BWP)                    0.03 *     0.61 r
+  U4040/Z (XOR2D0BWP)                      0.05 *     0.65 f
+  node0/mult_82/S2_2_2/S (FA1D0BWP)        0.05 *     0.70 r
+  node0/mult_82/S2_3_1/CO (FA1D0BWP)       0.05 *     0.76 r
+  node0/mult_82/S2_4_1/CO (FA1D0BWP)       0.08 *     0.84 r
+  node0/mult_82/S2_5_1/CO (FA1D0BWP)       0.07 *     0.91 r
+  node0/mult_82/S2_6_1/CO (FA1D0BWP)       0.07 *     0.97 r
+  node0/mult_82/S2_7_1/CO (FA1D0BWP)       0.07 *     1.04 r
+  node0/mult_82/S2_8_1/CO (FA1D0BWP)       0.07 *     1.11 r
+  node0/mult_82/S2_9_1/CO (FA1D0BWP)       0.07 *     1.17 r
+  node0/mult_82/S2_10_1/CO (FA1D0BWP)      0.07 *     1.24 r
+  node0/mult_82/S2_11_1/CO (FA1D0BWP)      0.07 *     1.30 r
+  node0/mult_82/S2_12_1/CO (FA1D0BWP)      0.07 *     1.37 r
+  node0/mult_82/S2_13_1/CO (FA1D0BWP)      0.07 *     1.43 r
+  node0/mult_82/S4_1/S (FA1D0BWP)          0.07 *     1.51 r
+  U4833/Z (XOR2D0BWP)                      0.04 *     1.55 f
+  U6471/Z (CKAN2D0BWP)                     0.03 *     1.58 f
+  U6190/ZN (AOI21D1BWP)                    0.03 *     1.61 r
+  U6379/ZN (OAI21D0BWP)                    0.02 *     1.64 f
+  U9554/Z (AO221D0BWP)                     0.06 *     1.70 f
+  U9553/Z (XOR3D0BWP)                      0.05 *     1.75 r
+  node0/mul5_out_reg[18]/D (DFQD1BWP)      0.00 *     1.75 r
+  data arrival time                                   1.75
 
   clock clk (rise edge)                    1.88       1.88
   clock network delay (propagated)         0.08       1.96
@@ -185,129 +189,14 @@ Information: Percent of Arnoldi-based delays =  2.85%
   data required time                                  1.81
   -----------------------------------------------------------
   data required time                                  1.81
-  data arrival time                                  -1.74
-  -----------------------------------------------------------
-  slack (MET)                                         0.07
-
-
-  Startpoint: dnn_state_reg[1]
-              (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: node1/mul2_out_reg[18]
-            (rising edge-triggered flip-flop clocked by clk)
-  Path Group: clk
-  Path Type: max
-
-  Point                                    Incr       Path
-  -----------------------------------------------------------
-  clock clk (rise edge)                    0.00       0.00
-  clock network delay (propagated)         0.08       0.08
-  dnn_state_reg[1]/CP (DFCNQD1BWP)         0.00       0.08 r
-  dnn_state_reg[1]/Q (DFCNQD1BWP)          0.07       0.16 r
-  U10313/ZN (CKND0BWP)                     0.02 *     0.18 f
-  U5413/ZN (NR3D2BWP)                      0.05 *     0.23 r
-  U19/Z (BUFFD2BWP)                        0.07 *     0.29 r
-  U5832/ZN (NR2XD3BWP)                     0.06 *     0.36 f
-  U10320/ZN (AOI222D4BWP)                  0.13 *     0.49 r
-  U145/ZN (INVD2BWP)                       0.08 *     0.56 f
-  U9075/ZN (CKND2D0BWP)                    0.03 *     0.60 r
-  U3220/Z (XOR2D0BWP)                      0.04 *     0.64 f
-  node1/mult_78/S2_2_2/S (FA1D0BWP)        0.05 *     0.69 r
-  node1/mult_78/S2_3_1/CO (FA1D0BWP)       0.04 *     0.74 r
-  node1/mult_78/S2_4_1/CO (FA1D0BWP)       0.07 *     0.80 r
-  node1/mult_78/S2_5_1/CO (FA1D0BWP)       0.07 *     0.87 r
-  node1/mult_78/S2_6_1/CO (FA1D0BWP)       0.07 *     0.94 r
-  node1/mult_78/S2_7_1/CO (FA1D0BWP)       0.07 *     1.00 r
-  node1/mult_78/S2_8_1/CO (FA1D0BWP)       0.07 *     1.07 r
-  node1/mult_78/S2_9_1/CO (FA1D0BWP)       0.07 *     1.14 r
-  node1/mult_78/S2_10_1/CO (FA1D0BWP)      0.07 *     1.21 r
-  node1/mult_78/S2_11_1/CO (FA1D0BWP)      0.07 *     1.27 r
-  node1/mult_78/S2_12_1/CO (FA1D0BWP)      0.07 *     1.34 r
-  node1/mult_78/S2_13_1/CO (FA1D0BWP)      0.07 *     1.41 r
-  node1/mult_78/S4_1/S (FA1D0BWP)          0.07 *     1.48 r
-  U3459/Z (XOR2D0BWP)                      0.04 *     1.52 f
-  U6528/ZN (NR2D0BWP)                      0.03 *     1.55 r
-  U6193/ZN (CKND0BWP)                      0.02 *     1.57 f
-  U6192/ZN (AOI21D1BWP)                    0.02 *     1.59 r
-  U6390/ZN (OAI21D0BWP)                    0.02 *     1.61 f
-  U9585/Z (AO221D0BWP)                     0.06 *     1.68 f
-  U9584/Z (XOR3D0BWP)                      0.06 *     1.74 r
-  node1/mul2_out_reg[18]/D (DFQD1BWP)      0.00 *     1.74 r
-  data arrival time                                   1.74
-
-  clock clk (rise edge)                    1.88       1.88
-  clock network delay (propagated)         0.08       1.96
-  clock uncertainty                       -0.15       1.81
-  node1/mul2_out_reg[18]/CP (DFQD1BWP)     0.00       1.81 r
-  library setup time                      -0.01       1.80
-  data required time                                  1.80
-  -----------------------------------------------------------
-  data required time                                  1.80
-  data arrival time                                  -1.74
-  -----------------------------------------------------------
-  slack (MET)                                         0.07
-
-
-  Startpoint: dnn_state_reg[1]
-              (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: node3/mul5_out_reg[18]
-            (rising edge-triggered flip-flop clocked by clk)
-  Path Group: clk
-  Path Type: max
-
-  Point                                    Incr       Path
-  -----------------------------------------------------------
-  clock clk (rise edge)                    0.00       0.00
-  clock network delay (propagated)         0.08       0.08
-  dnn_state_reg[1]/CP (DFCNQD1BWP)         0.00       0.08 r
-  dnn_state_reg[1]/Q (DFCNQD1BWP)          0.07       0.16 r
-  U10313/ZN (CKND0BWP)                     0.02 *     0.18 f
-  U5413/ZN (NR3D2BWP)                      0.05 *     0.23 r
-  U19/Z (BUFFD2BWP)                        0.07 *     0.29 r
-  U5832/ZN (NR2XD3BWP)                     0.06 *     0.36 f
-  U10314/ZN (AOI222D4BWP)                  0.12 *     0.48 r
-  U134/Z (BUFFD3BWP)                       0.06 *     0.54 r
-  U135/ZN (INVD3BWP)                       0.04 *     0.58 f
-  U9189/ZN (CKND2D0BWP)                    0.03 *     0.61 r
-  U761/Z (XOR2D0BWP)                       0.04 *     0.65 r
-  node3/mult_82/S2_2_2/CO (FA1D0BWP)       0.04 *     0.69 r
-  node3/mult_82/S2_3_2/CO (FA1D0BWP)       0.07 *     0.76 r
-  node3/mult_82/S2_4_2/CO (FA1D0BWP)       0.07 *     0.83 r
-  node3/mult_82/S2_5_2/CO (FA1D0BWP)       0.07 *     0.90 r
-  node3/mult_82/S2_6_2/CO (FA1D0BWP)       0.07 *     0.97 r
-  node3/mult_82/S2_7_2/CO (FA1D0BWP)       0.07 *     1.04 r
-  node3/mult_82/S2_8_2/CO (FA1D0BWP)       0.07 *     1.11 r
-  node3/mult_82/S2_9_2/CO (FA1D0BWP)       0.07 *     1.17 r
-  node3/mult_82/S2_10_2/CO (FA1D0BWP)      0.07 *     1.24 r
-  node3/mult_82/S2_11_2/CO (FA1D0BWP)      0.07 *     1.31 r
-  node3/mult_82/S2_12_2/CO (FA1D0BWP)      0.07 *     1.37 r
-  node3/mult_82/S2_13_2/S (FA1D0BWP)       0.07 *     1.45 f
-  node3/mult_82/S4_1/S (FA1D0BWP)          0.05 *     1.50 r
-  U1525/Z (XOR2D0BWP)                      0.04 *     1.54 f
-  U6356/ZN (NR2D0BWP)                      0.03 *     1.57 r
-  U6169/ZN (CKND0BWP)                      0.01 *     1.58 f
-  U6168/ZN (AOI21D0BWP)                    0.03 *     1.61 r
-  U6322/ZN (OAI21D0BWP)                    0.02 *     1.64 f
-  U9521/Z (AO221D0BWP)                     0.06 *     1.70 f
-  U9520/Z (XOR3D0BWP)                      0.05 *     1.75 r
-  node3/mul5_out_reg[18]/D (DFQD1BWP)      0.00 *     1.75 r
-  data arrival time                                   1.75
-
-  clock clk (rise edge)                    1.88       1.88
-  clock network delay (propagated)         0.09       1.97
-  clock uncertainty                       -0.15       1.82
-  node3/mul5_out_reg[18]/CP (DFQD1BWP)     0.00       1.82 r
-  library setup time                       0.00       1.81
-  data required time                                  1.81
-  -----------------------------------------------------------
-  data required time                                  1.81
   data arrival time                                  -1.75
   -----------------------------------------------------------
-  slack (MET)                                         0.07
+  slack (MET)                                         0.06
 
 
-  Startpoint: dnn_state_reg[1]
+  Startpoint: dnn_state_reg[0]
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: node0/mul1_out_reg[18]
+  Endpoint: node3/mul3_out_reg[18]
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: max
@@ -316,54 +205,59 @@ Information: Percent of Arnoldi-based delays =  2.85%
   -----------------------------------------------------------
   clock clk (rise edge)                    0.00       0.00
   clock network delay (propagated)         0.08       0.08
-  dnn_state_reg[1]/CP (DFCNQD1BWP)         0.00       0.08 r
-  dnn_state_reg[1]/Q (DFCNQD1BWP)          0.08       0.16 f
-  U10313/ZN (CKND0BWP)                     0.03 *     0.19 r
-  U5413/ZN (NR3D2BWP)                      0.04 *     0.23 f
-  U19/Z (BUFFD2BWP)                        0.06 *     0.29 f
-  U5832/ZN (NR2XD3BWP)                     0.06 *     0.35 r
-  U10281/Z (AO222D2BWP)                    0.08 *     0.44 r
-  U150/Z (DEL025D1BWP)                     0.05 *     0.49 r
-  U151/ZN (INVD2BWP)                       0.05 *     0.54 f
-  U7702/ZN (NR3D0BWP)                      0.04 *     0.58 r
-  node0/mult_77/S1_2_0/CO (FA1D0BWP)       0.07 *     0.65 r
-  node0/mult_77/S1_3_0/CO (FA1D0BWP)       0.07 *     0.72 r
-  node0/mult_77/S1_4_0/CO (FA1D0BWP)       0.07 *     0.78 r
-  node0/mult_77/S1_5_0/CO (FA1D0BWP)       0.07 *     0.85 r
-  node0/mult_77/S1_6_0/CO (FA1D0BWP)       0.07 *     0.92 r
-  node0/mult_77/S1_7_0/CO (FA1D0BWP)       0.07 *     0.99 r
-  node0/mult_77/S1_8_0/CO (FA1D0BWP)       0.07 *     1.05 r
-  node0/mult_77/S1_9_0/CO (FA1D0BWP)       0.07 *     1.12 r
-  node0/mult_77/S1_10_0/CO (FA1D0BWP)      0.07 *     1.19 r
-  node0/mult_77/S1_11_0/CO (FA1D0BWP)      0.07 *     1.25 r
-  node0/mult_77/S1_12_0/CO (FA1D0BWP)      0.07 *     1.32 r
-  node0/mult_77/S1_13_0/CO (FA1D0BWP)      0.07 *     1.39 r
-  node0/mult_77/S4_0/S (FA1D0BWP)          0.08 *     1.47 r
-  U4624/Z (XOR2D0BWP)                      0.06 *     1.52 f
-  U6556/ZN (INR2D0BWP)                     0.03 *     1.56 f
-  U6200/ZN (AOI21D0BWP)                    0.04 *     1.59 r
-  U6394/ZN (OAI21D0BWP)                    0.03 *     1.62 f
-  U9603/Z (AO221D0BWP)                     0.07 *     1.69 f
-  U9602/Z (XOR3D0BWP)                      0.05 *     1.74 r
-  node0/mul1_out_reg[18]/D (DFQD1BWP)      0.00 *     1.74 r
+  dnn_state_reg[0]/CP (DFCNQD1BWP)         0.00       0.08 r
+  dnn_state_reg[0]/Q (DFCNQD1BWP)          0.08       0.16 f
+  U175/Z (CKBD1BWP)                        0.02 *     0.17 f
+  U40/ZN (INVD1BWP)                        0.01 *     0.18 r
+  U187/Z (BUFFD0BWP)                       0.02 *     0.21 r
+  U67/ZN (CKND2BWP)                        0.02 *     0.22 f
+  U2/ZN (CKND12BWP)                        0.02 *     0.25 r
+  U10248/ZN (NR2XD0BWP)                    0.04 *     0.29 f
+  U82/Z (CKBD4BWP)                         0.06 *     0.34 f
+  U10242/ZN (AOI222D4BWP)                  0.11 *     0.45 r
+  U173/Z (BUFFD3BWP)                       0.05 *     0.51 r
+  U174/ZN (INVD2BWP)                       0.05 *     0.56 f
+  U9034/ZN (CKND2D0BWP)                    0.03 *     0.59 r
+  U938/Z (XOR2D0BWP)                       0.05 *     0.63 f
+  node3/mult_79/S2_2_2/S (FA1D0BWP)        0.06 *     0.69 r
+  node3/mult_79/S2_3_1/CO (FA1D0BWP)       0.04 *     0.73 r
+  node3/mult_79/S2_4_1/CO (FA1D0BWP)       0.07 *     0.80 r
+  node3/mult_79/S2_5_1/CO (FA1D0BWP)       0.07 *     0.87 r
+  node3/mult_79/S2_6_1/CO (FA1D0BWP)       0.07 *     0.94 r
+  node3/mult_79/S2_7_1/CO (FA1D0BWP)       0.07 *     1.00 r
+  node3/mult_79/S2_8_1/CO (FA1D0BWP)       0.07 *     1.07 r
+  node3/mult_79/S2_9_1/CO (FA1D0BWP)       0.07 *     1.14 r
+  node3/mult_79/S2_10_1/CO (FA1D0BWP)      0.07 *     1.20 r
+  node3/mult_79/S2_11_1/CO (FA1D0BWP)      0.07 *     1.27 r
+  node3/mult_79/S2_12_1/CO (FA1D0BWP)      0.07 *     1.34 r
+  node3/mult_79/S2_13_1/CO (FA1D0BWP)      0.07 *     1.40 r
+  node3/mult_79/S4_1/S (FA1D0BWP)          0.07 *     1.48 r
+  U1224/Z (XOR2D0BWP)                      0.04 *     1.52 f
+  U6449/ZN (NR2D0BWP)                      0.03 *     1.55 r
+  U6167/ZN (CKND0BWP)                      0.01 *     1.56 f
+  U6166/ZN (AOI21D0BWP)                    0.03 *     1.59 r
+  U6319/ZN (OAI21D0BWP)                    0.03 *     1.62 f
+  U9495/Z (AO221D0BWP)                     0.06 *     1.69 f
+  U9494/Z (XOR3D0BWP)                      0.06 *     1.74 r
+  node3/mul3_out_reg[18]/D (DFQD2BWP)      0.00 *     1.74 r
   data arrival time                                   1.74
 
   clock clk (rise edge)                    1.88       1.88
   clock network delay (propagated)         0.08       1.96
   clock uncertainty                       -0.15       1.81
-  node0/mul1_out_reg[18]/CP (DFQD1BWP)     0.00       1.81 r
-  library setup time                       0.00       1.81
+  node3/mul3_out_reg[18]/CP (DFQD2BWP)     0.00       1.81 r
+  library setup time                      -0.01       1.81
   data required time                                  1.81
   -----------------------------------------------------------
   data required time                                  1.81
   data arrival time                                  -1.74
   -----------------------------------------------------------
-  slack (MET)                                         0.07
+  slack (MET)                                         0.06
 
 
   Startpoint: x3_node2[0]
               (input port clocked by clk)
-  Endpoint: node2/mul8_out_reg[18]
+  Endpoint: node3/mul8_out_reg[18]
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: max
@@ -374,52 +268,53 @@ Information: Percent of Arnoldi-based delays =  2.85%
   clock network delay (ideal)              0.00       0.00
   input external delay                     0.25       0.25 r
   x3_node2[0] (in)                         0.00       0.25 r
-  U10244/ZN (CKND0BWP)                     0.04 *     0.29 f
-  U10262/ZN (NR2D0BWP)                     0.03 *     0.32 r
-  U577/S (FA1D0BWP)                        0.05 *     0.37 f
-  U589/S (FA1D0BWP)                        0.07 *     0.44 r
-  U5937/Z (AO22D0BWP)                      0.06 *     0.50 r
-  U8338/ZN (CKND2D0BWP)                    0.03 *     0.53 f
-  U7479/ZN (NR3D0BWP)                      0.04 *     0.57 r
-  node2/mult_85/S2_2_1/CO (FA1D0BWP)       0.08 *     0.65 r
-  node2/mult_85/S2_3_1/CO (FA1D0BWP)       0.07 *     0.72 r
-  node2/mult_85/S2_4_1/CO (FA1D0BWP)       0.08 *     0.80 r
-  node2/mult_85/S2_5_1/CO (FA1D0BWP)       0.08 *     0.87 r
-  node2/mult_85/S2_6_1/CO (FA1D0BWP)       0.07 *     0.94 r
-  node2/mult_85/S2_7_1/CO (FA1D0BWP)       0.07 *     1.01 r
-  node2/mult_85/S2_8_1/CO (FA1D0BWP)       0.07 *     1.08 r
-  node2/mult_85/S2_9_1/CO (FA1D0BWP)       0.07 *     1.15 r
-  node2/mult_85/S2_10_1/CO (FA1D0BWP)      0.07 *     1.21 r
-  node2/mult_85/S2_11_1/CO (FA1D0BWP)      0.07 *     1.28 r
-  node2/mult_85/S2_12_1/CO (FA1D0BWP)      0.07 *     1.34 r
-  node2/mult_85/S2_13_1/CO (FA1D0BWP)      0.07 *     1.41 r
-  node2/mult_85/S4_1/S (FA1D0BWP)          0.07 *     1.48 r
-  U2457/Z (XOR2D0BWP)                      0.04 *     1.53 f
-  U6571/ZN (NR2D0BWP)                      0.03 *     1.56 r
-  U6231/ZN (CKND0BWP)                      0.01 *     1.57 f
-  U6230/ZN (AOI21D0BWP)                    0.03 *     1.60 r
-  U6459/ZN (OAI21D0BWP)                    0.03 *     1.63 f
-  U9663/Z (AO221D0BWP)                     0.06 *     1.69 f
-  U9662/Z (XOR3D0BWP)                      0.05 *     1.74 r
-  node2/mul8_out_reg[18]/D (DFQD1BWP)      0.00 *     1.74 r
+  U10184/ZN (CKND0BWP)                     0.03 *     0.28 f
+  U10187/ZN (NR2D0BWP)                     0.03 *     0.31 r
+  U558/S (FA1D0BWP)                        0.05 *     0.37 f
+  U580/CO (FA1D0BWP)                       0.06 *     0.42 f
+  U562/S (FA1D0BWP)                        0.05 *     0.47 r
+  U792/ZN (CKND2D0BWP)                     0.01 *     0.48 f
+  U794/Z (CKAN2D0BWP)                      0.06 *     0.54 f
+  U7495/ZN (NR2D0BWP)                      0.04 *     0.58 r
+  node3/mult_85/S2_2_1/CO (FA1D0BWP)       0.08 *     0.66 r
+  node3/mult_85/S2_3_1/CO (FA1D0BWP)       0.07 *     0.73 r
+  node3/mult_85/S2_4_1/CO (FA1D0BWP)       0.07 *     0.80 r
+  node3/mult_85/S2_5_1/CO (FA1D0BWP)       0.07 *     0.86 r
+  node3/mult_85/S2_6_1/CO (FA1D0BWP)       0.07 *     0.93 r
+  node3/mult_85/S2_7_1/CO (FA1D0BWP)       0.07 *     1.00 r
+  node3/mult_85/S2_8_1/CO (FA1D0BWP)       0.07 *     1.07 r
+  node3/mult_85/S2_9_1/CO (FA1D0BWP)       0.07 *     1.14 r
+  node3/mult_85/S2_10_1/CO (FA1D0BWP)      0.07 *     1.21 r
+  node3/mult_85/S2_11_1/CO (FA1D0BWP)      0.07 *     1.28 r
+  node3/mult_85/S2_12_1/CO (FA1D0BWP)      0.07 *     1.34 r
+  node3/mult_85/S2_13_1/CO (FA1D0BWP)      0.07 *     1.41 r
+  node3/mult_85/S4_1/S (FA1D0BWP)          0.07 *     1.49 r
+  U1358/Z (XOR2D0BWP)                      0.04 *     1.53 f
+  U6552/ZN (NR2D0BWP)                      0.03 *     1.56 r
+  U6219/ZN (CKND0BWP)                      0.01 *     1.57 f
+  U6218/ZN (AOI21D0BWP)                    0.03 *     1.60 r
+  U6445/ZN (OAI21D0BWP)                    0.03 *     1.63 f
+  U9616/Z (AO221D0BWP)                     0.06 *     1.69 f
+  U9615/Z (XOR3D0BWP)                      0.05 *     1.74 r
+  node3/mul8_out_reg[18]/D (DFQD1BWP)      0.00 *     1.74 r
   data arrival time                                   1.74
 
   clock clk (rise edge)                    1.88       1.88
-  clock network delay (propagated)         0.09       1.97
-  clock uncertainty                       -0.15       1.82
-  node2/mul8_out_reg[18]/CP (DFQD1BWP)     0.00       1.82 r
+  clock network delay (propagated)         0.08       1.96
+  clock uncertainty                       -0.15       1.81
+  node3/mul8_out_reg[18]/CP (DFQD1BWP)     0.00       1.81 r
   library setup time                      -0.01       1.81
   data required time                                  1.81
   -----------------------------------------------------------
   data required time                                  1.81
   data arrival time                                  -1.74
   -----------------------------------------------------------
-  slack (MET)                                         0.07
+  slack (MET)                                         0.06
 
 
-  Startpoint: dnn_state_reg[1]
-              (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: node0/mul2_out_reg[18]
+  Startpoint: x1_node2[0]
+              (input port clocked by clk)
+  Endpoint: node3/mul6_out_reg[18]
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: max
@@ -427,53 +322,54 @@ Information: Percent of Arnoldi-based delays =  2.85%
   Point                                    Incr       Path
   -----------------------------------------------------------
   clock clk (rise edge)                    0.00       0.00
-  clock network delay (propagated)         0.08       0.08
-  dnn_state_reg[1]/CP (DFCNQD1BWP)         0.00       0.08 r
-  dnn_state_reg[1]/Q (DFCNQD1BWP)          0.07       0.16 r
-  U10313/ZN (CKND0BWP)                     0.02 *     0.18 f
-  U5413/ZN (NR3D2BWP)                      0.05 *     0.23 r
-  U19/Z (BUFFD2BWP)                        0.07 *     0.29 r
-  U5832/ZN (NR2XD3BWP)                     0.06 *     0.36 f
-  U10320/ZN (AOI222D4BWP)                  0.13 *     0.49 r
-  U145/ZN (INVD2BWP)                       0.08 *     0.56 f
-  U9079/ZN (ND2D0BWP)                      0.03 *     0.60 r
-  U4322/Z (XOR2D0BWP)                      0.03 *     0.63 r
-  node0/mult_78/S2_2_2/CO (FA1D0BWP)       0.04 *     0.67 r
-  node0/mult_78/S2_3_2/CO (FA1D0BWP)       0.07 *     0.74 r
-  node0/mult_78/S2_4_2/CO (FA1D0BWP)       0.07 *     0.81 r
-  node0/mult_78/S2_5_2/CO (FA1D0BWP)       0.07 *     0.88 r
-  node0/mult_78/S2_6_2/CO (FA1D0BWP)       0.07 *     0.94 r
-  node0/mult_78/S2_7_2/CO (FA1D0BWP)       0.07 *     1.01 r
-  node0/mult_78/S2_8_2/CO (FA1D0BWP)       0.07 *     1.08 r
-  node0/mult_78/S2_9_2/CO (FA1D0BWP)       0.07 *     1.15 r
-  node0/mult_78/S2_10_2/CO (FA1D0BWP)      0.07 *     1.22 r
-  node0/mult_78/S2_11_2/CO (FA1D0BWP)      0.07 *     1.29 r
-  node0/mult_78/S2_12_2/CO (FA1D0BWP)      0.07 *     1.35 r
-  node0/mult_78/S2_13_2/S (FA1D0BWP)       0.07 *     1.43 f
-  node0/mult_78/S4_1/S (FA1D0BWP)          0.06 *     1.48 r
-  U4571/Z (XOR2D0BWP)                      0.04 *     1.53 f
-  U6498/Z (CKAN2D0BWP)                     0.03 *     1.55 f
-  U6212/ZN (AOI21D0BWP)                    0.04 *     1.59 r
-  U6430/ZN (OAI21D0BWP)                    0.03 *     1.62 f
-  U9624/Z (AO221D0BWP)                     0.06 *     1.68 f
-  U9623/Z (XOR3D0BWP)                      0.05 *     1.74 r
-  node0/mul2_out_reg[18]/D (DFQD1BWP)      0.00 *     1.74 r
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.25       0.25 r
+  x1_node2[0] (in)                         0.00       0.25 r
+  U10164/ZN (CKND0BWP)                     0.03 *     0.28 f
+  U10170/ZN (NR2D0BWP)                     0.03 *     0.31 r
+  U570/CO (FA1D0BWP)                       0.04 *     0.35 r
+  U566/S (FA1D0BWP)                        0.05 *     0.40 f
+  U574/S (FA1D0BWP)                        0.06 *     0.47 r
+  U766/ZN (CKND2D0BWP)                     0.02 *     0.48 f
+  U768/Z (CKAN2D1BWP)                      0.05 *     0.53 f
+  U7050/ZN (NR2D0BWP)                      0.04 *     0.58 r
+  node3/mult_83/S2_2_1/CO (FA1D0BWP)       0.08 *     0.66 r
+  node3/mult_83/S2_3_1/CO (FA1D0BWP)       0.07 *     0.73 r
+  node3/mult_83/S2_4_1/CO (FA1D0BWP)       0.07 *     0.79 r
+  node3/mult_83/S2_5_1/CO (FA1D0BWP)       0.07 *     0.86 r
+  node3/mult_83/S2_6_1/CO (FA1D0BWP)       0.07 *     0.93 r
+  node3/mult_83/S2_7_1/CO (FA1D0BWP)       0.07 *     1.00 r
+  node3/mult_83/S2_8_1/CO (FA1D0BWP)       0.07 *     1.07 r
+  node3/mult_83/S2_9_1/CO (FA1D0BWP)       0.07 *     1.13 r
+  node3/mult_83/S2_10_1/CO (FA1D0BWP)      0.07 *     1.20 r
+  node3/mult_83/S2_11_1/CO (FA1D0BWP)      0.07 *     1.27 r
+  node3/mult_83/S2_12_1/CO (FA1D0BWP)      0.07 *     1.34 r
+  node3/mult_83/S2_13_1/CO (FA1D0BWP)      0.07 *     1.40 r
+  node3/mult_83/S4_1/S (FA1D0BWP)          0.08 *     1.48 r
+  U1464/Z (XOR2D0BWP)                      0.04 *     1.52 f
+  U6335/ZN (NR2D0BWP)                      0.03 *     1.55 r
+  U6163/ZN (CKND0BWP)                      0.01 *     1.56 f
+  U6162/ZN (AOI21D0BWP)                    0.03 *     1.59 r
+  U6308/ZN (OAI21D0BWP)                    0.02 *     1.62 f
+  U9480/Z (AO221D0BWP)                     0.06 *     1.68 f
+  U9479/Z (XOR3D0BWP)                      0.06 *     1.74 r
+  node3/mul6_out_reg[18]/D (DFQD1BWP)      0.00 *     1.74 r
   data arrival time                                   1.74
 
   clock clk (rise edge)                    1.88       1.88
   clock network delay (propagated)         0.08       1.96
   clock uncertainty                       -0.15       1.81
-  node0/mul2_out_reg[18]/CP (DFQD1BWP)     0.00       1.81 r
-  library setup time                       0.00       1.81
-  data required time                                  1.81
+  node3/mul6_out_reg[18]/CP (DFQD1BWP)     0.00       1.81 r
+  library setup time                      -0.01       1.80
+  data required time                                  1.80
   -----------------------------------------------------------
-  data required time                                  1.81
+  data required time                                  1.80
   data arrival time                                  -1.74
   -----------------------------------------------------------
-  slack (MET)                                         0.07
+  slack (MET)                                         0.06
 
 
-  Startpoint: dnn_state_reg[1]
+  Startpoint: dnn_state_reg[0]
               (rising edge-triggered flip-flop clocked by clk)
   Endpoint: node2/mul5_out_reg[18]
             (rising edge-triggered flip-flop clocked by clk)
@@ -484,44 +380,46 @@ Information: Percent of Arnoldi-based delays =  2.85%
   -----------------------------------------------------------
   clock clk (rise edge)                    0.00       0.00
   clock network delay (propagated)         0.08       0.08
-  dnn_state_reg[1]/CP (DFCNQD1BWP)         0.00       0.08 r
-  dnn_state_reg[1]/Q (DFCNQD1BWP)          0.07       0.16 r
-  U10313/ZN (CKND0BWP)                     0.02 *     0.18 f
-  U5413/ZN (NR3D2BWP)                      0.05 *     0.23 r
-  U19/Z (BUFFD2BWP)                        0.07 *     0.29 r
-  U5832/ZN (NR2XD3BWP)                     0.06 *     0.36 f
-  U10314/ZN (AOI222D4BWP)                  0.12 *     0.48 r
-  U134/Z (BUFFD3BWP)                       0.06 *     0.54 r
-  U135/ZN (INVD3BWP)                       0.04 *     0.58 f
-  U9181/ZN (CKND2D0BWP)                    0.03 *     0.61 r
-  U1851/Z (XOR2D0BWP)                      0.04 *     0.66 f
-  node2/mult_82/S2_2_2/S (FA1D0BWP)        0.05 *     0.71 r
-  node2/mult_82/S2_3_1/CO (FA1D0BWP)       0.04 *     0.75 r
-  node2/mult_82/S2_4_1/CO (FA1D0BWP)       0.07 *     0.82 r
-  node2/mult_82/S2_5_1/CO (FA1D0BWP)       0.07 *     0.88 r
-  node2/mult_82/S2_6_1/CO (FA1D0BWP)       0.07 *     0.95 r
-  node2/mult_82/S2_7_1/CO (FA1D0BWP)       0.07 *     1.01 r
-  node2/mult_82/S2_8_1/CO (FA1D0BWP)       0.07 *     1.08 r
-  node2/mult_82/S2_9_1/CO (FA1D0BWP)       0.07 *     1.15 r
-  node2/mult_82/S2_10_1/CO (FA1D0BWP)      0.07 *     1.21 r
-  node2/mult_82/S2_11_1/CO (FA1D0BWP)      0.07 *     1.28 r
-  node2/mult_82/S2_12_1/CO (FA1D0BWP)      0.07 *     1.35 r
-  node2/mult_82/S2_13_1/CO (FA1D0BWP)      0.07 *     1.42 r
-  node2/mult_82/S4_1/S (FA1D0BWP)          0.07 *     1.49 r
-  U2615/Z (XOR2D0BWP)                      0.04 *     1.53 f
-  U6566/ZN (NR2D0BWP)                      0.03 *     1.56 r
-  U6221/ZN (CKND0BWP)                      0.02 *     1.57 f
-  U6220/ZN (AOI21D0BWP)                    0.03 *     1.60 r
-  U6454/ZN (OAI21D0BWP)                    0.03 *     1.63 f
-  U9645/Z (AO221D0BWP)                     0.06 *     1.69 f
-  U9644/Z (XOR3D0BWP)                      0.05 *     1.74 r
+  dnn_state_reg[0]/CP (DFCNQD1BWP)         0.00       0.08 r
+  dnn_state_reg[0]/Q (DFCNQD1BWP)          0.08       0.16 f
+  U175/Z (CKBD1BWP)                        0.02 *     0.17 f
+  U40/ZN (INVD1BWP)                        0.01 *     0.18 r
+  U187/Z (BUFFD0BWP)                       0.02 *     0.21 r
+  U67/ZN (CKND2BWP)                        0.02 *     0.22 f
+  U2/ZN (CKND12BWP)                        0.02 *     0.25 r
+  U10248/ZN (NR2XD0BWP)                    0.04 *     0.29 f
+  U82/Z (CKBD4BWP)                         0.06 *     0.34 f
+  U10238/ZN (AOI222D4BWP)                  0.12 *     0.46 r
+  U108/Z (BUFFD3BWP)                       0.06 *     0.53 r
+  U109/ZN (CKND2BWP)                       0.05 *     0.58 f
+  U9014/ZN (CKND2D0BWP)                    0.04 *     0.61 r
+  U1846/Z (XOR2D0BWP)                      0.04 *     0.65 r
+  node2/mult_82/S2_2_2/CO (FA1D0BWP)       0.04 *     0.69 r
+  node2/mult_82/S2_3_2/CO (FA1D0BWP)       0.07 *     0.76 r
+  node2/mult_82/S2_4_2/CO (FA1D0BWP)       0.07 *     0.83 r
+  node2/mult_82/S2_5_2/CO (FA1D0BWP)       0.07 *     0.90 r
+  node2/mult_82/S2_6_2/CO (FA1D0BWP)       0.07 *     0.97 r
+  node2/mult_82/S2_7_2/CO (FA1D0BWP)       0.07 *     1.04 r
+  node2/mult_82/S2_8_2/CO (FA1D0BWP)       0.07 *     1.10 r
+  node2/mult_82/S2_9_2/CO (FA1D0BWP)       0.07 *     1.17 r
+  node2/mult_82/S2_10_2/CO (FA1D0BWP)      0.07 *     1.24 r
+  node2/mult_82/S2_11_2/CO (FA1D0BWP)      0.07 *     1.30 r
+  node2/mult_82/S2_12_2/CO (FA1D0BWP)      0.07 *     1.37 r
+  node2/mult_82/S2_13_2/CO (FA1D0BWP)      0.07 *     1.44 r
+  node2/mult_82/S4_2/S (FA1D0BWP)          0.08 *     1.51 f
+  U2606/ZN (XNR2D0BWP)                     0.05 *     1.56 r
+  U6427/ZN (CKND0BWP)                      0.02 *     1.58 f
+  U6411/ZN (CKND2D0BWP)                    0.02 *     1.60 r
+  U6419/ZN (OAI21D0BWP)                    0.03 *     1.63 f
+  U9590/Z (AO221D0BWP)                     0.06 *     1.69 f
+  U9589/Z (XOR3D0BWP)                      0.05 *     1.74 r
   node2/mul5_out_reg[18]/D (DFQD1BWP)      0.00 *     1.74 r
   data arrival time                                   1.74
 
   clock clk (rise edge)                    1.88       1.88
-  clock network delay (propagated)         0.09       1.97
-  clock uncertainty                       -0.15       1.82
-  node2/mul5_out_reg[18]/CP (DFQD1BWP)     0.00       1.82 r
+  clock network delay (propagated)         0.08       1.96
+  clock uncertainty                       -0.15       1.81
+  node2/mul5_out_reg[18]/CP (DFQD1BWP)     0.00       1.81 r
   library setup time                       0.00       1.81
   data required time                                  1.81
   -----------------------------------------------------------
@@ -544,95 +442,41 @@ Information: Percent of Arnoldi-based delays =  2.85%
   clock network delay (ideal)              0.00       0.00
   input external delay                     0.25       0.25 r
   x3_node2[0] (in)                         0.00       0.25 r
-  U10244/ZN (CKND0BWP)                     0.04 *     0.29 f
-  U10245/ZN (NR2D0BWP)                     0.03 *     0.32 r
-  U580/S (FA1D0BWP)                        0.05 *     0.37 f
-  U593/S (FA1D0BWP)                        0.07 *     0.44 r
-  U5928/Z (AO22D0BWP)                      0.06 *     0.51 r
-  U8467/ZN (CKND2D0BWP)                    0.04 *     0.55 f
-  U7597/ZN (NR3D0BWP)                      0.03 *     0.58 r
-  node3/mult_80/S1_2_0/CO (FA1D0BWP)       0.07 *     0.66 r
-  node3/mult_80/S1_3_0/CO (FA1D0BWP)       0.07 *     0.73 r
-  node3/mult_80/S1_4_0/CO (FA1D0BWP)       0.07 *     0.80 r
-  node3/mult_80/S1_5_0/CO (FA1D0BWP)       0.07 *     0.86 r
-  node3/mult_80/S1_6_0/CO (FA1D0BWP)       0.07 *     0.93 r
-  node3/mult_80/S1_7_0/CO (FA1D0BWP)       0.07 *     1.00 r
-  node3/mult_80/S1_8_0/CO (FA1D0BWP)       0.07 *     1.07 r
-  node3/mult_80/S1_9_0/CO (FA1D0BWP)       0.07 *     1.14 r
-  node3/mult_80/S1_10_0/CO (FA1D0BWP)      0.07 *     1.21 r
-  node3/mult_80/S1_11_0/CO (FA1D0BWP)      0.07 *     1.28 r
-  node3/mult_80/S1_12_0/CO (FA1D0BWP)      0.07 *     1.35 r
-  node3/mult_80/S1_13_0/CO (FA1D0BWP)      0.07 *     1.41 r
-  node3/mult_80/S4_0/S (FA1D0BWP)          0.07 *     1.49 f
-  U1192/Z (XOR2D0BWP)                      0.05 *     1.54 f
-  U6479/ZN (INR2D0BWP)                     0.03 *     1.57 f
-  U6182/ZN (AOI21D0BWP)                    0.04 *     1.60 r
-  U6345/ZN (OAI21D0BWP)                    0.03 *     1.63 f
-  U9547/Z (AO221D0BWP)                     0.06 *     1.69 f
-  U9546/Z (XOR3D0BWP)                      0.05 *     1.74 r
+  U10184/ZN (CKND0BWP)                     0.03 *     0.28 f
+  U10187/ZN (NR2D0BWP)                     0.03 *     0.31 r
+  U558/S (FA1D0BWP)                        0.05 *     0.37 f
+  U580/CO (FA1D0BWP)                       0.06 *     0.42 f
+  U562/S (FA1D0BWP)                        0.05 *     0.47 r
+  U792/ZN (CKND2D0BWP)                     0.01 *     0.48 f
+  U794/Z (CKAN2D0BWP)                      0.06 *     0.54 f
+  U7509/ZN (NR2D0BWP)                      0.04 *     0.58 r
+  node3/mult_80/S2_2_1/CO (FA1D0BWP)       0.08 *     0.66 r
+  node3/mult_80/S2_3_1/CO (FA1D0BWP)       0.07 *     0.73 r
+  node3/mult_80/S2_4_1/CO (FA1D0BWP)       0.07 *     0.80 r
+  node3/mult_80/S2_5_1/CO (FA1D0BWP)       0.07 *     0.86 r
+  node3/mult_80/S2_6_1/CO (FA1D0BWP)       0.07 *     0.93 r
+  node3/mult_80/S2_7_1/CO (FA1D0BWP)       0.07 *     1.00 r
+  node3/mult_80/S2_8_1/CO (FA1D0BWP)       0.07 *     1.07 r
+  node3/mult_80/S2_9_1/CO (FA1D0BWP)       0.07 *     1.14 r
+  node3/mult_80/S2_10_1/CO (FA1D0BWP)      0.07 *     1.21 r
+  node3/mult_80/S2_11_1/CO (FA1D0BWP)      0.07 *     1.28 r
+  node3/mult_80/S2_12_1/CO (FA1D0BWP)      0.07 *     1.35 r
+  node3/mult_80/S2_13_1/CO (FA1D0BWP)      0.07 *     1.42 r
+  node3/mult_80/S4_1/S (FA1D0BWP)          0.07 *     1.49 r
+  U1178/Z (XOR2D0BWP)                      0.04 *     1.53 f
+  U6587/ZN (NR2D0BWP)                      0.03 *     1.56 r
+  U6221/ZN (CKND0BWP)                      0.01 *     1.57 f
+  U6220/ZN (AOI21D0BWP)                    0.03 *     1.60 r
+  U6455/ZN (OAI21D0BWP)                    0.03 *     1.63 f
+  U9621/Z (AO221D0BWP)                     0.06 *     1.69 f
+  U9620/Z (XOR3D0BWP)                      0.05 *     1.74 r
   node3/mul4_out_reg[18]/D (DFQD1BWP)      0.00 *     1.74 r
   data arrival time                                   1.74
 
   clock clk (rise edge)                    1.88       1.88
-  clock network delay (propagated)         0.09       1.97
-  clock uncertainty                       -0.15       1.82
-  node3/mul4_out_reg[18]/CP (DFQD1BWP)     0.00       1.82 r
-  library setup time                      -0.01       1.81
-  data required time                                  1.81
-  -----------------------------------------------------------
-  data required time                                  1.81
-  data arrival time                                  -1.74
-  -----------------------------------------------------------
-  slack (MET)                                         0.07
-
-
-  Startpoint: x1_node1[0]
-              (input port clocked by clk)
-  Endpoint: node0/mul6_out_reg[18]
-            (rising edge-triggered flip-flop clocked by clk)
-  Path Group: clk
-  Path Type: max
-
-  Point                                    Incr       Path
-  -----------------------------------------------------------
-  clock clk (rise edge)                    0.00       0.00
-  clock network delay (ideal)              0.00       0.00
-  input external delay                     0.25       0.25 r
-  x1_node1[0] (in)                         0.00       0.25 r
-  U10253/ZN (CKND0BWP)                     0.02 *     0.27 f
-  U10249/ZN (NR2D0BWP)                     0.03 *     0.30 r
-  U550/S (FA1D0BWP)                        0.06 *     0.35 f
-  U563/S (FA1D0BWP)                        0.07 *     0.42 r
-  U790/ZN (CKND2D0BWP)                     0.02 *     0.44 f
-  U792/ZN (CKND2D1BWP)                     0.05 *     0.49 r
-  U8827/ZN (CKND2D0BWP)                    0.04 *     0.53 f
-  U7827/ZN (NR3D0BWP)                      0.03 *     0.56 r
-  node0/mult_83/S1_2_0/CO (FA1D0BWP)       0.07 *     0.64 r
-  node0/mult_83/S1_3_0/CO (FA1D0BWP)       0.07 *     0.70 r
-  node0/mult_83/S1_4_0/CO (FA1D0BWP)       0.07 *     0.77 r
-  node0/mult_83/S1_5_0/CO (FA1D0BWP)       0.07 *     0.85 r
-  node0/mult_83/S1_6_0/CO (FA1D0BWP)       0.07 *     0.92 r
-  node0/mult_83/S1_7_0/CO (FA1D0BWP)       0.07 *     0.99 r
-  node0/mult_83/S1_8_0/CO (FA1D0BWP)       0.07 *     1.06 r
-  node0/mult_83/S1_9_0/CO (FA1D0BWP)       0.07 *     1.13 r
-  node0/mult_83/S1_10_0/CO (FA1D0BWP)      0.07 *     1.20 r
-  node0/mult_83/S1_11_0/CO (FA1D0BWP)      0.07 *     1.27 r
-  node0/mult_83/S1_12_0/CO (FA1D0BWP)      0.07 *     1.34 r
-  node0/mult_83/S1_13_0/CO (FA1D0BWP)      0.07 *     1.41 r
-  node0/mult_83/S4_0/S (FA1D0BWP)          0.07 *     1.48 f
-  U4775/Z (XOR2D0BWP)                      0.05 *     1.53 f
-  U6563/ZN (INR2D0BWP)                     0.03 *     1.56 f
-  U6214/ZN (AOI21D0BWP)                    0.04 *     1.60 r
-  U6431/ZN (OAI21D0BWP)                    0.03 *     1.62 f
-  U9627/Z (AO221D0BWP)                     0.06 *     1.69 f
-  U9626/Z (XOR3D0BWP)                      0.05 *     1.74 r
-  node0/mul6_out_reg[18]/D (DFQD1BWP)      0.00 *     1.74 r
-  data arrival time                                   1.74
-
-  clock clk (rise edge)                    1.88       1.88
   clock network delay (propagated)         0.08       1.96
   clock uncertainty                       -0.15       1.81
-  node0/mul6_out_reg[18]/CP (DFQD1BWP)     0.00       1.81 r
+  node3/mul4_out_reg[18]/CP (DFQD1BWP)     0.00       1.81 r
   library setup time                       0.00       1.81
   data required time                                  1.81
   -----------------------------------------------------------
@@ -642,9 +486,9 @@ Information: Percent of Arnoldi-based delays =  2.85%
   slack (MET)                                         0.07
 
 
-  Startpoint: dnn_state_reg[1]
+  Startpoint: dnn_state_reg[0]
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: node2/mul2_out_reg[18]
+  Endpoint: node1/mul3_out_reg[18]
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: max
@@ -653,225 +497,59 @@ Information: Percent of Arnoldi-based delays =  2.85%
   -----------------------------------------------------------
   clock clk (rise edge)                    0.00       0.00
   clock network delay (propagated)         0.08       0.08
-  dnn_state_reg[1]/CP (DFCNQD1BWP)         0.00       0.08 r
-  dnn_state_reg[1]/Q (DFCNQD1BWP)          0.07       0.16 r
-  U10313/ZN (CKND0BWP)                     0.02 *     0.18 f
-  U5413/ZN (NR3D2BWP)                      0.05 *     0.23 r
-  U19/Z (BUFFD2BWP)                        0.07 *     0.29 r
-  U5832/ZN (NR2XD3BWP)                     0.06 *     0.36 f
-  U10320/ZN (AOI222D4BWP)                  0.13 *     0.49 r
-  U145/ZN (INVD2BWP)                       0.08 *     0.56 f
-  U9187/ZN (CKND2D0BWP)                    0.04 *     0.60 r
-  U2130/Z (XOR2D0BWP)                      0.04 *     0.64 f
-  node2/mult_78/S2_2_2/S (FA1D0BWP)        0.05 *     0.69 r
-  node2/mult_78/S2_3_1/CO (FA1D0BWP)       0.04 *     0.73 r
-  node2/mult_78/S2_4_1/CO (FA1D0BWP)       0.07 *     0.80 r
-  node2/mult_78/S2_5_1/CO (FA1D0BWP)       0.07 *     0.86 r
-  node2/mult_78/S2_6_1/CO (FA1D0BWP)       0.07 *     0.93 r
-  node2/mult_78/S2_7_1/CO (FA1D0BWP)       0.07 *     1.00 r
-  node2/mult_78/S2_8_1/CO (FA1D0BWP)       0.07 *     1.07 r
-  node2/mult_78/S2_9_1/CO (FA1D0BWP)       0.07 *     1.14 r
-  node2/mult_78/S2_10_1/CO (FA1D0BWP)      0.07 *     1.21 r
-  node2/mult_78/S2_11_1/CO (FA1D0BWP)      0.07 *     1.28 r
-  node2/mult_78/S2_12_1/CO (FA1D0BWP)      0.07 *     1.34 r
-  node2/mult_78/S2_13_1/CO (FA1D0BWP)      0.07 *     1.41 r
-  node2/mult_78/S4_1/S (FA1D0BWP)          0.07 *     1.48 r
-  U2369/Z (XOR2D0BWP)                      0.04 *     1.52 f
-  U6568/ZN (NR2D0BWP)                      0.03 *     1.55 r
-  U6225/ZN (CKND0BWP)                      0.01 *     1.56 f
-  U6224/ZN (AOI21D0BWP)                    0.03 *     1.59 r
-  U6456/ZN (OAI21D0BWP)                    0.03 *     1.62 f
-  U9648/Z (AO221D0BWP)                     0.06 *     1.68 f
-  U9647/Z (XOR3D0BWP)                      0.06 *     1.74 r
-  node2/mul2_out_reg[18]/D (DFQD1BWP)      0.00 *     1.74 r
+  dnn_state_reg[0]/CP (DFCNQD1BWP)         0.00       0.08 r
+  dnn_state_reg[0]/Q (DFCNQD1BWP)          0.08       0.16 f
+  U175/Z (CKBD1BWP)                        0.02 *     0.17 f
+  U40/ZN (INVD1BWP)                        0.01 *     0.18 r
+  U187/Z (BUFFD0BWP)                       0.02 *     0.21 r
+  U67/ZN (CKND2BWP)                        0.02 *     0.22 f
+  U2/ZN (CKND12BWP)                        0.02 *     0.25 r
+  U10248/ZN (NR2XD0BWP)                    0.04 *     0.29 f
+  U82/Z (CKBD4BWP)                         0.06 *     0.34 f
+  U10242/ZN (AOI222D4BWP)                  0.11 *     0.45 r
+  U173/Z (BUFFD3BWP)                       0.05 *     0.51 r
+  U174/ZN (INVD2BWP)                       0.05 *     0.56 f
+  U8977/ZN (CKND2D0BWP)                    0.03 *     0.59 r
+  U3126/Z (XOR2D0BWP)                      0.04 *     0.63 f
+  node1/mult_79/S2_2_2/S (FA1D0BWP)        0.05 *     0.68 r
+  node1/mult_79/S2_3_1/CO (FA1D0BWP)       0.04 *     0.73 r
+  node1/mult_79/S2_4_1/CO (FA1D0BWP)       0.07 *     0.80 r
+  node1/mult_79/S2_5_1/CO (FA1D0BWP)       0.07 *     0.87 r
+  node1/mult_79/S2_6_1/CO (FA1D0BWP)       0.07 *     0.93 r
+  node1/mult_79/S2_7_1/CO (FA1D0BWP)       0.07 *     1.00 r
+  node1/mult_79/S2_8_1/CO (FA1D0BWP)       0.07 *     1.07 r
+  node1/mult_79/S2_9_1/CO (FA1D0BWP)       0.07 *     1.14 r
+  node1/mult_79/S2_10_1/CO (FA1D0BWP)      0.07 *     1.21 r
+  node1/mult_79/S2_11_1/CO (FA1D0BWP)      0.07 *     1.27 r
+  node1/mult_79/S2_12_1/CO (FA1D0BWP)      0.07 *     1.34 r
+  node1/mult_79/S2_13_1/CO (FA1D0BWP)      0.07 *     1.41 r
+  node1/mult_79/S4_1/S (FA1D0BWP)          0.08 *     1.48 r
+  U3412/Z (XOR2D0BWP)                      0.04 *     1.53 f
+  U6506/ZN (NR2D0BWP)                      0.03 *     1.55 r
+  U6179/ZN (CKND0BWP)                      0.01 *     1.57 f
+  U6178/ZN (AOI21D0BWP)                    0.03 *     1.60 r
+  U6373/ZN (OAI21D0BWP)                    0.03 *     1.63 f
+  U9545/Z (AO221D0BWP)                     0.06 *     1.69 f
+  U9544/Z (XOR3D0BWP)                      0.05 *     1.74 r
+  node1/mul3_out_reg[18]/D (DFQD1BWP)      0.00 *     1.74 r
   data arrival time                                   1.74
-
-  clock clk (rise edge)                    1.88       1.88
-  clock network delay (propagated)         0.09       1.97
-  clock uncertainty                       -0.15       1.82
-  node2/mul2_out_reg[18]/CP (DFQD1BWP)     0.00       1.82 r
-  library setup time                      -0.01       1.81
-  data required time                                  1.81
-  -----------------------------------------------------------
-  data required time                                  1.81
-  data arrival time                                  -1.74
-  -----------------------------------------------------------
-  slack (MET)                                         0.07
-
-
-  Startpoint: dnn_state_reg[1]
-              (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: node2/mul4_out_reg[18]
-            (rising edge-triggered flip-flop clocked by clk)
-  Path Group: clk
-  Path Type: max
-
-  Point                                    Incr       Path
-  -----------------------------------------------------------
-  clock clk (rise edge)                    0.00       0.00
-  clock network delay (propagated)         0.08       0.08
-  dnn_state_reg[1]/CP (DFCNQD1BWP)         0.00       0.08 r
-  dnn_state_reg[1]/Q (DFCNQD1BWP)          0.07       0.16 r
-  U10313/ZN (CKND0BWP)                     0.02 *     0.18 f
-  U5413/ZN (NR3D2BWP)                      0.05 *     0.23 r
-  U19/Z (BUFFD2BWP)                        0.07 *     0.29 r
-  U5832/ZN (NR2XD3BWP)                     0.06 *     0.36 f
-  U10321/ZN (AOI222D4BWP)                  0.11 *     0.47 r
-  U115/Z (CKBD4BWP)                        0.05 *     0.52 r
-  U116/ZN (INVD2BWP)                       0.04 *     0.56 f
-  U9188/ZN (CKND2D0BWP)                    0.03 *     0.59 r
-  U1944/Z (XOR2D0BWP)                      0.04 *     0.63 r
-  node2/mult_80/S2_2_2/CO (FA1D0BWP)       0.04 *     0.67 r
-  node2/mult_80/S2_3_2/CO (FA1D0BWP)       0.07 *     0.74 r
-  node2/mult_80/S2_4_2/CO (FA1D0BWP)       0.07 *     0.81 r
-  node2/mult_80/S2_5_2/CO (FA1D0BWP)       0.07 *     0.88 r
-  node2/mult_80/S2_6_2/CO (FA1D0BWP)       0.07 *     0.95 r
-  node2/mult_80/S2_7_2/CO (FA1D0BWP)       0.07 *     1.02 r
-  node2/mult_80/S2_8_2/CO (FA1D0BWP)       0.07 *     1.09 r
-  node2/mult_80/S2_9_2/CO (FA1D0BWP)       0.07 *     1.16 r
-  node2/mult_80/S2_10_2/CO (FA1D0BWP)      0.07 *     1.23 r
-  node2/mult_80/S2_11_2/CO (FA1D0BWP)      0.07 *     1.29 r
-  node2/mult_80/S2_12_2/CO (FA1D0BWP)      0.07 *     1.36 r
-  node2/mult_80/S2_13_2/CO (FA1D0BWP)      0.07 *     1.43 r
-  node2/mult_80/S4_2/S (FA1D0BWP)          0.08 *     1.51 f
-  U2270/ZN (XNR2D0BWP)                     0.05 *     1.55 r
-  U6465/ZN (CKND0BWP)                      0.02 *     1.57 f
-  U6449/ZN (CKND2D0BWP)                    0.02 *     1.59 r
-  U6457/ZN (OAI21D0BWP)                    0.03 *     1.62 f
-  U9660/Z (AO221D0BWP)                     0.06 *     1.68 f
-  U9659/Z (XOR3D0BWP)                      0.06 *     1.74 r
-  node2/mul4_out_reg[18]/D (DFQD1BWP)      0.00 *     1.74 r
-  data arrival time                                   1.74
-
-  clock clk (rise edge)                    1.88       1.88
-  clock network delay (propagated)         0.09       1.97
-  clock uncertainty                       -0.15       1.82
-  node2/mul4_out_reg[18]/CP (DFQD1BWP)     0.00       1.82 r
-  library setup time                      -0.01       1.81
-  data required time                                  1.81
-  -----------------------------------------------------------
-  data required time                                  1.81
-  data arrival time                                  -1.74
-  -----------------------------------------------------------
-  slack (MET)                                         0.07
-
-
-  Startpoint: dnn_state_reg[1]
-              (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: node3/mul6_out_reg[18]
-            (rising edge-triggered flip-flop clocked by clk)
-  Path Group: clk
-  Path Type: max
-
-  Point                                    Incr       Path
-  -----------------------------------------------------------
-  clock clk (rise edge)                    0.00       0.00
-  clock network delay (propagated)         0.08       0.08
-  dnn_state_reg[1]/CP (DFCNQD1BWP)         0.00       0.08 r
-  dnn_state_reg[1]/Q (DFCNQD1BWP)          0.07       0.16 r
-  U10313/ZN (CKND0BWP)                     0.02 *     0.18 f
-  U5413/ZN (NR3D2BWP)                      0.05 *     0.23 r
-  U19/Z (BUFFD2BWP)                        0.07 *     0.29 r
-  U5832/ZN (NR2XD3BWP)                     0.06 *     0.36 f
-  U10295/Z (AO222D2BWP)                    0.11 *     0.47 f
-  U256/Z (BUFFD2BWP)                       0.05 *     0.51 f
-  U257/ZN (CKND2BWP)                       0.06 *     0.58 r
-  U7085/ZN (NR3D0BWP)                      0.04 *     0.61 f
-  node3/mult_83/S2_2_1/S (FA1D0BWP)        0.08 *     0.69 r
-  node3/mult_83/S1_3_0/CO (FA1D0BWP)       0.05 *     0.74 r
-  node3/mult_83/S1_4_0/CO (FA1D0BWP)       0.07 *     0.81 r
-  node3/mult_83/S1_5_0/CO (FA1D0BWP)       0.07 *     0.88 r
-  node3/mult_83/S1_6_0/CO (FA1D0BWP)       0.07 *     0.95 r
-  node3/mult_83/S1_7_0/CO (FA1D0BWP)       0.07 *     1.01 r
-  node3/mult_83/S1_8_0/CO (FA1D0BWP)       0.07 *     1.08 r
-  node3/mult_83/S1_9_0/CO (FA1D0BWP)       0.07 *     1.15 r
-  node3/mult_83/S1_10_0/CO (FA1D0BWP)      0.07 *     1.21 r
-  node3/mult_83/S1_11_0/CO (FA1D0BWP)      0.07 *     1.28 r
-  node3/mult_83/S1_12_0/CO (FA1D0BWP)      0.07 *     1.35 r
-  node3/mult_83/S1_13_0/CO (FA1D0BWP)      0.07 *     1.41 r
-  node3/mult_83/S4_0/S (FA1D0BWP)          0.07 *     1.48 f
-  U1476/Z (XOR2D0BWP)                      0.05 *     1.53 f
-  U6366/ZN (INR2D0BWP)                     0.03 *     1.56 f
-  U6172/ZN (AOI21D0BWP)                    0.03 *     1.59 r
-  U6324/ZN (OAI21D0BWP)                    0.02 *     1.62 f
-  U9524/Z (AO221D0BWP)                     0.06 *     1.68 f
-  U9523/Z (XOR3D0BWP)                      0.06 *     1.74 r
-  node3/mul6_out_reg[18]/D (DFQD1BWP)      0.00 *     1.74 r
-  data arrival time                                   1.74
-
-  clock clk (rise edge)                    1.88       1.88
-  clock network delay (propagated)         0.09       1.97
-  clock uncertainty                       -0.15       1.82
-  node3/mul6_out_reg[18]/CP (DFQD1BWP)     0.00       1.82 r
-  library setup time                      -0.01       1.81
-  data required time                                  1.81
-  -----------------------------------------------------------
-  data required time                                  1.81
-  data arrival time                                  -1.74
-  -----------------------------------------------------------
-  slack (MET)                                         0.07
-
-
-  Startpoint: dnn_state_reg[1]
-              (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: node1/mul5_out_reg[18]
-            (rising edge-triggered flip-flop clocked by clk)
-  Path Group: clk
-  Path Type: max
-
-  Point                                    Incr       Path
-  -----------------------------------------------------------
-  clock clk (rise edge)                    0.00       0.00
-  clock network delay (propagated)         0.08       0.08
-  dnn_state_reg[1]/CP (DFCNQD1BWP)         0.00       0.08 r
-  dnn_state_reg[1]/Q (DFCNQD1BWP)          0.07       0.16 r
-  U10313/ZN (CKND0BWP)                     0.02 *     0.18 f
-  U5413/ZN (NR3D2BWP)                      0.05 *     0.23 r
-  U19/Z (BUFFD2BWP)                        0.07 *     0.29 r
-  U5832/ZN (NR2XD3BWP)                     0.06 *     0.36 f
-  U10314/ZN (AOI222D4BWP)                  0.12 *     0.48 r
-  U134/Z (BUFFD3BWP)                       0.06 *     0.54 r
-  U135/ZN (INVD3BWP)                       0.04 *     0.58 f
-  U9065/ZN (CKND2D0BWP)                    0.03 *     0.61 r
-  U2941/Z (XOR2D0BWP)                      0.04 *     0.66 f
-  node1/mult_82/S2_2_2/S (FA1D0BWP)        0.05 *     0.71 r
-  node1/mult_82/S2_3_1/CO (FA1D0BWP)       0.04 *     0.75 r
-  node1/mult_82/S2_4_1/CO (FA1D0BWP)       0.07 *     0.81 r
-  node1/mult_82/S2_5_1/CO (FA1D0BWP)       0.07 *     0.88 r
-  node1/mult_82/S2_6_1/CO (FA1D0BWP)       0.07 *     0.94 r
-  node1/mult_82/S2_7_1/CO (FA1D0BWP)       0.07 *     1.01 r
-  node1/mult_82/S2_8_1/CO (FA1D0BWP)       0.07 *     1.08 r
-  node1/mult_82/S2_9_1/CO (FA1D0BWP)       0.07 *     1.14 r
-  node1/mult_82/S2_10_1/CO (FA1D0BWP)      0.07 *     1.21 r
-  node1/mult_82/S2_11_1/CO (FA1D0BWP)      0.07 *     1.27 r
-  node1/mult_82/S2_12_1/CO (FA1D0BWP)      0.07 *     1.34 r
-  node1/mult_82/S2_13_1/CO (FA1D0BWP)      0.07 *     1.41 r
-  node1/mult_82/S4_1/S (FA1D0BWP)          0.07 *     1.48 r
-  U3705/Z (XOR2D1BWP)                      0.04 *     1.52 f
-  U6486/Z (CKAN2D0BWP)                     0.03 *     1.55 f
-  U6188/ZN (AOI21D0BWP)                    0.04 *     1.59 r
-  U6388/ZN (OAI21D0BWP)                    0.03 *     1.61 f
-  U9582/Z (AO221D0BWP)                     0.06 *     1.68 f
-  U9581/Z (XOR3D0BWP)                      0.05 *     1.73 r
-  node1/mul5_out_reg[18]/D (DFQD1BWP)      0.00 *     1.73 r
-  data arrival time                                   1.73
 
   clock clk (rise edge)                    1.88       1.88
   clock network delay (propagated)         0.08       1.96
   clock uncertainty                       -0.15       1.81
-  node1/mul5_out_reg[18]/CP (DFQD1BWP)     0.00       1.81 r
-  library setup time                      -0.01       1.81
+  node1/mul3_out_reg[18]/CP (DFQD1BWP)     0.00       1.81 r
+  library setup time                       0.00       1.81
   data required time                                  1.81
   -----------------------------------------------------------
   data required time                                  1.81
-  data arrival time                                  -1.73
+  data arrival time                                  -1.74
   -----------------------------------------------------------
-  slack (MET)                                         0.08
+  slack (MET)                                         0.07
 
 
-  Startpoint: dnn_state_reg[1]
+  Startpoint: dnn_state_reg[0]
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: node0/mul4_out_reg[18]
+  Endpoint: node1/mul1_out_reg[18]
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: max
@@ -880,56 +558,179 @@ Information: Percent of Arnoldi-based delays =  2.85%
   -----------------------------------------------------------
   clock clk (rise edge)                    0.00       0.00
   clock network delay (propagated)         0.08       0.08
-  dnn_state_reg[1]/CP (DFCNQD1BWP)         0.00       0.08 r
-  dnn_state_reg[1]/Q (DFCNQD1BWP)          0.07       0.16 r
-  U10313/ZN (CKND0BWP)                     0.02 *     0.18 f
-  U5413/ZN (NR3D2BWP)                      0.05 *     0.23 r
-  U19/Z (BUFFD2BWP)                        0.07 *     0.29 r
-  U5832/ZN (NR2XD3BWP)                     0.06 *     0.36 f
-  U10321/ZN (AOI222D4BWP)                  0.11 *     0.47 r
-  U115/Z (CKBD4BWP)                        0.05 *     0.52 r
-  U116/ZN (INVD2BWP)                       0.04 *     0.56 f
-  U9080/ZN (CKND2D0BWP)                    0.03 *     0.59 r
-  U4132/Z (XOR2D0BWP)                      0.04 *     0.63 f
-  node0/mult_80/S2_2_2/S (FA1D0BWP)        0.05 *     0.69 r
-  node0/mult_80/S2_3_1/CO (FA1D0BWP)       0.04 *     0.73 r
-  node0/mult_80/S2_4_1/CO (FA1D0BWP)       0.07 *     0.80 r
-  node0/mult_80/S2_5_1/CO (FA1D0BWP)       0.07 *     0.86 r
-  node0/mult_80/S2_6_1/CO (FA1D0BWP)       0.07 *     0.93 r
-  node0/mult_80/S2_7_1/CO (FA1D0BWP)       0.07 *     1.00 r
-  node0/mult_80/S2_8_1/CO (FA1D0BWP)       0.07 *     1.06 r
-  node0/mult_80/S2_9_1/CO (FA1D0BWP)       0.07 *     1.14 r
-  node0/mult_80/S2_10_1/CO (FA1D0BWP)      0.07 *     1.20 r
-  node0/mult_80/S2_11_1/CO (FA1D0BWP)      0.07 *     1.27 r
-  node0/mult_80/S2_12_1/CO (FA1D0BWP)      0.07 *     1.34 r
-  node0/mult_80/S2_13_1/CO (FA1D0BWP)      0.07 *     1.40 r
-  node0/mult_80/S4_1/S (FA1D0BWP)          0.07 *     1.48 r
-  U4475/Z (XOR2D0BWP)                      0.04 *     1.52 f
-  U6536/ZN (NR2D0BWP)                      0.03 *     1.55 r
-  U6209/ZN (CKND0BWP)                      0.02 *     1.56 f
-  U6208/ZN (AOI21D0BWP)                    0.03 *     1.59 r
-  U6398/ZN (OAI21D0BWP)                    0.02 *     1.62 f
-  U9615/Z (AO221D0BWP)                     0.06 *     1.68 f
-  U9614/Z (XOR3D0BWP)                      0.05 *     1.73 r
-  node0/mul4_out_reg[18]/D (DFQD1BWP)      0.00 *     1.73 r
-  data arrival time                                   1.73
+  dnn_state_reg[0]/CP (DFCNQD1BWP)         0.00       0.08 r
+  dnn_state_reg[0]/Q (DFCNQD1BWP)          0.07       0.15 r
+  U175/Z (CKBD1BWP)                        0.02 *     0.17 r
+  U40/ZN (INVD1BWP)                        0.01 *     0.18 f
+  U187/Z (BUFFD0BWP)                       0.02 *     0.20 f
+  U67/ZN (CKND2BWP)                        0.02 *     0.22 r
+  U2/ZN (CKND12BWP)                        0.03 *     0.24 f
+  U10248/ZN (NR2XD0BWP)                    0.05 *     0.29 r
+  U82/Z (CKBD4BWP)                         0.06 *     0.35 r
+  U10206/Z (AO222D2BWP)                    0.08 *     0.43 r
+  U129/Z (BUFFD1BWP)                       0.07 *     0.50 r
+  U130/ZN (INVD2BWP)                       0.04 *     0.54 f
+  U7152/ZN (NR2D0BWP)                      0.03 *     0.57 r
+  node1/mult_77/S2_2_1/CO (FA1D0BWP)       0.08 *     0.65 r
+  node1/mult_77/S2_3_1/CO (FA1D0BWP)       0.07 *     0.72 r
+  node1/mult_77/S2_4_1/CO (FA1D0BWP)       0.07 *     0.79 r
+  node1/mult_77/S2_5_1/CO (FA1D0BWP)       0.07 *     0.86 r
+  node1/mult_77/S2_6_1/CO (FA1D0BWP)       0.07 *     0.93 r
+  node1/mult_77/S2_7_1/CO (FA1D0BWP)       0.07 *     1.00 r
+  node1/mult_77/S2_8_1/CO (FA1D0BWP)       0.07 *     1.07 r
+  node1/mult_77/S2_9_1/CO (FA1D0BWP)       0.07 *     1.13 r
+  node1/mult_77/S2_10_1/CO (FA1D0BWP)      0.07 *     1.20 r
+  node1/mult_77/S2_11_1/CO (FA1D0BWP)      0.07 *     1.27 r
+  node1/mult_77/S2_12_1/CO (FA1D0BWP)      0.07 *     1.34 r
+  node1/mult_77/S2_13_1/CO (FA1D0BWP)      0.07 *     1.41 r
+  node1/mult_77/S4_1/S (FA1D0BWP)          0.07 *     1.48 r
+  U3504/Z (XOR2D0BWP)                      0.04 *     1.52 f
+  U6502/ZN (NR2D0BWP)                      0.03 *     1.55 r
+  U6171/ZN (CKND0BWP)                      0.02 *     1.57 f
+  U6170/ZN (AOI21D0BWP)                    0.03 *     1.60 r
+  U6349/ZN (OAI21D0BWP)                    0.03 *     1.63 f
+  U9509/Z (AO221D0BWP)                     0.06 *     1.69 f
+  U9508/Z (XOR3D0BWP)                      0.05 *     1.74 r
+  node1/mul1_out_reg[18]/D (DFQD1BWP)      0.00 *     1.74 r
+  data arrival time                                   1.74
 
   clock clk (rise edge)                    1.88       1.88
-  clock network delay (propagated)         0.09       1.97
-  clock uncertainty                       -0.15       1.82
-  node0/mul4_out_reg[18]/CP (DFQD1BWP)     0.00       1.82 r
+  clock network delay (propagated)         0.08       1.96
+  clock uncertainty                       -0.15       1.81
+  node1/mul1_out_reg[18]/CP (DFQD1BWP)     0.00       1.81 r
   library setup time                       0.00       1.81
   data required time                                  1.81
   -----------------------------------------------------------
   data required time                                  1.81
-  data arrival time                                  -1.73
+  data arrival time                                  -1.74
   -----------------------------------------------------------
-  slack (MET)                                         0.08
+  slack (MET)                                         0.07
+
+
+  Startpoint: dnn_state_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node2/mul7_out_reg[18]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (propagated)         0.08       0.08
+  dnn_state_reg[0]/CP (DFCNQD1BWP)         0.00       0.08 r
+  dnn_state_reg[0]/Q (DFCNQD1BWP)          0.08       0.16 f
+  U175/Z (CKBD1BWP)                        0.02 *     0.17 f
+  U40/ZN (INVD1BWP)                        0.01 *     0.18 r
+  U187/Z (BUFFD0BWP)                       0.02 *     0.21 r
+  U67/ZN (CKND2BWP)                        0.02 *     0.22 f
+  U2/ZN (CKND12BWP)                        0.02 *     0.25 r
+  U10248/ZN (NR2XD0BWP)                    0.04 *     0.29 f
+  U82/Z (CKBD4BWP)                         0.06 *     0.34 f
+  U10239/ZN (AOI222D4BWP)                  0.10 *     0.45 r
+  U112/Z (CKBD4BWP)                        0.05 *     0.50 r
+  U113/ZN (INVD2BWP)                       0.05 *     0.55 f
+  U9015/ZN (CKND2D0BWP)                    0.03 *     0.58 r
+  U1686/Z (XOR2D0BWP)                      0.03 *     0.62 r
+  node2/mult_84/S2_2_2/CO (FA1D0BWP)       0.04 *     0.66 r
+  node2/mult_84/S2_3_2/CO (FA1D0BWP)       0.07 *     0.72 r
+  node2/mult_84/S2_4_2/CO (FA1D0BWP)       0.07 *     0.79 r
+  node2/mult_84/S2_5_2/CO (FA1D0BWP)       0.07 *     0.85 r
+  node2/mult_84/S2_6_2/CO (FA1D0BWP)       0.07 *     0.92 r
+  node2/mult_84/S2_7_2/CO (FA1D0BWP)       0.07 *     0.99 r
+  node2/mult_84/S2_8_2/CO (FA1D0BWP)       0.07 *     1.06 r
+  node2/mult_84/S2_9_2/CO (FA1D0BWP)       0.07 *     1.13 r
+  node2/mult_84/S2_10_2/CO (FA1D0BWP)      0.07 *     1.19 r
+  node2/mult_84/S2_11_2/CO (FA1D0BWP)      0.07 *     1.26 r
+  node2/mult_84/S2_12_2/CO (FA1D0BWP)      0.07 *     1.33 r
+  node2/mult_84/S2_13_2/CO (FA1D0BWP)      0.07 *     1.40 r
+  node2/mult_84/S4_2/S (FA1D0BWP)          0.08 *     1.48 f
+  U2496/ZN (XNR2D0BWP)                     0.05 *     1.53 r
+  U6428/ZN (CKND0BWP)                      0.02 *     1.54 f
+  U6412/ZN (ND2D0BWP)                      0.02 *     1.57 r
+  U6420/ZN (OAI21D0BWP)                    0.03 *     1.60 f
+  U9602/Z (AO221D0BWP)                     0.06 *     1.66 f
+  U9601/Z (XOR3D0BWP)                      0.08 *     1.74 r
+  node2/mul7_out_reg[18]/D (DFQD1BWP)      0.00 *     1.74 r
+  data arrival time                                   1.74
+
+  clock clk (rise edge)                    1.88       1.88
+  clock network delay (propagated)         0.09       1.97
+  clock uncertainty                       -0.15       1.82
+  node2/mul7_out_reg[18]/CP (DFQD1BWP)     0.00       1.82 r
+  library setup time                      -0.01       1.81
+  data required time                                  1.81
+  -----------------------------------------------------------
+  data required time                                  1.81
+  data arrival time                                  -1.74
+  -----------------------------------------------------------
+  slack (MET)                                         0.07
+
+
+  Startpoint: dnn_state_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node2/mul3_out_reg[18]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (propagated)         0.08       0.08
+  dnn_state_reg[0]/CP (DFCNQD1BWP)         0.00       0.08 r
+  dnn_state_reg[0]/Q (DFCNQD1BWP)          0.08       0.16 f
+  U175/Z (CKBD1BWP)                        0.02 *     0.17 f
+  U40/ZN (INVD1BWP)                        0.01 *     0.18 r
+  U187/Z (BUFFD0BWP)                       0.02 *     0.21 r
+  U67/ZN (CKND2BWP)                        0.02 *     0.22 f
+  U2/ZN (CKND12BWP)                        0.02 *     0.25 r
+  U10248/ZN (NR2XD0BWP)                    0.04 *     0.29 f
+  U82/Z (CKBD4BWP)                         0.06 *     0.34 f
+  U10242/ZN (AOI222D4BWP)                  0.11 *     0.45 r
+  U173/Z (BUFFD3BWP)                       0.05 *     0.51 r
+  U174/ZN (INVD2BWP)                       0.05 *     0.56 f
+  U9013/ZN (ND2D0BWP)                      0.03 *     0.59 r
+  U2032/Z (XOR2D0BWP)                      0.04 *     0.63 f
+  node2/mult_79/S2_2_2/S (FA1D0BWP)        0.05 *     0.68 r
+  node2/mult_79/S2_3_1/CO (FA1D0BWP)       0.04 *     0.72 r
+  node2/mult_79/S2_4_1/CO (FA1D0BWP)       0.07 *     0.79 r
+  node2/mult_79/S2_5_1/CO (FA1D0BWP)       0.07 *     0.85 r
+  node2/mult_79/S2_6_1/CO (FA1D0BWP)       0.07 *     0.92 r
+  node2/mult_79/S2_7_1/CO (FA1D0BWP)       0.07 *     0.99 r
+  node2/mult_79/S2_8_1/CO (FA1D0BWP)       0.07 *     1.06 r
+  node2/mult_79/S2_9_1/CO (FA1D0BWP)       0.07 *     1.12 r
+  node2/mult_79/S2_10_1/CO (FA1D0BWP)      0.07 *     1.19 r
+  node2/mult_79/S2_11_1/CO (FA1D0BWP)      0.07 *     1.25 r
+  node2/mult_79/S2_12_1/CO (FA1D0BWP)      0.07 *     1.32 r
+  node2/mult_79/S2_13_1/CO (FA1D0BWP)      0.07 *     1.39 r
+  node2/mult_79/S4_1/S (FA1D0BWP)          0.08 *     1.47 r
+  U2318/Z (XOR2D0BWP)                      0.04 *     1.51 f
+  U6544/ZN (NR2D0BWP)                      0.03 *     1.54 r
+  U6205/ZN (CKND0BWP)                      0.01 *     1.55 f
+  U6204/ZN (AOI21D0BWP)                    0.03 *     1.58 r
+  U6418/ZN (OAI21D0BWP)                    0.03 *     1.61 f
+  U9599/Z (AO221D0BWP)                     0.06 *     1.68 f
+  U9598/Z (XOR3D1BWP)                      0.06 *     1.74 r
+  node2/mul3_out_reg[18]/D (DFQD1BWP)      0.00 *     1.74 r
+  data arrival time                                   1.74
+
+  clock clk (rise edge)                    1.88       1.88
+  clock network delay (propagated)         0.09       1.97
+  clock uncertainty                       -0.15       1.82
+  node2/mul3_out_reg[18]/CP (DFQD1BWP)     0.00       1.82 r
+  library setup time                      -0.01       1.81
+  data required time                                  1.81
+  -----------------------------------------------------------
+  data required time                                  1.81
+  data arrival time                                  -1.74
+  -----------------------------------------------------------
+  slack (MET)                                         0.07
 
 
   Startpoint: x3_node2[0]
               (input port clocked by clk)
-  Endpoint: node3/mul8_out_reg[18]
+  Endpoint: node2/mul4_out_reg[18]
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: max
@@ -940,52 +741,173 @@ Information: Percent of Arnoldi-based delays =  2.85%
   clock network delay (ideal)              0.00       0.00
   input external delay                     0.25       0.25 r
   x3_node2[0] (in)                         0.00       0.25 r
-  U10244/ZN (CKND0BWP)                     0.04 *     0.29 f
-  U10245/ZN (NR2D0BWP)                     0.03 *     0.32 r
-  U580/S (FA1D0BWP)                        0.05 *     0.37 f
-  U593/CO (FA1D0BWP)                       0.06 *     0.43 f
-  U586/S (FA1D0BWP)                        0.05 *     0.48 r
-  U787/Z (CKAN2D0BWP)                      0.03 *     0.51 r
-  U789/ZN (NR2XD1BWP)                      0.03 *     0.53 f
-  U7215/ZN (NR2D0BWP)                      0.04 *     0.57 r
-  node3/mult_85/S1_2_0/CO (FA1D0BWP)       0.08 *     0.65 r
-  node3/mult_85/S1_3_0/CO (FA1D0BWP)       0.07 *     0.73 r
-  node3/mult_85/S1_4_0/CO (FA1D0BWP)       0.07 *     0.80 r
-  node3/mult_85/S1_5_0/CO (FA1D0BWP)       0.07 *     0.87 r
-  node3/mult_85/S1_6_0/CO (FA1D0BWP)       0.07 *     0.93 r
-  node3/mult_85/S1_7_0/CO (FA1D0BWP)       0.07 *     1.00 r
-  node3/mult_85/S1_8_0/CO (FA1D0BWP)       0.07 *     1.07 r
-  node3/mult_85/S1_9_0/CO (FA1D0BWP)       0.07 *     1.14 r
-  node3/mult_85/S1_10_0/CO (FA1D0BWP)      0.07 *     1.20 r
-  node3/mult_85/S1_11_0/CO (FA1D0BWP)      0.07 *     1.27 r
-  node3/mult_85/S1_12_0/CO (FA1D0BWP)      0.07 *     1.34 r
-  node3/mult_85/S1_13_0/CO (FA1D0BWP)      0.07 *     1.41 r
-  node3/mult_85/S4_0/S (FA1D0BWP)          0.07 *     1.48 f
-  U1372/Z (XOR2D0BWP)                      0.05 *     1.53 f
-  U6367/ZN (INR2D0BWP)                     0.03 *     1.56 f
-  U6174/ZN (AOI21D0BWP)                    0.03 *     1.59 r
-  U6330/ZN (OAI21D0BWP)                    0.03 *     1.62 f
-  U9531/Z (AO221D0BWP)                     0.06 *     1.68 f
-  U9530/Z (XOR3D0BWP)                      0.05 *     1.74 r
-  node3/mul8_out_reg[18]/D (DFQD1BWP)      0.00 *     1.74 r
+  U10184/ZN (CKND0BWP)                     0.03 *     0.28 f
+  U10186/ZN (NR2D0BWP)                     0.04 *     0.32 r
+  U556/S (FA1D0BWP)                        0.06 *     0.38 f
+  U576/CO (FA1D0BWP)                       0.06 *     0.44 f
+  U560/S (FA1D0BWP)                        0.05 *     0.48 r
+  U777/Z (CKAN2D0BWP)                      0.03 *     0.51 r
+  U779/ZN (NR2XD1BWP)                      0.03 *     0.54 f
+  U7799/ZN (NR2D0BWP)                      0.04 *     0.58 r
+  node2/mult_80/S1_2_0/CO (FA1D0BWP)       0.08 *     0.66 r
+  node2/mult_80/S1_3_0/CO (FA1D0BWP)       0.07 *     0.73 r
+  node2/mult_80/S1_4_0/CO (FA1D0BWP)       0.07 *     0.80 r
+  node2/mult_80/S1_5_0/CO (FA1D0BWP)       0.07 *     0.87 r
+  node2/mult_80/S1_6_0/CO (FA1D0BWP)       0.07 *     0.94 r
+  node2/mult_80/S1_7_0/CO (FA1D0BWP)       0.07 *     1.01 r
+  node2/mult_80/S1_8_0/CO (FA1D0BWP)       0.07 *     1.08 r
+  node2/mult_80/S1_9_0/CO (FA1D0BWP)       0.07 *     1.15 r
+  node2/mult_80/S1_10_0/CO (FA1D0BWP)      0.07 *     1.21 r
+  node2/mult_80/S1_11_0/CO (FA1D0BWP)      0.07 *     1.28 r
+  node2/mult_80/S1_12_0/CO (FA1D0BWP)      0.07 *     1.35 r
+  node2/mult_80/S1_13_0/CO (FA1D0BWP)      0.07 *     1.42 r
+  node2/mult_80/S4_0/S (FA1D0BWP)          0.07 *     1.49 f
+  U2277/Z (XOR2D0BWP)                      0.05 *     1.54 f
+  U6574/ZN (INR2D0BWP)                     0.03 *     1.57 f
+  U6212/ZN (AOI21D0BWP)                    0.04 *     1.61 r
+  U6422/ZN (OAI21D0BWP)                    0.03 *     1.63 f
+  U9605/Z (AO221D0BWP)                     0.06 *     1.70 f
+  U9604/Z (XOR3D0BWP)                      0.05 *     1.75 r
+  node2/mul4_out_reg[18]/D (DFQD1BWP)      0.00 *     1.75 r
+  data arrival time                                   1.75
+
+  clock clk (rise edge)                    1.88       1.88
+  clock network delay (propagated)         0.09       1.97
+  clock uncertainty                       -0.15       1.82
+  node2/mul4_out_reg[18]/CP (DFQD1BWP)     0.00       1.82 r
+  library setup time                       0.00       1.82
+  data required time                                  1.82
+  -----------------------------------------------------------
+  data required time                                  1.82
+  data arrival time                                  -1.75
+  -----------------------------------------------------------
+  slack (MET)                                         0.07
+
+
+  Startpoint: dnn_state_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node0/mul8_out_reg[18]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (propagated)         0.08       0.08
+  dnn_state_reg[0]/CP (DFCNQD1BWP)         0.00       0.08 r
+  dnn_state_reg[0]/Q (DFCNQD1BWP)          0.08       0.16 f
+  U175/Z (CKBD1BWP)                        0.02 *     0.17 f
+  U40/ZN (INVD1BWP)                        0.01 *     0.18 r
+  U187/Z (BUFFD0BWP)                       0.02 *     0.21 r
+  U67/ZN (CKND2BWP)                        0.02 *     0.22 f
+  U2/ZN (CKND12BWP)                        0.02 *     0.25 r
+  U10248/ZN (NR2XD0BWP)                    0.04 *     0.29 f
+  U82/Z (CKBD4BWP)                         0.06 *     0.34 f
+  U10245/ZN (AOI222D4BWP)                  0.11 *     0.45 r
+  U86/Z (BUFFD3BWP)                        0.06 *     0.51 r
+  U87/ZN (INVD2BWP)                        0.04 *     0.55 f
+  U8987/ZN (CKND2D0BWP)                    0.03 *     0.59 r
+  U3794/Z (XOR2D0BWP)                      0.04 *     0.63 f
+  node0/mult_85/S2_2_2/S (FA1D0BWP)        0.05 *     0.68 r
+  node0/mult_85/S2_3_1/CO (FA1D0BWP)       0.04 *     0.72 r
+  node0/mult_85/S2_4_1/CO (FA1D0BWP)       0.07 *     0.79 r
+  node0/mult_85/S2_5_1/CO (FA1D0BWP)       0.07 *     0.87 r
+  node0/mult_85/S2_6_1/CO (FA1D0BWP)       0.07 *     0.94 r
+  node0/mult_85/S2_7_1/CO (FA1D0BWP)       0.07 *     1.00 r
+  node0/mult_85/S2_8_1/CO (FA1D0BWP)       0.07 *     1.07 r
+  node0/mult_85/S2_9_1/CO (FA1D0BWP)       0.07 *     1.14 r
+  node0/mult_85/S2_10_1/CO (FA1D0BWP)      0.07 *     1.21 r
+  node0/mult_85/S2_11_1/CO (FA1D0BWP)      0.07 *     1.28 r
+  node0/mult_85/S2_12_1/CO (FA1D0BWP)      0.07 *     1.34 r
+  node0/mult_85/S2_13_1/CO (FA1D0BWP)      0.07 *     1.41 r
+  node0/mult_85/S4_1/S (FA1D0BWP)          0.08 *     1.49 r
+  U4664/Z (XOR2D0BWP)                      0.04 *     1.53 f
+  U6517/ZN (NR2D0BWP)                      0.03 *     1.56 r
+  U6201/ZN (CKND0BWP)                      0.01 *     1.57 f
+  U6200/ZN (AOI21D0BWP)                    0.03 *     1.60 r
+  U6384/ZN (OAI21D0BWP)                    0.03 *     1.62 f
+  U9572/Z (AO221D0BWP)                     0.06 *     1.69 f
+  U9571/Z (XOR3D0BWP)                      0.05 *     1.74 r
+  node0/mul8_out_reg[18]/D (DFQD1BWP)      0.00 *     1.74 r
   data arrival time                                   1.74
 
   clock clk (rise edge)                    1.88       1.88
   clock network delay (propagated)         0.09       1.97
   clock uncertainty                       -0.15       1.82
-  node3/mul8_out_reg[18]/CP (DFQD1BWP)     0.00       1.82 r
-  library setup time                      -0.01       1.81
+  node0/mul8_out_reg[18]/CP (DFQD1BWP)     0.00       1.82 r
+  library setup time                       0.00       1.81
   data required time                                  1.81
   -----------------------------------------------------------
   data required time                                  1.81
   data arrival time                                  -1.74
   -----------------------------------------------------------
-  slack (MET)                                         0.08
+  slack (MET)                                         0.07
 
 
-  Startpoint: x2_node2[0]
+  Startpoint: dnn_state_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node3/mul7_out_reg[18]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (propagated)         0.08       0.08
+  dnn_state_reg[0]/CP (DFCNQD1BWP)         0.00       0.08 r
+  dnn_state_reg[0]/Q (DFCNQD1BWP)          0.08       0.16 f
+  U175/Z (CKBD1BWP)                        0.02 *     0.17 f
+  U40/ZN (INVD1BWP)                        0.01 *     0.18 r
+  U187/Z (BUFFD0BWP)                       0.02 *     0.21 r
+  U67/ZN (CKND2BWP)                        0.02 *     0.22 f
+  U2/ZN (CKND12BWP)                        0.02 *     0.25 r
+  U10248/ZN (NR2XD0BWP)                    0.04 *     0.29 f
+  U82/Z (CKBD4BWP)                         0.06 *     0.34 f
+  U10239/ZN (AOI222D4BWP)                  0.10 *     0.45 r
+  U112/Z (CKBD4BWP)                        0.05 *     0.50 r
+  U113/ZN (INVD2BWP)                       0.05 *     0.55 f
+  U9037/ZN (CKND2D0BWP)                    0.03 *     0.58 r
+  U435/Z (XOR2D0BWP)                       0.04 *     0.63 f
+  node3/mult_84/S2_2_2/S (FA1D0BWP)        0.05 *     0.68 r
+  node3/mult_84/S2_3_1/CO (FA1D0BWP)       0.04 *     0.72 r
+  node3/mult_84/S2_4_1/S (FA1D0BWP)        0.08 *     0.80 r
+  node3/mult_84/S1_5_0/CO (FA1D0BWP)       0.05 *     0.85 r
+  node3/mult_84/S1_6_0/CO (FA1D0BWP)       0.07 *     0.92 r
+  node3/mult_84/S1_7_0/CO (FA1D0BWP)       0.07 *     0.98 r
+  node3/mult_84/S1_8_0/CO (FA1D0BWP)       0.07 *     1.05 r
+  node3/mult_84/S1_9_0/CO (FA1D0BWP)       0.07 *     1.12 r
+  node3/mult_84/S1_10_0/CO (FA1D0BWP)      0.07 *     1.18 r
+  node3/mult_84/S1_11_0/CO (FA1D0BWP)      0.07 *     1.25 r
+  node3/mult_84/S1_12_0/CO (FA1D0BWP)      0.07 *     1.32 r
+  node3/mult_84/S1_13_0/CO (FA1D0BWP)      0.07 *     1.38 r
+  node3/mult_84/S4_0/S (FA1D0BWP)          0.08 *     1.46 r
+  U1414/Z (XOR2D0BWP)                      0.06 *     1.52 f
+  U6340/ZN (INR2D0BWP)                     0.03 *     1.55 f
+  U6160/ZN (AOI21D0BWP)                    0.04 *     1.59 r
+  U6307/ZN (OAI21D0BWP)                    0.03 *     1.62 f
+  U9483/Z (AO221D0BWP)                     0.06 *     1.68 f
+  U9482/Z (XOR3D0BWP)                      0.05 *     1.73 r
+  node3/mul7_out_reg[18]/D (DFQD2BWP)      0.00 *     1.73 r
+  data arrival time                                   1.73
+
+  clock clk (rise edge)                    1.88       1.88
+  clock network delay (propagated)         0.08       1.96
+  clock uncertainty                       -0.15       1.81
+  node3/mul7_out_reg[18]/CP (DFQD2BWP)     0.00       1.81 r
+  library setup time                       0.00       1.81
+  data required time                                  1.81
+  -----------------------------------------------------------
+  data required time                                  1.81
+  data arrival time                                  -1.73
+  -----------------------------------------------------------
+  slack (MET)                                         0.07
+
+
+  Startpoint: x3_node2[0]
               (input port clocked by clk)
-  Endpoint: node2/mul3_out_reg[18]
+  Endpoint: node3/mul8_out_reg[17]
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: max
@@ -994,42 +916,101 @@ Information: Percent of Arnoldi-based delays =  2.85%
   -----------------------------------------------------------
   clock clk (rise edge)                    0.00       0.00
   clock network delay (ideal)              0.00       0.00
-  input external delay                     0.25       0.25 f
-  x2_node2[0] (in)                         0.00       0.25 f
-  U10236/ZN (CKND0BWP)                     0.03 *     0.28 r
-  U10260/ZN (NR2XD0BWP)                    0.02 *     0.30 f
-  U578/CO (FA1D0BWP)                       0.04 *     0.35 f
-  U572/S (FA1D0BWP)                        0.05 *     0.40 r
-  U584/S (FA1D0BWP)                        0.07 *     0.47 r
-  U9630/ZN (AOI22D2BWP)                    0.04 *     0.51 f
-  U7468/ZN (NR2D0BWP)                      0.05 *     0.56 r
-  node2/mult_79/S2_2_1/CO (FA1D0BWP)       0.08 *     0.64 r
-  node2/mult_79/S2_3_1/CO (FA1D0BWP)       0.07 *     0.71 r
-  node2/mult_79/S2_4_1/CO (FA1D0BWP)       0.07 *     0.78 r
-  node2/mult_79/S2_5_1/CO (FA1D0BWP)       0.07 *     0.85 r
-  node2/mult_79/S2_6_1/CO (FA1D0BWP)       0.07 *     0.92 r
-  node2/mult_79/S2_7_1/CO (FA1D0BWP)       0.07 *     0.98 r
-  node2/mult_79/S2_8_1/CO (FA1D0BWP)       0.07 *     1.05 r
-  node2/mult_79/S2_9_1/CO (FA1D0BWP)       0.07 *     1.11 r
-  node2/mult_79/S2_10_1/CO (FA1D0BWP)      0.07 *     1.18 r
-  node2/mult_79/S2_11_1/CO (FA1D0BWP)      0.07 *     1.25 r
-  node2/mult_79/S2_12_1/CO (FA1D0BWP)      0.07 *     1.32 r
-  node2/mult_79/S2_13_1/CO (FA1D0BWP)      0.07 *     1.38 r
-  node2/mult_79/S4_1/S (FA1D0BWP)          0.07 *     1.46 r
-  U2323/Z (XOR2D0BWP)                      0.04 *     1.50 f
-  U6565/ZN (NR2D0BWP)                      0.03 *     1.53 r
-  U6219/ZN (CKND0BWP)                      0.02 *     1.55 f
-  U6218/ZN (AOI21D0BWP)                    0.03 *     1.58 r
-  U6453/ZN (OAI21D0BWP)                    0.03 *     1.61 f
-  U9654/Z (AO221D0BWP)                     0.06 *     1.68 f
-  U9653/Z (XOR3D0BWP)                      0.05 *     1.73 r
-  node2/mul3_out_reg[18]/D (DFQD2BWP)      0.00 *     1.73 r
+  input external delay                     0.25       0.25 r
+  x3_node2[0] (in)                         0.00       0.25 r
+  U10184/ZN (CKND0BWP)                     0.03 *     0.28 f
+  U10187/ZN (NR2D0BWP)                     0.03 *     0.31 r
+  U558/S (FA1D0BWP)                        0.05 *     0.37 f
+  U580/CO (FA1D0BWP)                       0.06 *     0.42 f
+  U562/S (FA1D0BWP)                        0.05 *     0.47 r
+  U792/ZN (CKND2D0BWP)                     0.01 *     0.48 f
+  U794/Z (CKAN2D0BWP)                      0.06 *     0.54 f
+  U7843/ZN (NR2XD0BWP)                     0.03 *     0.57 r
+  node3/mult_85/S1_2_0/CO (FA1D0BWP)       0.08 *     0.65 r
+  node3/mult_85/S1_3_0/CO (FA1D0BWP)       0.07 *     0.72 r
+  node3/mult_85/S1_4_0/CO (FA1D0BWP)       0.07 *     0.79 r
+  node3/mult_85/S1_5_0/CO (FA1D0BWP)       0.07 *     0.86 r
+  node3/mult_85/S1_6_0/CO (FA1D0BWP)       0.07 *     0.93 r
+  node3/mult_85/S1_7_0/CO (FA1D0BWP)       0.07 *     1.00 r
+  node3/mult_85/S1_8_0/CO (FA1D0BWP)       0.07 *     1.07 r
+  node3/mult_85/S1_9_0/CO (FA1D0BWP)       0.07 *     1.14 r
+  node3/mult_85/S1_10_0/CO (FA1D0BWP)      0.07 *     1.21 r
+  node3/mult_85/S1_11_0/CO (FA1D0BWP)      0.07 *     1.28 r
+  node3/mult_85/S1_12_0/CO (FA1D0BWP)      0.07 *     1.34 r
+  node3/mult_85/S1_13_0/CO (FA1D0BWP)      0.07 *     1.41 r
+  node3/mult_85/S4_0/S (FA1D0BWP)          0.07 *     1.48 f
+  U1363/Z (XOR2D0BWP)                      0.05 *     1.54 r
+  U6577/ZN (INR2D0BWP)                     0.04 *     1.58 r
+  U6218/ZN (AOI21D0BWP)                    0.03 *     1.61 f
+  U6445/ZN (OAI21D0BWP)                    0.03 *     1.64 r
+  U1342/Z (CKXOR2D0BWP)                    0.08 *     1.72 r
+  node3/mul8_out_reg[17]/D (DFQD1BWP)      0.00 *     1.73 r
   data arrival time                                   1.73
 
   clock clk (rise edge)                    1.88       1.88
   clock network delay (propagated)         0.08       1.96
   clock uncertainty                       -0.15       1.81
-  node2/mul3_out_reg[18]/CP (DFQD2BWP)     0.00       1.81 r
+  node3/mul8_out_reg[17]/CP (DFQD1BWP)     0.00       1.81 r
+  library setup time                      -0.01       1.80
+  data required time                                  1.80
+  -----------------------------------------------------------
+  data required time                                  1.80
+  data arrival time                                  -1.73
+  -----------------------------------------------------------
+  slack (MET)                                         0.07
+
+
+  Startpoint: dnn_state_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node3/mul5_out_reg[18]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (propagated)         0.08       0.08
+  dnn_state_reg[0]/CP (DFCNQD1BWP)         0.00       0.08 r
+  dnn_state_reg[0]/Q (DFCNQD1BWP)          0.08       0.16 f
+  U175/Z (CKBD1BWP)                        0.02 *     0.17 f
+  U40/ZN (INVD1BWP)                        0.01 *     0.18 r
+  U187/Z (BUFFD0BWP)                       0.02 *     0.21 r
+  U67/ZN (CKND2BWP)                        0.02 *     0.22 f
+  U2/ZN (CKND12BWP)                        0.02 *     0.25 r
+  U10248/ZN (NR2XD0BWP)                    0.04 *     0.29 f
+  U82/Z (CKBD4BWP)                         0.06 *     0.34 f
+  U10238/ZN (AOI222D4BWP)                  0.12 *     0.46 r
+  U108/Z (BUFFD3BWP)                       0.06 *     0.53 r
+  U109/ZN (CKND2BWP)                       0.05 *     0.58 f
+  U9041/ZN (CKND2D1BWP)                    0.03 *     0.61 r
+  U752/Z (XOR2D0BWP)                       0.04 *     0.65 f
+  node3/mult_82/S2_2_2/S (FA1D0BWP)        0.05 *     0.70 r
+  node3/mult_82/S2_3_1/CO (FA1D0BWP)       0.05 *     0.75 r
+  node3/mult_82/S2_4_1/CO (FA1D0BWP)       0.07 *     0.81 r
+  node3/mult_82/S2_5_1/CO (FA1D0BWP)       0.07 *     0.88 r
+  node3/mult_82/S2_6_1/CO (FA1D0BWP)       0.07 *     0.95 r
+  node3/mult_82/S2_7_1/CO (FA1D0BWP)       0.07 *     1.02 r
+  node3/mult_82/S2_8_1/CO (FA1D0BWP)       0.07 *     1.09 r
+  node3/mult_82/S2_9_1/CO (FA1D0BWP)       0.07 *     1.16 r
+  node3/mult_82/S2_10_1/CO (FA1D0BWP)      0.07 *     1.23 r
+  node3/mult_82/S2_11_1/CO (FA1D0BWP)      0.07 *     1.29 r
+  node3/mult_82/S2_12_1/CO (FA1D0BWP)      0.07 *     1.36 r
+  node3/mult_82/S2_13_1/CO (FA1D0BWP)      0.07 *     1.42 r
+  node3/mult_82/S4_1/S (FA1D0BWP)          0.07 *     1.50 r
+  U1519/Z (XOR2D0BWP)                      0.04 *     1.54 f
+  U6327/Z (AN2D0BWP)                       0.03 *     1.57 f
+  U6158/ZN (AOI21D1BWP)                    0.03 *     1.59 r
+  U6306/ZN (OAI21D0BWP)                    0.02 *     1.62 f
+  U9477/Z (AO221D0BWP)                     0.06 *     1.68 f
+  U9476/Z (XOR3D0BWP)                      0.05 *     1.73 r
+  node3/mul5_out_reg[18]/D (DFQD1BWP)      0.00 *     1.73 r
+  data arrival time                                   1.73
+
+  clock clk (rise edge)                    1.88       1.88
+  clock network delay (propagated)         0.08       1.96
+  clock uncertainty                       -0.15       1.81
+  node3/mul5_out_reg[18]/CP (DFQD1BWP)     0.00       1.81 r
   library setup time                       0.00       1.81
   data required time                                  1.81
   -----------------------------------------------------------
@@ -1039,9 +1020,9 @@ Information: Percent of Arnoldi-based delays =  2.85%
   slack (MET)                                         0.08
 
 
-  Startpoint: x1_node1[0]
+  Startpoint: x1_node2[0]
               (input port clocked by clk)
-  Endpoint: node1/mul6_out_reg[18]
+  Endpoint: node2/mul2_out_reg[18]
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: max
@@ -1051,42 +1032,41 @@ Information: Percent of Arnoldi-based delays =  2.85%
   clock clk (rise edge)                    0.00       0.00
   clock network delay (ideal)              0.00       0.00
   input external delay                     0.25       0.25 r
-  x1_node1[0] (in)                         0.00       0.25 r
-  U10253/ZN (CKND0BWP)                     0.02 *     0.27 f
-  U10249/ZN (NR2D0BWP)                     0.03 *     0.30 r
-  U550/S (FA1D0BWP)                        0.06 *     0.35 f
-  U559/CO (FA1D0BWP)                       0.06 *     0.42 f
-  U553/S (FA1D0BWP)                        0.05 *     0.46 r
-  U775/ZN (CKND2D0BWP)                     0.02 *     0.48 f
-  U777/Z (CKAN2D1BWP)                      0.05 *     0.53 f
-  U7686/ZN (NR2D0BWP)                      0.04 *     0.57 r
-  node1/mult_83/S1_2_0/CO (FA1D0BWP)       0.08 *     0.65 r
-  node1/mult_83/S1_3_0/CO (FA1D0BWP)       0.07 *     0.72 r
-  node1/mult_83/S1_4_0/CO (FA1D0BWP)       0.07 *     0.79 r
-  node1/mult_83/S1_5_0/CO (FA1D0BWP)       0.07 *     0.86 r
-  node1/mult_83/S1_6_0/CO (FA1D0BWP)       0.07 *     0.92 r
-  node1/mult_83/S1_7_0/CO (FA1D0BWP)       0.07 *     0.99 r
-  node1/mult_83/S1_8_0/CO (FA1D0BWP)       0.07 *     1.06 r
-  node1/mult_83/S1_9_0/CO (FA1D0BWP)       0.07 *     1.12 r
-  node1/mult_83/S1_10_0/CO (FA1D0BWP)      0.07 *     1.19 r
-  node1/mult_83/S1_11_0/CO (FA1D0BWP)      0.07 *     1.26 r
-  node1/mult_83/S1_12_0/CO (FA1D0BWP)      0.07 *     1.33 r
-  node1/mult_83/S1_13_0/CO (FA1D0BWP)      0.07 *     1.39 r
-  node1/mult_83/S4_0/CO (FA1D0BWP)         0.07 *     1.46 r
-  U3651/Z (XOR2D0BWP)                      0.05 *     1.51 f
-  U6530/ZN (NR2D0BWP)                      0.03 *     1.54 r
-  U6197/ZN (CKND0BWP)                      0.01 *     1.55 f
-  U6196/ZN (AOI21D0BWP)                    0.03 *     1.58 r
-  U6392/ZN (OAI21D0BWP)                    0.03 *     1.61 f
-  U9588/Z (AO221D0BWP)                     0.06 *     1.67 f
-  U9587/Z (XOR3D0BWP)                      0.05 *     1.73 r
-  node1/mul6_out_reg[18]/D (DFQD1BWP)      0.00 *     1.73 r
+  x1_node2[0] (in)                         0.00       0.25 r
+  U10164/ZN (CKND0BWP)                     0.03 *     0.28 f
+  U10183/ZN (NR2D0BWP)                     0.04 *     0.31 r
+  U568/S (FA1D0BWP)                        0.05 *     0.36 f
+  U578/S (FA1D0BWP)                        0.07 *     0.43 r
+  U5889/Z (AO22D1BWP)                      0.06 *     0.49 r
+  U8255/ZN (CKND2D0BWP)                    0.04 *     0.53 f
+  U7379/ZN (NR3D0BWP)                      0.04 *     0.57 r
+  node2/mult_78/S2_2_1/CO (FA1D0BWP)       0.08 *     0.65 r
+  node2/mult_78/S2_3_1/CO (FA1D0BWP)       0.07 *     0.71 r
+  node2/mult_78/S2_4_1/CO (FA1D0BWP)       0.07 *     0.78 r
+  node2/mult_78/S2_5_1/CO (FA1D0BWP)       0.07 *     0.85 r
+  node2/mult_78/S2_6_1/CO (FA1D0BWP)       0.07 *     0.92 r
+  node2/mult_78/S2_7_1/CO (FA1D0BWP)       0.07 *     0.99 r
+  node2/mult_78/S2_8_1/CO (FA1D0BWP)       0.07 *     1.06 r
+  node2/mult_78/S2_9_1/CO (FA1D0BWP)       0.07 *     1.13 r
+  node2/mult_78/S2_10_1/CO (FA1D0BWP)      0.07 *     1.19 r
+  node2/mult_78/S2_11_1/CO (FA1D0BWP)      0.07 *     1.26 r
+  node2/mult_78/S2_12_1/CO (FA1D0BWP)      0.07 *     1.33 r
+  node2/mult_78/S2_13_1/CO (FA1D0BWP)      0.07 *     1.39 r
+  node2/mult_78/S4_1/S (FA1D0BWP)          0.07 *     1.47 r
+  U2364/Z (XOR2D0BWP)                      0.04 *     1.51 f
+  U6547/ZN (NR2D0BWP)                      0.03 *     1.54 r
+  U6211/ZN (CKND0BWP)                      0.01 *     1.55 f
+  U6210/ZN (AOI21D0BWP)                    0.03 *     1.58 r
+  U6421/ZN (OAI21D0BWP)                    0.03 *     1.61 f
+  U9593/Z (AO221D0BWP)                     0.07 *     1.67 f
+  U9592/Z (XOR3D0BWP)                      0.06 *     1.73 r
+  node2/mul2_out_reg[18]/D (DFQD1BWP)      0.00 *     1.73 r
   data arrival time                                   1.73
 
   clock clk (rise edge)                    1.88       1.88
-  clock network delay (propagated)         0.08       1.96
-  clock uncertainty                       -0.15       1.81
-  node1/mul6_out_reg[18]/CP (DFQD1BWP)     0.00       1.81 r
+  clock network delay (propagated)         0.09       1.97
+  clock uncertainty                       -0.15       1.82
+  node2/mul2_out_reg[18]/CP (DFQD1BWP)     0.00       1.82 r
   library setup time                      -0.01       1.81
   data required time                                  1.81
   -----------------------------------------------------------
@@ -1096,9 +1076,9 @@ Information: Percent of Arnoldi-based delays =  2.85%
   slack (MET)                                         0.08
 
 
-  Startpoint: x3_node1[0]
-              (input port clocked by clk)
-  Endpoint: node0/mul8_out_reg[18]
+  Startpoint: dnn_state_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node2/mul1_out_reg[18]
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: max
@@ -1106,44 +1086,107 @@ Information: Percent of Arnoldi-based delays =  2.85%
   Point                                    Incr       Path
   -----------------------------------------------------------
   clock clk (rise edge)                    0.00       0.00
-  clock network delay (ideal)              0.00       0.00
-  input external delay                     0.25       0.25 r
-  x3_node1[0] (in)                         0.00       0.25 r
-  U10254/ZN (CKND0BWP)                     0.02 *     0.27 f
-  U10250/ZN (NR2D0BWP)                     0.03 *     0.30 r
-  U548/CO (FA1D0BWP)                       0.04 *     0.34 r
-  U545/S (FA1D0BWP)                        0.05 *     0.40 f
-  U554/CO (FA1D0BWP)                       0.06 *     0.46 f
-  U605/S (FA1D0BWP)                        0.05 *     0.51 r
-  U772/ZN (CKND2D0BWP)                     0.01 *     0.52 f
-  U774/Z (CKAN2D0BWP)                      0.06 *     0.58 f
-  U7691/ZN (NR2D0BWP)                      0.04 *     0.63 r
-  node0/mult_85/S1_3_0/CO (FA1D0BWP)       0.08 *     0.71 r
-  node0/mult_85/S1_4_0/CO (FA1D0BWP)       0.07 *     0.79 r
-  node0/mult_85/S1_5_0/CO (FA1D0BWP)       0.07 *     0.86 r
-  node0/mult_85/S1_6_0/CO (FA1D0BWP)       0.07 *     0.93 r
-  node0/mult_85/S1_7_0/CO (FA1D0BWP)       0.07 *     1.00 r
-  node0/mult_85/S1_8_0/CO (FA1D0BWP)       0.07 *     1.07 r
-  node0/mult_85/S1_9_0/CO (FA1D0BWP)       0.07 *     1.14 r
-  node0/mult_85/S1_10_0/CO (FA1D0BWP)      0.07 *     1.21 r
-  node0/mult_85/S1_11_0/CO (FA1D0BWP)      0.07 *     1.27 r
-  node0/mult_85/S1_12_0/CO (FA1D0BWP)      0.07 *     1.34 r
-  node0/mult_85/S1_13_0/CO (FA1D0BWP)      0.07 *     1.41 r
-  node0/mult_85/S4_0/CO (FA1D0BWP)         0.07 *     1.47 r
-  U4661/Z (XOR2D0BWP)                      0.05 *     1.52 f
-  U6537/ZN (NR2D0BWP)                      0.03 *     1.55 r
-  U6211/ZN (CKND0BWP)                      0.02 *     1.56 f
-  U6210/ZN (AOI21D0BWP)                    0.03 *     1.59 r
-  U6399/ZN (OAI21D0BWP)                    0.03 *     1.62 f
-  U9618/Z (AO221D0BWP)                     0.06 *     1.68 f
-  U9617/Z (XOR3D0BWP)                      0.05 *     1.73 r
-  node0/mul8_out_reg[18]/D (DFQD1BWP)      0.00 *     1.73 r
+  clock network delay (propagated)         0.08       0.08
+  dnn_state_reg[0]/CP (DFCNQD1BWP)         0.00       0.08 r
+  dnn_state_reg[0]/Q (DFCNQD1BWP)          0.08       0.16 f
+  U175/Z (CKBD1BWP)                        0.02 *     0.17 f
+  U40/ZN (INVD1BWP)                        0.01 *     0.18 r
+  U187/Z (BUFFD0BWP)                       0.02 *     0.21 r
+  U67/ZN (CKND2BWP)                        0.02 *     0.22 f
+  U2/ZN (CKND12BWP)                        0.02 *     0.25 r
+  U10248/ZN (NR2XD0BWP)                    0.04 *     0.29 f
+  U82/Z (CKBD4BWP)                         0.06 *     0.34 f
+  U10206/Z (AO222D2BWP)                    0.11 *     0.45 f
+  U129/Z (BUFFD1BWP)                       0.07 *     0.52 f
+  U8256/ZN (CKND2D0BWP)                    0.04 *     0.55 r
+  U2224/Z (XOR2D0BWP)                      0.04 *     0.60 r
+  node2/mult_77/S1_2_0/CO (FA1D0BWP)       0.04 *     0.64 r
+  node2/mult_77/S1_3_0/CO (FA1D0BWP)       0.07 *     0.71 r
+  node2/mult_77/S1_4_0/CO (FA1D0BWP)       0.07 *     0.77 r
+  node2/mult_77/S1_5_0/CO (FA1D0BWP)       0.07 *     0.84 r
+  node2/mult_77/S1_6_0/CO (FA1D0BWP)       0.07 *     0.91 r
+  node2/mult_77/S1_7_0/CO (FA1D0BWP)       0.07 *     0.98 r
+  node2/mult_77/S1_8_0/CO (FA1D0BWP)       0.07 *     1.05 r
+  node2/mult_77/S1_9_0/CO (FA1D0BWP)       0.07 *     1.11 r
+  node2/mult_77/S1_10_0/CO (FA1D0BWP)      0.07 *     1.18 r
+  node2/mult_77/S1_11_0/CO (FA1D0BWP)      0.07 *     1.25 r
+  node2/mult_77/S1_12_0/CO (FA1D0BWP)      0.07 *     1.32 r
+  node2/mult_77/S1_13_0/CO (FA1D0BWP)      0.07 *     1.38 r
+  node2/mult_77/S4_0/S (FA1D0BWP)          0.07 *     1.46 f
+  U2415/Z (XOR2D0BWP)                      0.05 *     1.51 f
+  U6569/ZN (INR2D0BWP)                     0.03 *     1.54 f
+  U6202/ZN (AOI21D0BWP)                    0.04 *     1.57 r
+  U6417/ZN (OAI21D0BWP)                    0.03 *     1.61 f
+  U9587/Z (AO221D0BWP)                     0.07 *     1.67 f
+  U9586/Z (XOR3D0BWP)                      0.05 *     1.73 r
+  node2/mul1_out_reg[18]/D (DFQD2BWP)      0.00 *     1.73 r
   data arrival time                                   1.73
 
   clock clk (rise edge)                    1.88       1.88
-  clock network delay (propagated)         0.09       1.97
-  clock uncertainty                       -0.15       1.82
-  node0/mul8_out_reg[18]/CP (DFQD1BWP)     0.00       1.82 r
+  clock network delay (propagated)         0.08       1.96
+  clock uncertainty                       -0.15       1.81
+  node2/mul1_out_reg[18]/CP (DFQD2BWP)     0.00       1.81 r
+  library setup time                      -0.01       1.81
+  data required time                                  1.81
+  -----------------------------------------------------------
+  data required time                                  1.81
+  data arrival time                                  -1.73
+  -----------------------------------------------------------
+  slack (MET)                                         0.08
+
+
+  Startpoint: dnn_state_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node1/mul7_out_reg[18]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (propagated)         0.08       0.08
+  dnn_state_reg[0]/CP (DFCNQD1BWP)         0.00       0.08 r
+  dnn_state_reg[0]/Q (DFCNQD1BWP)          0.08       0.16 f
+  U175/Z (CKBD1BWP)                        0.02 *     0.17 f
+  U40/ZN (INVD1BWP)                        0.01 *     0.18 r
+  U187/Z (BUFFD0BWP)                       0.02 *     0.21 r
+  U67/ZN (CKND2BWP)                        0.02 *     0.22 f
+  U2/ZN (CKND12BWP)                        0.02 *     0.25 r
+  U10248/ZN (NR2XD0BWP)                    0.04 *     0.29 f
+  U82/Z (CKBD4BWP)                         0.06 *     0.34 f
+  U10239/ZN (AOI222D4BWP)                  0.10 *     0.45 r
+  U112/Z (CKBD4BWP)                        0.05 *     0.50 r
+  U113/ZN (INVD2BWP)                       0.05 *     0.55 f
+  U8979/ZN (CKND2D0BWP)                    0.04 *     0.59 r
+  U2780/Z (XOR2D0BWP)                      0.03 *     0.62 r
+  node1/mult_84/S2_2_2/CO (FA1D0BWP)       0.04 *     0.66 r
+  node1/mult_84/S2_3_2/CO (FA1D0BWP)       0.07 *     0.73 r
+  node1/mult_84/S2_4_2/CO (FA1D0BWP)       0.07 *     0.80 r
+  node1/mult_84/S2_5_2/CO (FA1D0BWP)       0.07 *     0.87 r
+  node1/mult_84/S2_6_2/CO (FA1D0BWP)       0.07 *     0.93 r
+  node1/mult_84/S2_7_2/CO (FA1D0BWP)       0.07 *     1.00 r
+  node1/mult_84/S2_8_2/CO (FA1D0BWP)       0.07 *     1.07 r
+  node1/mult_84/S2_9_2/CO (FA1D0BWP)       0.07 *     1.14 r
+  node1/mult_84/S2_10_2/CO (FA1D0BWP)      0.07 *     1.20 r
+  node1/mult_84/S2_11_2/CO (FA1D0BWP)      0.07 *     1.27 r
+  node1/mult_84/S2_12_2/CO (FA1D0BWP)      0.07 *     1.34 r
+  node1/mult_84/S2_13_2/S (FA1D0BWP)       0.07 *     1.42 f
+  node1/mult_84/S4_1/S (FA1D0BWP)          0.05 *     1.47 r
+  U3597/Z (XOR2D0BWP)                      0.04 *     1.51 f
+  U6507/ZN (NR2D0BWP)                      0.03 *     1.54 r
+  U6181/ZN (CKND0BWP)                      0.02 *     1.56 f
+  U6180/ZN (AOI21D0BWP)                    0.03 *     1.59 r
+  U6374/ZN (OAI21D0BWP)                    0.03 *     1.62 f
+  U9548/Z (AO221D0BWP)                     0.06 *     1.68 f
+  U9547/Z (XOR3D0BWP)                      0.05 *     1.73 r
+  node1/mul7_out_reg[18]/D (DFQD2BWP)      0.00 *     1.73 r
+  data arrival time                                   1.73
+
+  clock clk (rise edge)                    1.88       1.88
+  clock network delay (propagated)         0.08       1.96
+  clock uncertainty                       -0.15       1.81
+  node1/mul7_out_reg[18]/CP (DFQD2BWP)     0.00       1.81 r
   library setup time                       0.00       1.81
   data required time                                  1.81
   -----------------------------------------------------------
