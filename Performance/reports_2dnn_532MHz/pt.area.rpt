@@ -1,0 +1,19 @@
+Information: Checked out license 'PrimeTime-ADV' (PT-019)
+Error: Cannot read link_path file 'tpfn45gsgv18tc.db'. (LNK-001)
+****************************************
+Report : cell_usage
+Design : top
+Version: S-2021.06
+Date   : Sun May  1 18:05:28 2022
+****************************************
+
+Cell Group            Count                   Area        
+----------------------------------------------------------
+Combinational         13826 ( 97%)        24958.66 ( 93%) 
+Sequential              496 (  3%)         1838.44 (  7%) 
+Clock                     4 (  0%)           15.88 (  0%) 
+Others                    0 (  0%)            0.00 (  0%) 
+----------------------------------------------------------
+Total                 14326 (100%)        26812.98 (100%) 
+
+1

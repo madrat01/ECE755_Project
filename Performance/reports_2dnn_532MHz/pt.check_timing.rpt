@@ -1,0 +1,20 @@
+Information: Using automatic max wire load selection group 'WireAreaForZero'. (ENV-003)
+Information: Using automatic min wire load selection group 'WireAreaForZero'. (ENV-003)
+Information: Building multi voltage information for entire design. (MV-022)
+Information: Checking 'no_input_delay'.
+Information: Checking 'no_driving_cell'.
+Information: Checking 'unconstrained_endpoints'.
+Warning: There are 168 endpoints which are not constrained for maximum delay.
+
+Information: Checking 'unexpandable_clocks'.
+Information: Checking 'latch_fanout'.
+Information: Checking 'no_clock'.
+Warning: There are 168 register clock pins with no clock.
+
+Information: Checking 'partial_input_delay'.
+Information: Checking 'generic'.
+Information: Checking 'loops'.
+Information: Checking 'generated_clocks'.
+Information: Checking 'pulse_clock_non_pulse_clock_merge'.
+Information: Checking 'pll_configuration'.
+0

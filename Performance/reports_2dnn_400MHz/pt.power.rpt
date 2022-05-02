@@ -1,0 +1,57 @@
+Warning: Neither event file or switching activity data present for power estimation. The command will propagate switching activity values for power calculation.  (PWR-246)
+Information: Running switching activity propagation with 4 threads!
+Information: Running averaged power analysis... (PWR-601)
+Information: Running power calculation with 4 threads. (PWR-602)
+****************************************
+Report : Averaged Power
+	-verbose
+Design : top
+Version: S-2021.06
+Date   : Sun May  1 19:11:50 2022
+****************************************
+
+Library(s) Used:
+
+    tcbn45gsbwptc (File: /cae/apps/data/tsmclibs-2013/digital/Front_End/timing_power_noise/NLDM/tcbn45gsbwp_120a/tcbn45gsbwptc.db)
+
+
+Operating Conditions: NCCOM   Library: tcbn45gsbwptc
+Wire Load Model Mode: segmented
+
+Cell               Design       Wire_model  Library       Selection_type
+--------------------------------------------------------------------------------
+                   top          ZeroWireload
+                                            tcbn45gsbwptc automatic-by-area
+
+Power-specific unit information :
+    Voltage Units = 1 V
+    Capacitance Units = 1 pf
+    Time Units = 1 ns
+    Dynamic Power Units = 1 W
+    Leakage Power Units = 1 W
+
+
+
+  Attributes
+  ----------
+      i  -  Including register clock pin internal power
+      u  -  User defined power group
+
+                        Internal  Switching  Leakage    Total
+Power Group             Power     Power      Power      Power   (     %)  Attrs
+--------------------------------------------------------------------------------
+clock_network           4.874e-04 1.221e-04 4.358e-07 6.100e-04 (12.78%)  i
+register                1.185e-04 8.505e-05 1.143e-05 2.150e-04 ( 4.50%)  
+combinational           2.322e-03 1.357e-03 2.500e-04 3.930e-03 (82.31%)  
+sequential              1.199e-05 4.058e-06 3.468e-06 1.952e-05 ( 0.41%)  
+memory                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+io_pad                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+black_box                  0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+
+  Net Switching Power  = 1.569e-03   (32.86%)
+  Cell Internal Power  = 2.940e-03   (61.58%)
+  Cell Leakage Power   = 2.653e-04   ( 5.56%)
+                         ---------
+Total Power            = 4.774e-03  (100.00%)
+
+1

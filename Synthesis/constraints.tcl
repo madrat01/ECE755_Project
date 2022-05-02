@@ -1,5 +1,10 @@
 ## Clock with frequency of 200ns = 5 MHz
 ## 1.88 = 532 MHz
+## 1.90 = 526 MHz
+## 1.94 = 515 MHz
+## 2.00 = 500 MHz
+## 2.08 = 480 MHz
+## 2.50 = 400 MHz
 create_clock -name "clk" -period 1.88 -waveform { 0 0.94 } { clk }
 set_dont_touch_network [find port clk]
 

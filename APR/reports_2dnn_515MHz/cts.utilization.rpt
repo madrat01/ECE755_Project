@@ -1,0 +1,62 @@
+ 
+****************************************
+  Report : Chip Summary
+  Design : top
+  Version: S-2021.06
+  Date   : Sun May  1 18:27:25 2022
+****************************************
+Std cell utilization: 60.20%  (151209/(251168-0))
+(Non-fixed + Fixed)
+Std cell utilization: 60.18%  (151085/(251168-124))
+(Non-fixed only)
+Chip area:            251168   sites, bbox (10.00 10.00 220.56 220.42) um
+Std cell area:        151209   sites, (non-fixed:151085 fixed:124)
+                      14218    cells, (non-fixed:14214  fixed:4)
+Macro cell area:      0        sites
+                      0        cells
+Placement blockages:  0        sites, (excluding fixed std cells)
+                      124      sites, (include fixed std cells & chimney area)
+                      0        sites, (complete p/g net blockages)
+Routing blockages:    0        sites, (partial p/g net blockages)
+                      0        sites, (routing blockages and signal pre-route)
+Lib cell count:       103 
+Avg. std cell width:  1.38 um 
+Site array:           unit     (width: 0.14 um, height: 1.26 um, rows: 167)
+Physical DB scale:    1000 db_unit = 1 um 
+
+ 
+****************************************
+  Report : pnet options
+  Design : top
+  Version: S-2021.06
+  Date   : Sun May  1 18:27:25 2022
+****************************************
+
+
+--------------------------------------------------------------------
+Layer      Blockage   Min_width   Min_height   Via_additive     Density
+--------------------------------------------------------------------
+M1         none          ---         ---       via additive      ---
+M2         none          ---         ---       via additive      ---
+M3         none          ---         ---       via additive      ---
+M4         none          ---         ---       via additive      ---
+M5         none          ---         ---       via additive      ---
+M6         none          ---         ---       via additive      ---
+M7         none          ---         ---       via additive      ---
+M8         none          ---         ---       via additive      ---
+M9         none          ---         ---       via additive      ---
+M10        none          ---         ---       via additive      ---
+AP         none          ---         ---       via additive      ---
+
+**********************************
+      Sub-Region Utilization      
+**********************************
+Number of regions with placement utilization 0 - 0.125 is 205 (17.73%)
+Number of regions with placement utilization 0.125 - 0.25 is 41 (3.55%)
+Number of regions with placement utilization 0.25 - 0.375 is 44 (3.81%)
+Number of regions with placement utilization 0.375 - 0.5 is 45 (3.89%)
+Number of regions with placement utilization 0.5 - 0.625 is 57 (4.93%)
+Number of regions with placement utilization 0.625 - 0.75 is 231 (19.98%)
+Number of regions with placement utilization 0.75 - 0.875 is 475 (41.09%)
+Number of regions with placement utilization 0.875 - 1 is 58 (5.02%)
+1

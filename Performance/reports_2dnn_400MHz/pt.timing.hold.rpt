@@ -1,0 +1,111 @@
+****************************************
+Report : timing
+	-path_type full
+	-delay_type min
+	-slack_lesser_than 0.00
+	-max_paths 20
+	-sort_by slack
+Design : top
+Version: S-2021.06
+Date   : Sun May  1 19:11:50 2022
+****************************************
+
+
+  Startpoint: node0/mul1_reg[0]
+               (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: y4_node0_p4_reg[0]
+               (rising edge-triggered flip-flop clocked by clk)
+  Last common pin: clk
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.05       0.05
+  node0/mul1_reg[0]/CP (DFQD1BWP)                         0.00       0.05 r
+  node0/mul1_reg[0]/Q (DFQD1BWP)                          0.10 +     0.15 f
+  U6031/ZN (CKND2D2BWP)                                   0.04 +     0.19 r
+  U261/ZN (CKND0BWP)                                      0.02 +     0.21 f
+  y4_node0_p4_reg[0]/D (DFQD1BWP)                         0.00 +     0.21 f
+  data arrival time                                                  0.21
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.04       0.04
+  clock reconvergence pessimism                           0.00       0.04
+  clock uncertainty                                       0.15       0.19
+  y4_node0_p4_reg[0]/CP (DFQD1BWP)                                   0.19 r
+  library hold time                                       0.02       0.22
+  data required time                                                 0.22
+  ------------------------------------------------------------------------------
+  data required time                                                 0.22
+  data arrival time                                                 -0.21
+  ------------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.01
+
+
+  Startpoint: node1/mul1_reg[3]
+               (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: y4_node1_p4_reg[3]
+               (rising edge-triggered flip-flop clocked by clk)
+  Last common pin: clk
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.05       0.05
+  node1/mul1_reg[3]/CP (DFQD1BWP)                         0.00       0.05 r
+  node1/mul1_reg[3]/Q (DFQD1BWP)                          0.10 +     0.15 f
+  U11396/Z (CKAN2D1BWP)                                   0.06 +     0.21 f
+  y4_node1_p4_reg[3]/D (DFQD1BWP)                         0.00 +     0.21 f
+  data arrival time                                                  0.21
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.04       0.04
+  clock reconvergence pessimism                           0.00       0.04
+  clock uncertainty                                       0.15       0.19
+  y4_node1_p4_reg[3]/CP (DFQD1BWP)                                   0.19 r
+  library hold time                                       0.02       0.21
+  data required time                                                 0.21
+  ------------------------------------------------------------------------------
+  data required time                                                 0.21
+  data arrival time                                                 -0.21
+  ------------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: node1/mul3_reg[11]
+               (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: y6_node1_p4_reg[11]
+               (rising edge-triggered flip-flop clocked by clk)
+  Last common pin: clk
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.05       0.05
+  node1/mul3_reg[11]/CP (DFQD1BWP)                        0.00       0.05 r
+  node1/mul3_reg[11]/Q (DFQD1BWP)                         0.11 +     0.16 f
+  U6247/Z (AN2D1BWP)                                      0.06 +     0.22 f
+  y6_node1_p4_reg[11]/D (DFQD1BWP)                        0.00 +     0.22 f
+  data arrival time                                                  0.22
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.05       0.05
+  clock reconvergence pessimism                           0.00       0.05
+  clock uncertainty                                       0.15       0.20
+  y6_node1_p4_reg[11]/CP (DFQD1BWP)                                  0.20 r
+  library hold time                                       0.02       0.22
+  data required time                                                 0.22
+  ------------------------------------------------------------------------------
+  data required time                                                 0.22
+  data arrival time                                                 -0.22
+  ------------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+1

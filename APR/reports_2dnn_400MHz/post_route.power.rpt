@@ -1,0 +1,56 @@
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : top
+Version: S-2021.06
+Date   : Sun May  1 19:11:25 2022
+****************************************
+
+
+Library(s) Used:
+
+    tcbn45gsbwptc (File: /cae/apps/data/tsmclibs-2013/digital/Front_End/timing_power_noise/NLDM/tcbn45gsbwp_120a/tcbn45gsbwptc.db)
+
+
+Operating Conditions: NCCOM   Library: tcbn45gsbwptc
+Wire Load Model Mode: segmented
+
+Design        Wire Load Model            Library
+------------------------------------------------
+top                    ZeroWireload      tcbn45gsbwptc
+
+
+Global Operating Voltage = 0.9  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+  Cell Internal Power  =   3.9083 mW   (67%)
+  Net Switching Power  =   1.8991 mW   (33%)
+                         ---------
+Total Dynamic Power    =   5.8074 mW  (100%)
+
+Cell Leakage Power     = 265.3631 uW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network  1.1814e-02            0.1221          435.8167            0.1344  (   2.21%)
+register           0.6196        9.7449e-02        1.1429e+04            0.7285  (  12.00%)
+sequential     1.1826e-02        3.9731e-03        3.4697e+03        1.9269e-02  (   0.32%)
+combinational      3.2650            1.6755        2.5003e+05            5.1906  (  85.47%)
+--------------------------------------------------------------------------------------------------
+Total              3.9083 mW         1.8991 mW     2.6536e+05 nW         6.0727 mW
+1

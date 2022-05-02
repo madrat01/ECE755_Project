@@ -20,3 +20,11 @@ analyze -library work -format sverilog \
 #{   ../RTL/unoptimized/top.sv \
 #	../RTL/unoptimized/dnn.sv
 #}
+
+#lappend search_path "../RTL/2dnn"
+#
+#analyze -library work -format sverilog \
+#{	../RTL/2dnn/defines_pkg.sv \
+#	../RTL/2dnn/top.sv \
+#	../RTL/2dnn/dnn.sv
+#}
