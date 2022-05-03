@@ -47,5 +47,5 @@ redirect -tee ./reports/pt.update_timing.rpt   { update_timing }
 redirect -tee ./reports/pt.timing.rpt          { report_timing }
 redirect -tee ./reports/pt.power.rpt           { report_power -verbose }
 redirect -tee ./reports/pt.hier_power.rpt      { report_power -hierarchy -nosplit }
-redirect -tee ./reports/pt.timing.setup.rpt    { report_timing -delay max -max_paths 20 }
-redirect -tee ./reports/pt.timing.hold.rpt     { report_timing -delay min -max_paths 20 }
+redirect -tee ./reports/pt.timing.setup.rpt    { report_timing -delay max -max_paths 20 -significant_digits 6}
+redirect -tee ./reports/pt.timing.hold.rpt     { report_timing -delay min -max_paths 20 -significant_digits 6}

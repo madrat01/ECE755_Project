@@ -149,6 +149,7 @@ report_timing -delay min -max_paths 20 > ./reports/cts.timing.hold.rpt
 
 write_verilog ./outputs/${module}.cts.vg
 
+focal_opt -drc_nets all
 ###########################################################################
 ## Route
 ###########################################################################
@@ -157,14 +158,16 @@ route_opt -initial_route_only
 
 ## Optimized routing step
 route_opt -skip_initial_route -effort low -power
+focal_opt -drc_nets all
 derive_pg_connection -power_net VDD -power_pin VDD -ground_net VSS -ground_pin VSS
 
 ## Incremental route to clean up DRCs
 route_zrt_detail -incremental true
 ###########################################################################
 ## The following command helps in eliminating max trans/caps violations
-focal_opt -drc_nets all
 ###########################################################################
+focal_opt -drc_nets all
+#set_fix_hold [all_clocks]
 
 ## Dump reports after routing
 report_placement_utilization > ./reports/route.utilization.rpt
@@ -199,8 +202,13 @@ preroute_standard_cells \
   -cell_instance_filter_mode off \
   -voltage_area_filter_mode off
 
+focal_opt -drc_nets all
+focal_opt -hold_endpoints all
+
 ## Incremental route to clean up DRCs
 route_zrt_detail -incremental true
+
+report_constraint -all_violators -significant_digits 6 > ./reports/post_route.timing.all_violators.rpt
 
 ## Dump reports after routing
 report_placement_utilization > ./reports/post_route.utilization.rpt
@@ -209,8 +217,8 @@ report_qor                   > ./reports/post_route.qor.rpt
 report_area                  > ./reports/post_route.area.rpt
 report_power                 > ./reports/post_route.power.rpt
 
-report_timing -delay max -max_paths 20 > ./reports/post_route.timing.setup.rpt
-report_timing -delay min -max_paths 20 > ./reports/post_route.timing.hold.rpt
+report_timing -delay max -max_paths 20 -significant_digits 6 > ./reports/post_route.timing.setup.rpt
+report_timing -delay min -max_paths 20 -significant_digits 6 > ./reports/post_route.timing.hold.rpt
 
 verify_pg_nets   > ./reports/post_route.pg_nets.rpt
 verify_lvs       > ./reports/post_route.lvs.rpt

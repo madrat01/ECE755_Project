@@ -19,8 +19,7 @@ import defines_pkg::*;
 
 logic signed [14:0] y4, y5, y6, y7;
 logic signed [20:0]	mul1, mul2, mul3, mul4;
-logic               out_comp_ready;
-logic               out0_ready, out1_ready;
+logic               y_comp_ready;
 
 logic signed [14:0] multiplicand1, multiplicand2, multiplicand3, multiplicand4, multiplicand5, multiplicand6, multiplicand7, multiplicand8;
 logic signed [4:0]  multiplier1, multiplier2, multiplier3, multiplier4, multiplier5, multiplier6, multiplier7, multiplier8;
@@ -99,29 +98,29 @@ assign multiplier15  = dnn_state == FINAL_OUT       ? w69 :  // Output out0 y6*w
 assign multiplier16  = dnn_state == FINAL_OUT       ? w79 :  // Output out0 y6*w68
                                                       w37;      // Layer-1 y5 x2*w25
 
-
-assign out0_n0_ready = out0_ready;
-assign out0_n1_ready = out0_ready;
-assign out1_n0_ready = out1_ready;
-assign out1_n1_ready = out1_ready;
-
 // Layer-1 calculations
 // Uses 16 5*5 multipliers and 12 12-bit adders
 always_ff @ (posedge clk, negedge rst_n) begin
 	if (~rst_n) begin
-	    out_comp_ready <= 1'b0;
-		out0_ready <= 1'b0;
-		out1_ready <= 1'b0;
+	    y_comp_ready <= 1'b0;
+        out0_n0_ready <= 1'b0;
+        out0_n1_ready <= 1'b0;		
+        out1_n0_ready <= 1'b0;
+        out1_n1_ready <= 1'b0;
 	end
     else begin
 		if (dnn_state != FINAL_OUT) begin
-            out_comp_ready <= 1'b1;
-		    out0_ready <= 1'b0;
-		    out1_ready <= 1'b0;
+            y_comp_ready <= 1'b1;
+            out0_n0_ready <= 1'b0;
+            out0_n1_ready <= 1'b0;		
+            out1_n0_ready <= 1'b0;
+            out1_n1_ready <= 1'b0;
 		end else begin
-		    out0_ready <= 1'b1;
-		    out1_ready <= 1'b1;
-		    out_comp_ready <= 1'b0;
+            out0_n0_ready <= 1'b1;
+            out0_n1_ready <= 1'b1;		
+            out1_n0_ready <= 1'b1;
+            out1_n1_ready <= 1'b1;
+		    y_comp_ready <= 1'b0;
 		end
 	end
 end
@@ -135,38 +134,34 @@ always_ff @ (posedge clk) begin
     mul4 <= multiplicand5 * multiplier13 + multiplicand6 * multiplier14 + multiplicand7 * multiplier15 + multiplicand8 * multiplier16;
 end
 
-assign y4 = out_comp_ready ? mul1[12:0] : 'b0;
-assign y5 = out_comp_ready ? mul2[12:0] : 'b0;
-assign y6 = out_comp_ready ? mul3[12:0] : 'b0;
-assign y7 = out_comp_ready ? mul4[12:0] : 'b0;
-        
+assign y4 = y_comp_ready ? mul1[12:0] : 'b0;
+assign y5 = y_comp_ready ? mul2[12:0] : 'b0;
+assign y6 = y_comp_ready ? mul3[12:0] : 'b0;
+assign y7 = y_comp_ready ? mul4[12:0] : 'b0;
+       
 assign y4_relu = y4[12] ? 0 : {1'b0, y4[11:0]};
 assign y5_relu = y5[12] ? 0 : {1'b0, y5[11:0]};
 assign y6_relu = y6[12] ? 0 : {1'b0, y6[11:0]};
 assign y7_relu = y7[12] ? 0 : {1'b0, y7[11:0]};
 
-always_latch begin
-	if (out0_ready) begin
+always_ff @ (negedge clk) begin 
+ if (out0_n0_ready)
 		out0_n0 <= mul1;
-	end
 end
 
-always_latch begin
-	if (out1_ready) begin
+always_ff @ (negedge clk) begin 
+ if (out1_n0_ready)
 		out1_n0 <= mul2;
-	end
 end
 
-always_latch begin
-	if (out0_ready) begin
+always_ff @ (negedge clk) begin 
+ if (out0_n1_ready)
 		out0_n1 <= mul3;
-	end
 end
 
-always_latch begin
-	if (out1_ready) begin
+always_ff @ (negedge clk) begin 
+ if (out1_n1_ready)
 		out1_n1 <= mul4;
-    end
 end
 
 endmodule

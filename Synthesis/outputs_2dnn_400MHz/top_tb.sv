@@ -114,11 +114,10 @@ initial begin
     $display("---Few Negative---\n");
     $display("out0_node0 %d out0_node1 %d out0_node2 %d out0_node3 %d\n", out0_node0, out0_node1, out0_node2, out0_node3);
     $display("out1_node0 %d out1_node1 %d out1_node2 %d out1_node3 %d\n", out1_node0, out1_node1, out1_node2, out1_node3);
-    
+
     in_ready = 1'b0;
     repeat (5) @ (posedge clk);
 
-    @ (negedge clk);
     in_ready = 1'b1;
 
     x0_node0 = 5'b01111;
@@ -174,7 +173,6 @@ initial begin
     in_ready = 1'b0;
     repeat (5) @ (posedge clk);
 
-    @ (negedge clk);
     in_ready = 1'b1;
 
     x0_node0 = 5'b10000;

@@ -4,8 +4,9 @@
 ## 1.94 = 515 MHz
 ## 2.00 = 500 MHz
 ## 2.08 = 480 MHz
+## 2.22 = 450 MHz
 ## 2.50 = 400 MHz
-create_clock -name "clk" -period 1.88 -waveform { 0 0.94 } { clk }
+create_clock -name "clk" -period 2.22 -waveform { 0 1.11 } { clk }
 set_dont_touch_network [find port clk]
 
 ## Pointer to all inputs except clk

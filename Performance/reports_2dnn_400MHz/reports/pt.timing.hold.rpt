@@ -1,0 +1,114 @@
+****************************************
+Report : timing
+	-path_type full
+	-delay_type min
+	-slack_lesser_than 0.000000
+	-max_paths 20
+	-sort_by slack
+Design : top
+Version: S-2021.06
+Date   : Mon May  2 16:35:10 2022
+****************************************
+
+
+  Startpoint: node0/mul2_reg[10]
+               (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: y5_node0_p4_reg[10]
+               (rising edge-triggered flip-flop clocked by clk)
+  Last common pin: clk
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock clk (rise edge)                               0.000000   0.000000
+  clock network delay (propagated)                    0.049816   0.049816
+  node0/mul2_reg[10]/CP (DFQD1BWP)                    0.000000   0.049816 r
+  node0/mul2_reg[10]/Q (DFQD1BWP)                     0.081918 + 0.131734 f
+  U38/ZN (INVD2BWP)                                   0.030014 + 0.161748 r
+  U12089/ZN (NR2XD0BWP)                               0.047821 + 0.209568 f
+  y5_node0_p4_reg[10]/D (DFQD1BWP)                    0.000031 + 0.209599 f
+  data arrival time                                              0.209599
+
+  clock clk (rise edge)                               0.000000   0.000000
+  clock network delay (propagated)                    0.051069   0.051069
+  clock reconvergence pessimism                       0.000000   0.051069
+  clock uncertainty                                   0.150000   0.201069
+  y5_node0_p4_reg[10]/CP (DFQD1BWP)                              0.201069 r
+  library hold time                                   0.019456   0.220525
+  data required time                                             0.220525
+  ------------------------------------------------------------------------------
+  data required time                                             0.220525
+  data arrival time                                              -0.209599
+  ------------------------------------------------------------------------------
+  slack (VIOLATED)                                               -0.010926
+
+
+  Startpoint: dnn_state_reg[0]
+               (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node0/y_comp_ready_reg
+               (rising edge-triggered flip-flop clocked by clk)
+  Last common pin: clk
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock clk (rise edge)                               0.000000   0.000000
+  clock network delay (propagated)                    0.051069   0.051069
+  dnn_state_reg[0]/CP (DFSNQD1BWP)                    0.000000   0.051069 r
+  dnn_state_reg[0]/Q (DFSNQD1BWP)                     0.080615 + 0.131684 r
+  U12292/ZN (CKND2D8BWP)                              0.015679 + 0.147363 f
+  U43/Z (BUFFD16BWP)                                  0.035534 + 0.182897 f
+  U54/Z (CKBD0BWP)                                    0.040327 + 0.223224 f
+  node0/y_comp_ready_reg/D (DFCNQD1BWP)               0.000025 + 0.223250 f
+  data arrival time                                              0.223250
+
+  clock clk (rise edge)                               0.000000   0.000000
+  clock network delay (propagated)                    0.054497   0.054497
+  clock reconvergence pessimism                       0.000000   0.054497
+  clock uncertainty                                   0.150000   0.204497
+  node0/y_comp_ready_reg/CP (DFCNQD1BWP)                         0.204497 r
+  library hold time                                   0.026955   0.231452
+  data required time                                             0.231452
+  ------------------------------------------------------------------------------
+  data required time                                             0.231452
+  data arrival time                                              -0.223250
+  ------------------------------------------------------------------------------
+  slack (VIOLATED)                                               -0.008203
+
+
+  Startpoint: node0/mul3_reg[10]
+               (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: y6_node0_p4_reg[10]
+               (rising edge-triggered flip-flop clocked by clk)
+  Last common pin: clk
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock clk (rise edge)                               0.000000   0.000000
+  clock network delay (propagated)                    0.052202   0.052202
+  node0/mul3_reg[10]/CP (DFQD1BWP)                    0.000000   0.052202 r
+  node0/mul3_reg[10]/Q (DFQD1BWP)                     0.079418 + 0.131621 f
+  U7010/ZN (INVD1BWP)                                 0.032597 + 0.164218 r
+  U12090/ZN (NR2XD0BWP)                               0.049582 + 0.213800 f
+  y6_node0_p4_reg[10]/D (DFQD1BWP)                    0.000039 + 0.213838 f
+  data arrival time                                              0.213838
+
+  clock clk (rise edge)                               0.000000   0.000000
+  clock network delay (propagated)                    0.049816   0.049816
+  clock reconvergence pessimism                       0.000000   0.049816
+  clock uncertainty                                   0.150000   0.199816
+  y6_node0_p4_reg[10]/CP (DFQD1BWP)                              0.199816 r
+  library hold time                                   0.019052   0.218868
+  data required time                                             0.218868
+  ------------------------------------------------------------------------------
+  data required time                                             0.218868
+  data arrival time                                              -0.213838
+  ------------------------------------------------------------------------------
+  slack (VIOLATED)                                               -0.005030
+
+
+1

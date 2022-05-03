@@ -1,0 +1,795 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -max_paths 20
+Design : top
+Version: S-2021.06
+Date   : Mon May  2 16:30:53 2022
+****************************************
+
+Operating Conditions: NCCOM   Library: tcbn45gsbwptc
+Wire Load Model Mode: segmented
+
+  Startpoint: node0/mul1_reg[11]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: y4_node0_p4_reg[11]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  top                TSMC32K_Lowk_Conservative
+                                           tcbn45gsbwptc
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  node0/mul1_reg[11]/CP (DFQD1BWP)         0.00       0.00 r
+  node0/mul1_reg[11]/Q (DFQD1BWP)          0.06       0.06 f
+  U7027/ZN (CKND0BWP)                      0.02       0.08 r
+  U7028/Z (CKBD1BWP)                       0.02       0.10 r
+  U12090/ZN (NR2D1BWP)                     0.02       0.12 f
+  U7030/Z (CKBD1BWP)                       0.02       0.14 f
+  U7029/Z (CKBD1BWP)                       0.02       0.16 f
+  y4_node0_p4_reg[11]/D (DFQD1BWP)         0.00       0.16 f
+  data arrival time                                   0.16
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  clock uncertainty                        0.15       0.15
+  y4_node0_p4_reg[11]/CP (DFQD1BWP)        0.00       0.15 r
+  library hold time                        0.01       0.16
+  data required time                                  0.16
+  -----------------------------------------------------------
+  data required time                                  0.16
+  data arrival time                                  -0.16
+  -----------------------------------------------------------
+  slack (VIOLATED: increase significant digits)       0.00
+
+
+  Startpoint: node0/mul2_reg[10]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: y5_node0_p4_reg[10]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  top                TSMC32K_Lowk_Conservative
+                                           tcbn45gsbwptc
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  node0/mul2_reg[10]/CP (DFQD1BWP)         0.00       0.00 r
+  node0/mul2_reg[10]/Q (DFQD1BWP)          0.06       0.06 f
+  U7006/ZN (CKND0BWP)                      0.02       0.08 r
+  U7007/Z (CKBD1BWP)                       0.02       0.10 r
+  U12088/ZN (NR2D1BWP)                     0.02       0.12 f
+  U7009/Z (CKBD1BWP)                       0.02       0.14 f
+  U7008/Z (CKBD1BWP)                       0.02       0.16 f
+  y5_node0_p4_reg[10]/D (DFQD1BWP)         0.00       0.16 f
+  data arrival time                                   0.16
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  clock uncertainty                        0.15       0.15
+  y5_node0_p4_reg[10]/CP (DFQD1BWP)        0.00       0.15 r
+  library hold time                        0.01       0.16
+  data required time                                  0.16
+  -----------------------------------------------------------
+  data required time                                  0.16
+  data arrival time                                  -0.16
+  -----------------------------------------------------------
+  slack (VIOLATED: increase significant digits)       0.00
+
+
+  Startpoint: node0/mul1_reg[10]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: y4_node0_p4_reg[10]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  top                TSMC32K_Lowk_Conservative
+                                           tcbn45gsbwptc
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  node0/mul1_reg[10]/CP (DFQD1BWP)         0.00       0.00 r
+  node0/mul1_reg[10]/Q (DFQD1BWP)          0.06       0.06 f
+  U6999/ZN (CKND0BWP)                      0.02       0.08 r
+  U7000/Z (CKBD1BWP)                       0.02       0.10 r
+  U12086/ZN (NR2D1BWP)                     0.02       0.12 f
+  U7002/Z (CKBD1BWP)                       0.02       0.14 f
+  U7001/Z (CKBD1BWP)                       0.02       0.16 f
+  y4_node0_p4_reg[10]/D (DFQD1BWP)         0.00       0.16 f
+  data arrival time                                   0.16
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  clock uncertainty                        0.15       0.15
+  y4_node0_p4_reg[10]/CP (DFQD1BWP)        0.00       0.15 r
+  library hold time                        0.01       0.16
+  data required time                                  0.16
+  -----------------------------------------------------------
+  data required time                                  0.16
+  data arrival time                                  -0.16
+  -----------------------------------------------------------
+  slack (VIOLATED: increase significant digits)       0.00
+
+
+  Startpoint: node0/mul2_reg[9]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: y5_node0_p4_reg[9]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  top                TSMC32K_Lowk_Conservative
+                                           tcbn45gsbwptc
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  node0/mul2_reg[9]/CP (DFQD1BWP)          0.00       0.00 r
+  node0/mul2_reg[9]/Q (DFQD1BWP)           0.06       0.06 f
+  U6978/ZN (CKND0BWP)                      0.02       0.08 r
+  U6979/Z (CKBD1BWP)                       0.02       0.10 r
+  U12079/ZN (NR2D1BWP)                     0.02       0.12 f
+  U6981/Z (CKBD1BWP)                       0.02       0.14 f
+  U6980/Z (CKBD1BWP)                       0.02       0.16 f
+  y5_node0_p4_reg[9]/D (DFQD1BWP)          0.00       0.16 f
+  data arrival time                                   0.16
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  clock uncertainty                        0.15       0.15
+  y5_node0_p4_reg[9]/CP (DFQD1BWP)         0.00       0.15 r
+  library hold time                        0.01       0.16
+  data required time                                  0.16
+  -----------------------------------------------------------
+  data required time                                  0.16
+  data arrival time                                  -0.16
+  -----------------------------------------------------------
+  slack (VIOLATED: increase significant digits)       0.00
+
+
+  Startpoint: node0/mul1_reg[9]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: y4_node0_p4_reg[9]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  top                TSMC32K_Lowk_Conservative
+                                           tcbn45gsbwptc
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  node0/mul1_reg[9]/CP (DFQD1BWP)          0.00       0.00 r
+  node0/mul1_reg[9]/Q (DFQD1BWP)           0.06       0.06 f
+  U6971/ZN (CKND0BWP)                      0.02       0.08 r
+  U6972/Z (CKBD1BWP)                       0.02       0.10 r
+  U12078/ZN (NR2D1BWP)                     0.02       0.12 f
+  U6974/Z (CKBD1BWP)                       0.02       0.14 f
+  U6973/Z (CKBD1BWP)                       0.02       0.16 f
+  y4_node0_p4_reg[9]/D (DFQD1BWP)          0.00       0.16 f
+  data arrival time                                   0.16
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  clock uncertainty                        0.15       0.15
+  y4_node0_p4_reg[9]/CP (DFQD1BWP)         0.00       0.15 r
+  library hold time                        0.01       0.16
+  data required time                                  0.16
+  -----------------------------------------------------------
+  data required time                                  0.16
+  data arrival time                                  -0.16
+  -----------------------------------------------------------
+  slack (VIOLATED: increase significant digits)       0.00
+
+
+  Startpoint: node0/mul2_reg[8]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: y5_node0_p4_reg[8]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  top                TSMC32K_Lowk_Conservative
+                                           tcbn45gsbwptc
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  node0/mul2_reg[8]/CP (DFQD1BWP)          0.00       0.00 r
+  node0/mul2_reg[8]/Q (DFQD1BWP)           0.06       0.06 f
+  U6950/ZN (CKND0BWP)                      0.02       0.08 r
+  U6951/Z (CKBD1BWP)                       0.02       0.10 r
+  U12071/ZN (NR2D1BWP)                     0.02       0.12 f
+  U6953/Z (CKBD1BWP)                       0.02       0.14 f
+  U6952/Z (CKBD1BWP)                       0.02       0.16 f
+  y5_node0_p4_reg[8]/D (DFQD1BWP)          0.00       0.16 f
+  data arrival time                                   0.16
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  clock uncertainty                        0.15       0.15
+  y5_node0_p4_reg[8]/CP (DFQD1BWP)         0.00       0.15 r
+  library hold time                        0.01       0.16
+  data required time                                  0.16
+  -----------------------------------------------------------
+  data required time                                  0.16
+  data arrival time                                  -0.16
+  -----------------------------------------------------------
+  slack (VIOLATED: increase significant digits)       0.00
+
+
+  Startpoint: node0/mul1_reg[8]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: y4_node0_p4_reg[8]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  top                TSMC32K_Lowk_Conservative
+                                           tcbn45gsbwptc
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  node0/mul1_reg[8]/CP (DFQD1BWP)          0.00       0.00 r
+  node0/mul1_reg[8]/Q (DFQD1BWP)           0.06       0.06 f
+  U6943/ZN (CKND0BWP)                      0.02       0.08 r
+  U6944/Z (CKBD1BWP)                       0.02       0.10 r
+  U12070/ZN (NR2D1BWP)                     0.02       0.12 f
+  U6946/Z (CKBD1BWP)                       0.02       0.14 f
+  U6945/Z (CKBD1BWP)                       0.02       0.16 f
+  y4_node0_p4_reg[8]/D (DFQD1BWP)          0.00       0.16 f
+  data arrival time                                   0.16
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  clock uncertainty                        0.15       0.15
+  y4_node0_p4_reg[8]/CP (DFQD1BWP)         0.00       0.15 r
+  library hold time                        0.01       0.16
+  data required time                                  0.16
+  -----------------------------------------------------------
+  data required time                                  0.16
+  data arrival time                                  -0.16
+  -----------------------------------------------------------
+  slack (VIOLATED: increase significant digits)       0.00
+
+
+  Startpoint: node0/mul2_reg[7]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: y5_node0_p4_reg[7]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  top                TSMC32K_Lowk_Conservative
+                                           tcbn45gsbwptc
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  node0/mul2_reg[7]/CP (DFQD1BWP)          0.00       0.00 r
+  node0/mul2_reg[7]/Q (DFQD1BWP)           0.06       0.06 f
+  U6915/ZN (CKND0BWP)                      0.02       0.08 r
+  U6916/Z (CKBD1BWP)                       0.02       0.10 r
+  U12061/ZN (NR2D1BWP)                     0.02       0.12 f
+  U6918/Z (CKBD1BWP)                       0.02       0.14 f
+  U6917/Z (CKBD1BWP)                       0.02       0.16 f
+  y5_node0_p4_reg[7]/D (DFQD1BWP)          0.00       0.16 f
+  data arrival time                                   0.16
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  clock uncertainty                        0.15       0.15
+  y5_node0_p4_reg[7]/CP (DFQD1BWP)         0.00       0.15 r
+  library hold time                        0.01       0.16
+  data required time                                  0.16
+  -----------------------------------------------------------
+  data required time                                  0.16
+  data arrival time                                  -0.16
+  -----------------------------------------------------------
+  slack (VIOLATED: increase significant digits)       0.00
+
+
+  Startpoint: node0/mul1_reg[7]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: y4_node0_p4_reg[7]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  top                TSMC32K_Lowk_Conservative
+                                           tcbn45gsbwptc
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  node0/mul1_reg[7]/CP (DFQD1BWP)          0.00       0.00 r
+  node0/mul1_reg[7]/Q (DFQD1BWP)           0.06       0.06 f
+  U6926/ZN (CKND0BWP)                      0.02       0.08 r
+  U6927/Z (CKBD1BWP)                       0.02       0.10 r
+  U12056/ZN (NR2D1BWP)                     0.02       0.12 f
+  U6929/Z (CKBD1BWP)                       0.02       0.14 f
+  U6928/Z (CKBD1BWP)                       0.02       0.16 f
+  y4_node0_p4_reg[7]/D (DFQD1BWP)          0.00       0.16 f
+  data arrival time                                   0.16
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  clock uncertainty                        0.15       0.15
+  y4_node0_p4_reg[7]/CP (DFQD1BWP)         0.00       0.15 r
+  library hold time                        0.01       0.16
+  data required time                                  0.16
+  -----------------------------------------------------------
+  data required time                                  0.16
+  data arrival time                                  -0.16
+  -----------------------------------------------------------
+  slack (VIOLATED: increase significant digits)       0.00
+
+
+  Startpoint: node0/mul2_reg[6]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: y5_node0_p4_reg[6]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  top                TSMC32K_Lowk_Conservative
+                                           tcbn45gsbwptc
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  node0/mul2_reg[6]/CP (DFQD1BWP)          0.00       0.00 r
+  node0/mul2_reg[6]/Q (DFQD1BWP)           0.06       0.06 f
+  U6877/ZN (CKND0BWP)                      0.02       0.08 r
+  U6878/Z (CKBD1BWP)                       0.02       0.10 r
+  U12032/ZN (NR2D1BWP)                     0.02       0.12 f
+  U6880/Z (CKBD1BWP)                       0.02       0.14 f
+  U6879/Z (CKBD1BWP)                       0.02       0.16 f
+  y5_node0_p4_reg[6]/D (DFQD1BWP)          0.00       0.16 f
+  data arrival time                                   0.16
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  clock uncertainty                        0.15       0.15
+  y5_node0_p4_reg[6]/CP (DFQD1BWP)         0.00       0.15 r
+  library hold time                        0.01       0.16
+  data required time                                  0.16
+  -----------------------------------------------------------
+  data required time                                  0.16
+  data arrival time                                  -0.16
+  -----------------------------------------------------------
+  slack (VIOLATED: increase significant digits)       0.00
+
+
+  Startpoint: node0/mul1_reg[6]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: y4_node0_p4_reg[6]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  top                TSMC32K_Lowk_Conservative
+                                           tcbn45gsbwptc
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  node0/mul1_reg[6]/CP (DFQD1BWP)          0.00       0.00 r
+  node0/mul1_reg[6]/Q (DFQD1BWP)           0.06       0.06 f
+  U6892/ZN (CKND0BWP)                      0.02       0.08 r
+  U6893/Z (CKBD1BWP)                       0.02       0.10 r
+  U12031/ZN (NR2D1BWP)                     0.02       0.12 f
+  U6895/Z (CKBD1BWP)                       0.02       0.14 f
+  U6894/Z (CKBD1BWP)                       0.02       0.16 f
+  y4_node0_p4_reg[6]/D (DFQD1BWP)          0.00       0.16 f
+  data arrival time                                   0.16
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  clock uncertainty                        0.15       0.15
+  y4_node0_p4_reg[6]/CP (DFQD1BWP)         0.00       0.15 r
+  library hold time                        0.01       0.16
+  data required time                                  0.16
+  -----------------------------------------------------------
+  data required time                                  0.16
+  data arrival time                                  -0.16
+  -----------------------------------------------------------
+  slack (VIOLATED: increase significant digits)       0.00
+
+
+  Startpoint: node0/mul2_reg[5]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: y5_node0_p4_reg[5]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  top                TSMC32K_Lowk_Conservative
+                                           tcbn45gsbwptc
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  node0/mul2_reg[5]/CP (DFQD1BWP)          0.00       0.00 r
+  node0/mul2_reg[5]/Q (DFQD1BWP)           0.06       0.06 f
+  U6870/ZN (CKND0BWP)                      0.02       0.08 r
+  U6871/Z (CKBD1BWP)                       0.02       0.10 r
+  U12001/ZN (NR2D1BWP)                     0.02       0.12 f
+  U6873/Z (CKBD1BWP)                       0.02       0.14 f
+  U6872/Z (CKBD1BWP)                       0.02       0.16 f
+  y5_node0_p4_reg[5]/D (DFQD1BWP)          0.00       0.16 f
+  data arrival time                                   0.16
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  clock uncertainty                        0.15       0.15
+  y5_node0_p4_reg[5]/CP (DFQD1BWP)         0.00       0.15 r
+  library hold time                        0.01       0.16
+  data required time                                  0.16
+  -----------------------------------------------------------
+  data required time                                  0.16
+  data arrival time                                  -0.16
+  -----------------------------------------------------------
+  slack (VIOLATED: increase significant digits)       0.00
+
+
+  Startpoint: node0/mul1_reg[5]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: y4_node0_p4_reg[5]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  top                TSMC32K_Lowk_Conservative
+                                           tcbn45gsbwptc
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  node0/mul1_reg[5]/CP (DFQD1BWP)          0.00       0.00 r
+  node0/mul1_reg[5]/Q (DFQD1BWP)           0.06       0.06 f
+  U6863/ZN (CKND0BWP)                      0.02       0.08 r
+  U6864/Z (CKBD1BWP)                       0.02       0.10 r
+  U12000/ZN (NR2D1BWP)                     0.02       0.12 f
+  U6866/Z (CKBD1BWP)                       0.02       0.14 f
+  U6865/Z (CKBD1BWP)                       0.02       0.16 f
+  y4_node0_p4_reg[5]/D (DFQD1BWP)          0.00       0.16 f
+  data arrival time                                   0.16
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  clock uncertainty                        0.15       0.15
+  y4_node0_p4_reg[5]/CP (DFQD1BWP)         0.00       0.15 r
+  library hold time                        0.01       0.16
+  data required time                                  0.16
+  -----------------------------------------------------------
+  data required time                                  0.16
+  data arrival time                                  -0.16
+  -----------------------------------------------------------
+  slack (VIOLATED: increase significant digits)       0.00
+
+
+  Startpoint: node0/mul2_reg[4]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: y5_node0_p4_reg[4]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  top                TSMC32K_Lowk_Conservative
+                                           tcbn45gsbwptc
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  node0/mul2_reg[4]/CP (DFQD1BWP)          0.00       0.00 r
+  node0/mul2_reg[4]/Q (DFQD1BWP)           0.06       0.06 f
+  U6819/ZN (CKND0BWP)                      0.02       0.08 r
+  U6820/Z (CKBD1BWP)                       0.02       0.10 r
+  U11993/ZN (NR2D1BWP)                     0.02       0.12 f
+  U6822/Z (CKBD1BWP)                       0.02       0.14 f
+  U6821/Z (CKBD1BWP)                       0.02       0.16 f
+  y5_node0_p4_reg[4]/D (DFQD1BWP)          0.00       0.16 f
+  data arrival time                                   0.16
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  clock uncertainty                        0.15       0.15
+  y5_node0_p4_reg[4]/CP (DFQD1BWP)         0.00       0.15 r
+  library hold time                        0.01       0.16
+  data required time                                  0.16
+  -----------------------------------------------------------
+  data required time                                  0.16
+  data arrival time                                  -0.16
+  -----------------------------------------------------------
+  slack (VIOLATED: increase significant digits)       0.00
+
+
+  Startpoint: node0/mul1_reg[4]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: y4_node0_p4_reg[4]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  top                TSMC32K_Lowk_Conservative
+                                           tcbn45gsbwptc
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  node0/mul1_reg[4]/CP (DFQD1BWP)          0.00       0.00 r
+  node0/mul1_reg[4]/Q (DFQD1BWP)           0.06       0.06 f
+  U6815/ZN (CKND0BWP)                      0.02       0.08 r
+  U6816/Z (CKBD1BWP)                       0.02       0.10 r
+  U11992/ZN (NR2D1BWP)                     0.02       0.12 f
+  U6818/Z (CKBD1BWP)                       0.02       0.14 f
+  U6817/Z (CKBD1BWP)                       0.02       0.16 f
+  y4_node0_p4_reg[4]/D (DFQD1BWP)          0.00       0.16 f
+  data arrival time                                   0.16
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  clock uncertainty                        0.15       0.15
+  y4_node0_p4_reg[4]/CP (DFQD1BWP)         0.00       0.15 r
+  library hold time                        0.01       0.16
+  data required time                                  0.16
+  -----------------------------------------------------------
+  data required time                                  0.16
+  data arrival time                                  -0.16
+  -----------------------------------------------------------
+  slack (VIOLATED: increase significant digits)       0.00
+
+
+  Startpoint: node0/mul2_reg[3]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: y5_node0_p4_reg[3]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  top                TSMC32K_Lowk_Conservative
+                                           tcbn45gsbwptc
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  node0/mul2_reg[3]/CP (DFQD1BWP)          0.00       0.00 r
+  node0/mul2_reg[3]/Q (DFQD1BWP)           0.06       0.06 f
+  U6793/ZN (CKND0BWP)                      0.02       0.08 r
+  U6794/Z (CKBD1BWP)                       0.02       0.10 r
+  U11983/ZN (NR2D1BWP)                     0.02       0.12 f
+  U6796/Z (CKBD1BWP)                       0.02       0.14 f
+  U6795/Z (CKBD1BWP)                       0.02       0.16 f
+  y5_node0_p4_reg[3]/D (DFQD1BWP)          0.00       0.16 f
+  data arrival time                                   0.16
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  clock uncertainty                        0.15       0.15
+  y5_node0_p4_reg[3]/CP (DFQD1BWP)         0.00       0.15 r
+  library hold time                        0.01       0.16
+  data required time                                  0.16
+  -----------------------------------------------------------
+  data required time                                  0.16
+  data arrival time                                  -0.16
+  -----------------------------------------------------------
+  slack (VIOLATED: increase significant digits)       0.00
+
+
+  Startpoint: node0/mul1_reg[3]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: y4_node0_p4_reg[3]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  top                TSMC32K_Lowk_Conservative
+                                           tcbn45gsbwptc
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  node0/mul1_reg[3]/CP (DFQD1BWP)          0.00       0.00 r
+  node0/mul1_reg[3]/Q (DFQD1BWP)           0.06       0.06 f
+  U6808/ZN (CKND0BWP)                      0.02       0.08 r
+  U6809/Z (CKBD1BWP)                       0.02       0.10 r
+  U11982/ZN (NR2D1BWP)                     0.02       0.12 f
+  U6811/Z (CKBD1BWP)                       0.02       0.14 f
+  U6810/Z (CKBD1BWP)                       0.02       0.16 f
+  y4_node0_p4_reg[3]/D (DFQD1BWP)          0.00       0.16 f
+  data arrival time                                   0.16
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  clock uncertainty                        0.15       0.15
+  y4_node0_p4_reg[3]/CP (DFQD1BWP)         0.00       0.15 r
+  library hold time                        0.01       0.16
+  data required time                                  0.16
+  -----------------------------------------------------------
+  data required time                                  0.16
+  data arrival time                                  -0.16
+  -----------------------------------------------------------
+  slack (VIOLATED: increase significant digits)       0.00
+
+
+  Startpoint: node0/mul2_reg[2]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: y5_node0_p4_reg[2]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  top                TSMC32K_Lowk_Conservative
+                                           tcbn45gsbwptc
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  node0/mul2_reg[2]/CP (DFQD1BWP)          0.00       0.00 r
+  node0/mul2_reg[2]/Q (DFQD1BWP)           0.06       0.06 f
+  U6766/ZN (CKND0BWP)                      0.02       0.08 r
+  U6767/Z (CKBD1BWP)                       0.02       0.10 r
+  U11888/ZN (NR2D1BWP)                     0.02       0.12 f
+  U6769/Z (CKBD1BWP)                       0.02       0.14 f
+  U6768/Z (CKBD1BWP)                       0.02       0.16 f
+  y5_node0_p4_reg[2]/D (DFQD1BWP)          0.00       0.16 f
+  data arrival time                                   0.16
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  clock uncertainty                        0.15       0.15
+  y5_node0_p4_reg[2]/CP (DFQD1BWP)         0.00       0.15 r
+  library hold time                        0.01       0.16
+  data required time                                  0.16
+  -----------------------------------------------------------
+  data required time                                  0.16
+  data arrival time                                  -0.16
+  -----------------------------------------------------------
+  slack (VIOLATED: increase significant digits)       0.00
+
+
+  Startpoint: node0/mul1_reg[2]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: y4_node0_p4_reg[2]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  top                TSMC32K_Lowk_Conservative
+                                           tcbn45gsbwptc
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  node0/mul1_reg[2]/CP (DFQD1BWP)          0.00       0.00 r
+  node0/mul1_reg[2]/Q (DFQD1BWP)           0.06       0.06 f
+  U6786/ZN (CKND0BWP)                      0.02       0.08 r
+  U6787/Z (CKBD1BWP)                       0.02       0.10 r
+  U11887/ZN (NR2D1BWP)                     0.02       0.12 f
+  U6789/Z (CKBD1BWP)                       0.02       0.14 f
+  U6788/Z (CKBD1BWP)                       0.02       0.16 f
+  y4_node0_p4_reg[2]/D (DFQD1BWP)          0.00       0.16 f
+  data arrival time                                   0.16
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  clock uncertainty                        0.15       0.15
+  y4_node0_p4_reg[2]/CP (DFQD1BWP)         0.00       0.15 r
+  library hold time                        0.01       0.16
+  data required time                                  0.16
+  -----------------------------------------------------------
+  data required time                                  0.16
+  data arrival time                                  -0.16
+  -----------------------------------------------------------
+  slack (VIOLATED: increase significant digits)       0.00
+
+
+  Startpoint: node0/mul2_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: y5_node0_p4_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  top                TSMC32K_Lowk_Conservative
+                                           tcbn45gsbwptc
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  node0/mul2_reg[1]/CP (DFQD1BWP)          0.00       0.00 r
+  node0/mul2_reg[1]/Q (DFQD1BWP)           0.06       0.06 f
+  U6757/ZN (CKND0BWP)                      0.02       0.08 r
+  U6758/Z (CKBD1BWP)                       0.02       0.10 r
+  U11884/ZN (NR2D1BWP)                     0.02       0.12 f
+  U6760/Z (CKBD1BWP)                       0.02       0.14 f
+  U6759/Z (CKBD1BWP)                       0.02       0.16 f
+  y5_node0_p4_reg[1]/D (DFQD1BWP)          0.00       0.16 f
+  data arrival time                                   0.16
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  clock uncertainty                        0.15       0.15
+  y5_node0_p4_reg[1]/CP (DFQD1BWP)         0.00       0.15 r
+  library hold time                        0.01       0.16
+  data required time                                  0.16
+  -----------------------------------------------------------
+  data required time                                  0.16
+  data arrival time                                  -0.16
+  -----------------------------------------------------------
+  slack (VIOLATED: increase significant digits)       0.00
+
+
+1

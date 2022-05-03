@@ -55,11 +55,19 @@ logic signed [12:0]  y4_dnn1_out, y5_dnn1_out, y6_dnn1_out, y7_dnn1_out;
 dnn_state_t         dnn_state, next_dnn_state;
 logic               out_comp_ready_p5;
 
-logic               dnn0_clk, dnn1_clk, dnn2_clk, dnn3_clk;
+logic               dnn0_clk, dnn1_clk;
 logic               dnn0_clk_en, dnn0_clk_en_lat;
 logic               dnn1_clk_en, dnn1_clk_en_lat;
-logic               dnn2_clk_en, dnn2_clk_en_lat;
-logic               dnn3_clk_en, dnn3_clk_en_lat;
+
+logic               in_ready_dly, in_ready_rise;
+
+always_ff @ (posedge clk, negedge rst_n)
+    if (~rst_n)
+        in_ready_dly <= 'b0;
+    else
+        in_ready_dly <= in_ready;
+
+assign in_ready_rise = ~in_ready_dly & in_ready;
 
 //logic               out10_ready_node0_dly, out10_ready_node1_dly, out10_ready_node2_dly, out10_ready_node3_dly;
 //
@@ -242,7 +250,7 @@ always_ff @ (posedge clk, negedge rst_n)
 always_comb begin
     next_dnn_state = dnn_state;
     case (dnn_state)
-        DNN0_DNN1_Y_OUT     : next_dnn_state = in_ready ? DNN2_DNN3_Y_OUT : dnn_state;
+        DNN0_DNN1_Y_OUT     : next_dnn_state = in_ready_rise ? DNN2_DNN3_Y_OUT : dnn_state;
         DNN2_DNN3_Y_OUT     : next_dnn_state = FINAL_OUT;
         default             : next_dnn_state = DNN0_DNN1_Y_OUT;
     endcase

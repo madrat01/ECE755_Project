@@ -1,0 +1,86 @@
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-max_paths 1
+	-sort_by slack
+Design : top
+Version: S-2021.06
+Date   : Mon May  2 16:35:09 2022
+****************************************
+
+
+  Startpoint: node0/y_comp_ready_reg
+               (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: node1/mul4_reg[20]
+               (rising edge-triggered flip-flop clocked by clk)
+  Last common pin: clk
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.05       0.05
+  node0/y_comp_ready_reg/CP (DFCNQD1BWP)                  0.00       0.05 r
+  node0/y_comp_ready_reg/Q (DFCNQD1BWP)                   0.08 +     0.14 r
+  U25/Z (BUFFD2BWP)                                       0.04 +     0.18 r
+  U7580/ZN (ND2D1BWP)                                     0.07 +     0.25 f
+  U11884/ZN (NR2D0BWP)                                    0.06 +     0.31 r
+  U11250/ZN (CKND0BWP)                                    0.05 +     0.36 f
+  U12181/ZN (NR2D0BWP)                                    0.04 +     0.40 r
+  add_1_root_add_216_2/U1_1/CO (FA1D0BWP)                 0.05 +     0.45 r
+  add_1_root_add_216_2/U1_2/S (FA1D0BWP)                  0.05 +     0.50 f
+  add_0_root_add_216_2/U1_2/S (FA1D0BWP)                  0.07 +     0.58 r
+  U11808/ZN (IOA21D0BWP)                                  0.05 +     0.62 r
+  U194/ZN (CKND0BWP)                                      0.05 +     0.68 f
+  U8593/ZN (NR2D0BWP)                                     0.04 +     0.72 r
+  node1/mult_134_4/S1_2_0/CO (FA1D0BWP)                   0.08 +     0.80 r
+  node1/mult_134_4/S1_3_0/CO (FA1D0BWP)                   0.07 +     0.87 r
+  node1/mult_134_4/S1_4_0/CO (FA1D0BWP)                   0.07 +     0.95 r
+  node1/mult_134_4/S1_5_0/CO (FA1D0BWP)                   0.07 +     1.02 r
+  node1/mult_134_4/S1_6_0/CO (FA1D0BWP)                   0.07 +     1.09 r
+  node1/mult_134_4/S1_7_0/CO (FA1D0BWP)                   0.07 +     1.16 r
+  node1/mult_134_4/S1_8_0/CO (FA1D0BWP)                   0.07 +     1.22 r
+  node1/mult_134_4/S1_9_0/CO (FA1D0BWP)                   0.07 +     1.29 r
+  node1/mult_134_4/S1_10_0/CO (FA1D0BWP)                  0.07 +     1.36 r
+  node1/mult_134_4/S1_11_0/CO (FA1D0BWP)                  0.07 +     1.43 r
+  node1/mult_134_4/S1_12_0/CO (FA1D0BWP)                  0.07 +     1.50 r
+  node1/mult_134_4/S1_13_0/CO (FA1D0BWP)                  0.07 +     1.56 r
+  node1/mult_134_4/S4_0/CO (FA1D0BWP)                     0.07 +     1.63 r
+  U2366/Z (XOR2D0BWP)                                     0.05 +     1.68 f
+  U7806/ZN (NR2D0BWP)                                     0.04 +     1.72 r
+  U7610/ZN (NR2D0BWP)                                     0.02 +     1.73 f
+  U2362/Z (XOR2D0BWP)                                     0.08 +     1.81 r
+  node1/add_1_root_add_0_root_add_134_3/U1_15/CO (FA1D0BWP)
+                                                          0.08 +     1.89 r
+  node1/add_1_root_add_0_root_add_134_3/U1_16/CO (FA1D0BWP)
+                                                          0.04 +     1.93 r
+  node1/add_1_root_add_0_root_add_134_3/U1_17/CO (FA1D0BWP)
+                                                          0.04 +     1.97 r
+  node1/add_1_root_add_0_root_add_134_3/U1_18/CO (FA1D0BWP)
+                                                          0.04 +     2.00 r
+  node1/add_1_root_add_0_root_add_134_3/U1_19/CO (FA1D0BWP)
+                                                          0.04 +     2.04 r
+  node1/add_1_root_add_0_root_add_134_3/U1_20/Z (XOR3D0BWP)
+                                                          0.05 +     2.10 f
+  node1/add_0_root_add_0_root_add_134_3/U1_20/Z (XOR3D0BWP)
+                                                          0.09 +     2.18 r
+  node1/mul4_reg[20]/D (DFQD1BWP)                         0.00 +     2.18 r
+  data arrival time                                                  2.18
+
+  clock clk (rise edge)                                   2.50       2.50
+  clock network delay (propagated)                        0.05       2.55
+  clock reconvergence pessimism                           0.00       2.55
+  clock uncertainty                                      -0.15       2.40
+  node1/mul4_reg[20]/CP (DFQD1BWP)                                   2.40 r
+  library setup time                                     -0.01       2.39
+  data required time                                                 2.39
+  ------------------------------------------------------------------------------
+  data required time                                                 2.39
+  data arrival time                                                 -2.18
+  ------------------------------------------------------------------------------
+  slack (MET)                                                        0.21
+
+
+1
