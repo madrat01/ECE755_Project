@@ -30,7 +30,6 @@ mv outputs outputs_old
 mv reports reports_old
 rm top.post_route*
 cp -f ../APR/outputs/top.post_route* .
-gunzip top.post_route.spef.gz
 export LD_LIBRARY_PATH=/cae/apps/data/synopsys-2021/lc/S-2021.06/linux64/nwtn/shlib:${LD_LIBRARY_PATH}
 export TERM=xterm-basic
 source /cae/apps/env/synopsys-PrimeTime-2021

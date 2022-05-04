@@ -3,6 +3,8 @@ Information: Using automatic min wire load selection group 'WireAreaForZero'. (E
 Information: Building multi voltage information for entire design. (MV-022)
 Information: Checking 'no_input_delay'.
 Information: Checking 'no_driving_cell'.
+Warning: There are 203 ports with parasitics but with no driving cell.
+
 Information: Checking 'unconstrained_endpoints'.
 Information: Checking 'unexpandable_clocks'.
 Information: Checking 'latch_fanout'.
@@ -13,5 +15,4 @@ Information: Checking 'loops'.
 Information: Checking 'generated_clocks'.
 Information: Checking 'pulse_clock_non_pulse_clock_merge'.
 Information: Checking 'pll_configuration'.
-check_timing succeeded.
-1
+0
