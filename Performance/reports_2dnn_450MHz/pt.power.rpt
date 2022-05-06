@@ -7,7 +7,7 @@ Report : Averaged Power
 	-verbose
 Design : top
 Version: S-2021.06
-Date   : Wed May  4 15:17:50 2022
+Date   : Thu May  5 22:58:30 2022
 ****************************************
 
 Library(s) Used:
@@ -40,18 +40,18 @@ Power-specific unit information :
                         Internal  Switching  Leakage    Total
 Power Group             Power     Power      Power      Power   (     %)  Attrs
 --------------------------------------------------------------------------------
-clock_network           6.894e-04 2.000e-04 5.228e-07 8.899e-04 (17.23%)  i
-register                1.337e-04 4.487e-05 1.908e-05 1.977e-04 ( 3.83%)  
-combinational           2.439e-03 1.386e-03 2.523e-04 4.077e-03 (78.94%)  
+clock_network           6.686e-04 2.066e-04 5.680e-07 8.758e-04 (16.34%)  i
+register                1.441e-04 1.154e-04 2.016e-05 2.796e-04 ( 5.22%)  
+combinational           2.515e-03 1.438e-03 2.513e-04 4.204e-03 (78.44%)  
 sequential                 0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
 memory                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
 io_pad                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
 black_box                  0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
 
-  Net Switching Power  = 1.631e-03   (31.58%)
-  Cell Internal Power  = 3.262e-03   (63.15%)
-  Cell Leakage Power   = 2.719e-04   ( 5.26%)
+  Net Switching Power  = 1.760e-03   (32.83%)
+  Cell Internal Power  = 3.328e-03   (62.09%)
+  Cell Leakage Power   = 2.720e-04   ( 5.08%)
                          ---------
-Total Power            = 5.165e-03  (100.00%)
+Total Power            = 5.360e-03  (100.00%)
 
 1

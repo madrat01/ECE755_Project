@@ -4,16 +4,16 @@ Error: Cannot read link_path file 'tpfn45gsgv18tc.db'. (LNK-001)
 Report : cell_usage
 Design : top
 Version: S-2021.06
-Date   : Wed May  4 15:17:49 2022
+Date   : Thu May  5 22:58:29 2022
 ****************************************
 
 Cell Group            Count                   Area        
 ----------------------------------------------------------
-Combinational          8935 ( 95%)        18021.91 ( 91%) 
-Sequential              501 (  5%)         1855.02 (  9%) 
-Clock                     5 (  0%)           18.52 (  0%) 
+Combinational          8994 ( 95%)        18086.47 ( 90%) 
+Sequential              501 (  5%)         1891.01 (  9%) 
+Clock                     5 (  0%)           20.64 (  0%) 
 Others                    0 (  0%)            0.00 (  0%) 
 ----------------------------------------------------------
-Total                  9441 (100%)        19895.45 (100%) 
+Total                  9500 (100%)        19998.12 (100%) 
 
 1

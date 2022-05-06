@@ -3,7 +3,7 @@
 Report : area
 Design : top
 Version: S-2021.06
-Date   : Mon May  2 16:30:51 2022
+Date   : Thu May  5 22:53:42 2022
 ****************************************
 
 Information: Updating design information... (UID-85)
@@ -12,21 +12,21 @@ Library(s) Used:
     tcbn45gsbwptc (File: /cae/apps/data/tsmclibs-2013/digital/Front_End/timing_power_noise/NLDM/tcbn45gsbwp_120a/tcbn45gsbwptc.db)
 
 Number of ports:                          379
-Number of nets:                         12761
-Number of cells:                         9988
-Number of combinational cells:           9487
+Number of nets:                         12559
+Number of cells:                         9786
+Number of combinational cells:           9285
 Number of sequential cells:               501
 Number of macros/black boxes:               0
-Number of buf/inv:                       1666
-Number of references:                      49
+Number of buf/inv:                       1464
+Number of references:                      48
 
-Combinational area:              18206.949390
-Buf/Inv area:                     1420.372836
-Noncombinational area:            1853.611232
+Combinational area:              18251.049390
+Buf/Inv area:                     1419.314431
+Noncombinational area:            1884.657623
 Macro/Black Box area:                0.000000
 Net Interconnect area:      undefined  (Wire load has zero net area)
 
-Total cell area:                 20060.560623
+Total cell area:                 20135.707013
 Total area:                 undefined
 
 Hierarchical area distribution
@@ -37,8 +37,8 @@ Hierarchical area distribution
 Hierarchical cell                 Absolute    Percent  Combi-      Noncombi-  Black-
                                   Total       Total    national    national   boxes   Design
 --------------------------------  ----------  -------  ----------  ---------  ------  ---------
-top                               20060.5606    100.0  18206.9494  1853.6112  0.0000  top
+top                               20135.7070    100.0  18251.0494  1884.6576  0.0000  top
 --------------------------------  ----------  -------  ----------  ---------  ------  ---------
-Total                                                  18206.9494  1853.6112  0.0000
+Total                                                  18251.0494  1884.6576  0.0000
 
 1
